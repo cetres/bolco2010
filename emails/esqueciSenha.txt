@@ -1,0 +1,14 @@
+Olá ${C01},
+
+Este e-mail foi enviado para informar-lhe o endereço onde poderá inserir uma nova
+senha de acesso. Alguém, provavelmente você, indicou o esquecimento de senha. 
+
+A sua senha é: ${C03}
+
+Entre no endereço seguinte para inserir uma nova senha: 
+http://www.bolco.com.br/?e=${C02}
+
+Caso não tenha sido você o autor de tal ação então desconsidere este e-mail e 
+sua senha atual continuará válida.
+
+O endereço IP que fez a requisição foi: ${C04}

@@ -1,0 +1,7 @@
+${C01},
+entre no site a seguir para participar do bolão da copa que nós estamos fazendo:
+
+https://apto101.ath.cx/bolco/?c=${C02}
+
+abraço,
+gustavo

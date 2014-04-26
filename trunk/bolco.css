@@ -1,0 +1,222 @@
+body { 
+scrollbar-3d-light-color:#C7AE52;
+scrollbar-arrow-color:#34317D;
+scrollbar-base-color:#ffffff;
+scrollbar-dark-shadow-color:#34317D;
+scrollbar-face-color:#EFEFEF;
+scrollbar-highlight-color:#D6D7D6;
+scrollbar-shadow-color:#D6D7D6;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a:link {text-decoration: none; color:#1985B5}
+a:active {text-decoration: none; color: red;}
+a:hover {text-decoration: underline; color: red;}
+a {text-decoration : none; }
+a.Menu { font-family: Verdana; font-size: 13px; color: #242422 }
+a.texto { font-family: Verdana; font-size: 10px; color: #242422 }
+a.rodape { font-family: Verdana; font-size: 10px; color: #A30808; text-decoration:bold }
+a.menu2 { font-family: Verdana; font-size: 11px; color: #6E6E6E; text-decoration:bold }
+a.verm { font-family: Verdana; font-size: 9px; color: #990033 }
+.ver { font-family: Verdana; font-size: 9px; color: #336600 }
+a.link { font-family: Verdana; font-size: 11px; color: #242422; text-decoration:underline; }
+a.cor { font-family: Verdana; font-size: 11px; color: #990000; text-decoration:bold ;}
+p {text-indent: 15pt}
+.barra_menu { 
+border-width:0px;
+padding:0px;
+}
+.barra_menu td {
+text-align:center;
+}
+.barra_menu a {
+color: #ffffff;
+}
+.form {font-size: 8pt; font-style: normal;font-weight: normal;color: #000000;}
+.titulo { font-family: Verdana; font-size: 12px; color: #ffffff; text-decoration:bold; valign: middle; }
+.tituloG { font-family: Verdana; font-size: 14px; color: #ffffff; text-decoration:bold; valign: middle; }
+.texto { font-family: Verdana; font-size: 11px; color: #242422 }
+.breaking-news {
+	width:223px;
+	height:296px;
+	overflow:hidden;
+	position:relative;
+	background:green;
+	float:left;
+	background:url("imagens/table.jpg") no-repeat;
+}
+.destaques {
+	width:483px;
+	height:296px;
+	overflow:hidden;
+	position:relative;
+	background:green;
+	float:left;
+	background:url("imagens/destaques.jpg") no-repeat;
+}
+.divRodape { font-size: 9px; color: #242422; text-decoration:none; }
+p { font-family: Verdana; font-size: 9px; color: #242422 }
+.tit { font-family: Verdana; font-size: 13px; color: #242422 }
+
+body {
+	behavior: url(csshover.htc);
+}
+
+table.grupos {
+	border-collapse: collapse; /* CSS2 */
+	background: #FFFFFf;
+	border: solid gray 1px;
+}
+
+table.grupos tr:nth-child(even) /* CSS3 */ {
+	background: #fefefe;
+}
+table.grupos tr.even /* estilo explícito */ {
+	background: #ffffff;
+}
+
+table.grupos tr:hover {
+	background: #eeeeee;
+}
+
+table.grupos .link_jogo {
+cursor:pointer;
+}
+
+table.grupos td {
+	border-left: 1px dotted gray;
+	border-bottom: 1px dotted gray;
+	text-align: center;
+}
+
+table.grupos tr {
+	border-left: 1px dotted gray;
+	border-bottom: 1px solid gray;
+	background: #ffffff;
+}
+table.grupos thead td {
+	background: #eeeeee;
+	border-bottom: 1px solid gray;
+}
+table.grupos th  {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+table.grupos td a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+
+
+.formAp {
+border:1 inset #efefef;
+font-size:8pt;
+color:#707070;
+}
+
+table.fase2 {
+	border-collapse: collapse; /* CSS2 */
+	background: #FFFFFf;
+	border: solid gray 1px;
+}
+
+table.fase2 tr:nth-child(even) /* CSS3 */ {
+	background: #fefefe;
+}
+table.fase2 tr.even /* estilo explícito */ {
+	background: #ffffff;
+}
+
+table.fase2 tr:hover {
+	background: #eeeeee;
+}
+
+table.fase2 td {
+	border-left: 1px dotted #aaaaaa;
+	border-bottom: 1px dotted #aaaaaa;
+	text-align: center;
+}
+
+table.fase2 tr {
+	background: #ffffff;
+}
+table.fase2 thead td {
+	background: #eeeeee;
+	border-bottom: 1px solid gray;
+}
+table.fase2 th  {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+table.fase2 td a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+}
+#proxJogo {
+    position:absolute;
+    display: inline-table;
+    top: 10px;
+    right:20%;
+    float: right;
+    width: 300px;
+    opacity:0.6;
+    filter:alpha(opacity=60);
+}
+.noticia {
+    text-align: justify;
+    padding: 10px;
+    font-family: Verdana; 
+    font-size: 11px; 
+    color: #242422 
+}
+#panorama {
+  font-family: Verdana;
+}
+#panorama td {
+  text-align: center;
+}
+#panorama .resultado {
+  font-size: 72px; 
+}
+#panorama .nTime{
+  font-size: 18px;
+}
+#panorama .linha_palpite{
+  background-color: #5A8BCE;
+}
+#panorama .ajuda td {
+  border-bottom: solid 1px #aaa;
+}
+#panorama .jogadas td {
+   font-size: 12px;
+}
+#panorama .palpite {
+   text-align: center;
+}
+#panorama .ganha {
+   background-color: #5A8BCE;
+}
+#panorama input[type="button"] {
+   color: #C20000;
+   font-weight: bold;
+}
+
+table.usuarios {
+font-size:9px;
+border:1px gray solid;	
+}
+table.usuarios td{
+border-bottom:1px gray dotted;
+}
+.meuResultado td {
+  background-color:#79F773;	
+}
+.amigoResultado td {
+  background-color:#C6FEC2;	
+}
+.notorio td {
+  background-color:#C6C2FE;
+}

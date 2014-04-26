@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.bolco.com.br/ws/bolco/wsdl/" xmlns:xsd1="http://www.bolco.com.br/ws/bolco/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="bolco2010" targetNamespace="http://www.bolco.com.br/ws/bolco/wsdl/">
+	<types>
+		<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.bolco.com.br/ws/bolco/" targetNamespace="http://www.bolco.com.br/ws/bolco/">
+			<annotation>
+				<documentation>BolCo 2010 - Bolao da Copa</documentation>
+			</annotation>
+			<element name="parametro"/>
+			<element name="envioEmail">
+				<complexType>
+					<sequence>
+						<element name="id" type="integer" minOccurs="1" maxOccurs="1"/>
+						<element name="idusu" type="integer" minOccurs="1" maxOccurs="1"/>
+						<element name="email" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="assunto" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="template" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="apelido" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="parametro" type="string" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="palpites">
+				<complexType>
+					<sequence>
+						<element name="jid" type="int" minOccurs="1" maxOccurs="1"/>
+						<element name="jogo" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="hora" type="string" minOccurs="1" maxOccurs="1"/>
+						<element name="quantidade" type="int" minOccurs="1" maxOccurs="1"/>
+						<element name="email" type="string" minOccurs="1" maxOccurs="unbounded"/>
+						<element name="palpite" type="string" minOccurs="1" maxOccurs="unbounded"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="Erro">
+				<complexType>
+					<all>
+						<element name="numero" type="int"/>
+						<element name="mensagem" type="string"/>
+					</all>
+				</complexType>
+			</element>
+		</schema>
+	</types>
+	<message name="ObterEnvioEmailEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<part name="dataInicio" type="xsd:string"/>
+	</message>
+	<message name="ObterEnvioEmailSaida">
+		<part name="body" element="xsd1:envioEmail"/>
+	</message>
+	<message name="ConfirmarEnvioEmailEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<part name="id" type="xsd:integer"/>
+	</message>
+	<message name="ConfirmarEnvioEmailSaida" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<part name="resultado" type="xsd:integer"/>
+	</message>
+	<message name="ObterPalpiteEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<part name="jid" type="xsd:integer"/>
+	</message>
+	<message name="ObterPalpiteSaida">
+		<part name="body" element="xsd1:palpites"/>
+	</message>
+	<message name="ErroSaida">
+		<part name="body" element="xsd1:Erro"/>
+	</message>
+	<portType name="EnvioEmailPortType">
+		<operation name="ObterEnvioEmail">
+			<input message="tns:ObterEnvioEmailEntrada"/>
+			<output message="tns:ObterEnvioEmailSaida"/>
+			<fault name="Erro" message="tns:ErroSaida"/>
+		</operation>
+		<operation name="ConfirmarEnvioEmail">
+			<input message="tns:ConfirmarEnvioEmailEntrada"/>
+			<output message="tns:ConfirmarEnvioEmailSaida"/>
+			<fault name="Erro" message="tns:ErroSaida"/>
+		</operation>
+	</portType>
+	<portType name="PalpitePortType">
+		<operation name="ObterPalpites">
+			<input message="tns:ObterPalpiteEntrada"/>
+			<output message="tns:ObterPalpiteSaida"/>
+			<fault name="Erro" message="tns:ErroSaida"/>
+		</operation>
+	</portType>
+	<binding name="envioEmailBinding" type="tns:EnvioEmailPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ObterEnvioEmail">
+			<soap:operation soapAction="urn:xmethods-delayed-quotes#ObterEnvioEmail"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</output>
+			<fault name="Erro">
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</fault>
+		</operation>
+		<operation name="ConfirmarEnvioEmail">
+			<soap:operation soapAction="urn:xmethods-delayed-quotes#ConfirmarEnvioEmail"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</output>
+			<fault name="Erro">
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</fault>
+		</operation>
+	</binding>
+	<binding name="palpiteBinding" type="tns:PalpitePortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ObterPalpites">
+			<soap:operation soapAction="urn:xmethods-delayed-quotes#ObterPalpites"/>
+			<input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</input>
+			<output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</output>
+			<fault name="Erro">
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="bolco">
+		<documentation>WebService do BolCo 2010</documentation>
+		<port name="envioEmail" binding="tns:envioEmailBinding">
+			<soap:address location="http://w1.bolco.com.br/emails/"/>
+		</port>
+		<port name="palpites" binding="tns:palpiteBinding">
+			<soap:address location="http://w1.bolco.com.br/palpites/"/>
+		</port>
+	</service>
+</definitions>

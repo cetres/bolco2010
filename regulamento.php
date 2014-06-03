@@ -20,7 +20,7 @@ function troca_cor(src,nova_cor) {
 <SCRIPT LANGUAGE="JavaScript1.2" SRC="load.js" TYPE='text/javascript'></SCRIPT>
 
 <style>
-BODY { 
+BODY {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -34,7 +34,7 @@ scrollbar-shadow-color:#D6D7D6}
    <table cellpadding="0" cellspacing="0" border="0" bordercolor="#ffffff" height="100%">
    <tr>
    <td background="imagens/lado_esq.jpg" width="17"></td><td width="800" valign="top">
-   
+
 
 	<?php menu();?>
 
@@ -45,9 +45,9 @@ scrollbar-shadow-color:#D6D7D6}
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff"><tr><td>
 
 
-<a class="texto">O Bol&atilde;o &quot;Rumo ao Hexa&quot;, referente &agrave; Copa do Mundo de 2010 realizada na &Aacute;frica do Sul, &eacute; uma competi&ccedil;&atilde;o de progn&oacute;sticos esportivos, sem fins lucrativos, com o intuito de promover o lado psicosocioesportivo de seus participantes. As apostas ser&atilde;o para toda a competi&ccedil;&atilde;o da Copa do Mundo, cujos jogos j&aacute; est&atilde;o pr&eacute;-estabelecidos pela FIFA - F&eacute;d&eacute;ration Internationale de Football Association - e correspondem &agrave;queles da fase classificat&oacute;ria da Copa.</a><br><br>
-<a class="texto">A vincula&ccedil;&atilde;o e promo&ccedil;&atilde;o do Bol&atilde;o &quot;Rumo ao Hexa&quot; est&aacute; sendo feita atrav&eacute;s do site: http://www.bolco.com.br . Todo e qualquer uso e divulga&ccedil;&atilde;o &eacute; de responsabilidade &uacute;nica e exclusiva de seus criadores, sendo proibida c&oacute;pia, execu&ccedil;&atilde;o p&uacute;blica e r&aacute;dioteledifus&atilde;o.</a><br>
-<br><b class="texto">Da Inscri&ccedil;&atilde;o</b><br><br>
+<a class="texto">O Bolão "Rumo ao Hexa", referente à Copa do Mundo de 2010 realizada na África do Sul, é uma competição de prognósticos esportivos, sem fins lucrativos, com o intuito de promover o lado psicosocioesportivo de seus participantes. As apostas serão para toda a competição da Copa do Mundo, cujos jogos já estão pré-estabelecidos pela FIFA - Fédération Internationale de Football Association - e correspondem àqueles da fase classificatória da Copa.</a><br><br>
+<a class="texto">A vinculação e promoção do Bolão "Rumo ao Hexa" está sendo feita através do site: http://www.bolco.com.br . Todo e qualquer uso e divulgação é de responsabilidade única e exclusiva de seus criadores, sendo proibida cópia, execução pública e rádioteledifusão.</a><br>
+<br><b class="texto">Da Inscrição</b><br><br>
 <a class="texto">O apostador, ap&oacute;s indicado pelos criadores ou por um not&oacute;rio, dever&aacute; se cadastrar no site citado para fazer os seus progn&oacute;sticos. O pagamento ser&aacute; facultativo, por&eacute;m a premia&ccedil;&atilde;o se destinar&aacute; apenas aos pagadores.</a><br>
 <br><b class="texto">Dos Palpites</b><br><br>
 <a class="texto">Os progn&oacute;sticos dever&atilde;o ser efetuados at&eacute; 5 (cinco) minutos antes de cada partida, atrav&eacute;s do site, j&aacute; in&uacute;meras vezes citado.</a><br>
@@ -142,7 +142,7 @@ scrollbar-shadow-color:#D6D7D6}
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>

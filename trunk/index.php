@@ -57,9 +57,9 @@ document.submit();
 			<tr><td colspan="4" bgcolor="#2B59AE" height="25" >&nbsp;&nbsp;<b class="titulo">Acesso ao Sistema</b></td></tr>
 			<tr><td colspan="4" height="1" bgcolor="#2B59AE" ></td></tr>
 			
-<tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<b class="titulo">Email</b><br></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
+<tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<font color="#2B59AE"><b>Email</b></font><br></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<input value="<?php echo $email ?>" type="text" size="40" name="email" STYLE="border:1 inset #000088;font-size:8pt;color:#000000;"  onfocus="control_onfocus(this);" onblur="control_onblur(this);"></td><td>&nbsp;&nbsp;&nbsp;<input type="submit" value="Acessar" STYLE="border:1 outset #efefef;font-size:8pt;color:#707070;" onclick="return Validaform()"><br></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
-<tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<b class="titulo">Senha</b><br></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
+<tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<font color="#2B59AE"><b>Senha</b></font><br></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<input value=""  type="password" name="senha" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  onfocus="control_onfocus(this);" onblur="control_onblur(this);"></td><td>&nbsp;&nbsp;&nbsp;<input type="submit" value="Esqueceu a senha?" STYLE="border:1 outset #efefef;font-size:8pt;color:#707070;"  onclick="return ValidaformRe()"><br></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;
 	<a href="visitante.php?a=i"><strong><p style="font-size:12px;">Visitante</p></strong></a></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" >

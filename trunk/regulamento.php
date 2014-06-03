@@ -48,20 +48,20 @@ scrollbar-shadow-color:#D6D7D6}
 <a class="texto">O Bolão "Rumo ao Hexa", referente à Copa do Mundo de 2010 realizada na África do Sul, é uma competição de prognósticos esportivos, sem fins lucrativos, com o intuito de promover o lado psicosocioesportivo de seus participantes. As apostas serão para toda a competição da Copa do Mundo, cujos jogos já estão pré-estabelecidos pela FIFA - Fédération Internationale de Football Association - e correspondem àqueles da fase classificatória da Copa.</a><br><br>
 <a class="texto">A vinculação e promoção do Bolão "Rumo ao Hexa" está sendo feita através do site: http://www.bolco.com.br . Todo e qualquer uso e divulgação é de responsabilidade única e exclusiva de seus criadores, sendo proibida cópia, execução pública e rádioteledifusão.</a><br>
 <br><b class="texto">Da Inscrição</b><br><br>
-<a class="texto">O apostador, ap&oacute;s indicado pelos criadores ou por um not&oacute;rio, dever&aacute; se cadastrar no site citado para fazer os seus progn&oacute;sticos. O pagamento ser&aacute; facultativo, por&eacute;m a premia&ccedil;&atilde;o se destinar&aacute; apenas aos pagadores.</a><br>
+<a class="texto">O apostador, após indicado pelos criadores ou por um notório, deverá se cadastrar no site citado para fazer os seus prognósticos. O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores.</a><br>
 <br><b class="texto">Dos Palpites</b><br><br>
-<a class="texto">Os progn&oacute;sticos dever&atilde;o ser efetuados at&eacute; 5 (cinco) minutos antes de cada partida, atrav&eacute;s do site, j&aacute; in&uacute;meras vezes citado.</a><br>
-<a class="texto">A aposta de um jogador poder&aacute; ficar invis&iacute;vel (caso ele deseje) a outros participantes at&eacute; 5 (cinco) minutos antes de cada evento futebol&iacute;stico, quando ser&aacute; enviado um e-mail com as apostas de todos os participantes. Essa &eacute; uma forma de todos os apostadores comprovarem a integridade do BolC&oacute; 2010.</a><br>
-<br><b class="texto">Da Pontua&ccedil;&atilde;o</b><br><br>
-<a class="texto">A pontua&ccedil;&atilde;o adotada ser&aacute; a seguinte</a><br>
+<a class="texto">Os prognósticos deverão ser efetuados até 5 (cinco) minutos antes de cada partida, através do site, já inúmeras vezes citado.</a><br>
+<a class="texto">A aposta de um jogador poderá ficar invisível (caso ele deseje) a outros participantes até 5 (cinco) minutos antes de cada evento futebolístico, quando será enviado um e-mail com as apostas de todos os participantes. Essa é uma forma de todos os apostadores comprovarem a integridade do BolCó 2010.</a><br>
+<br><b class="texto">Da Pontuação</b><br><br>
+<a class="texto">A pontuação adotada será a seguinte:</a><br>
 <a class="texto">* <strong>Placar Correto</strong>: acerto integral do placar do jogo</a><br>
 <a class="texto">* <strong>Empate incerto</strong>: acerto do empate no jogo, mas com placar incorreto</a><br>
-<a class="texto">* <strong>Vit&oacute;ria simples</strong>: Indica&ccedil;&atilde;o do time vencedor e acerto somente do n&ordm; de gols do vencedor da partida</a><br>
-<a class="texto">* <strong>Derrota simples</strong>: Indica&ccedil;&atilde;o do time vencedor e acerto somente do n&ordm; de gols do perdedor da partida</a><br>
+<a class="texto">* <strong>Vitória simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do vencedor da partida</a><br>
+<a class="texto">* <strong>Derrota simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do perdedor da partida</a><br>
 <a class="texto">* <strong>Saldo de gols</strong>: Acerto do saldo de gols entre os dois times lembrando que o time vencedor deve coincidir</a><br>
-<a class="texto">* <strong>Indicativo do vencedor</strong>: indica&ccedil;&atilde;o do vencedor e perdedor, com desacerto do n&uacute;mero de gols marcados por ambos</a><br>
+<a class="texto">* <strong>Indicativo do vencedor</strong>: indicação do vencedor e perdedor, com desacerto do número de gols marcados por ambos</a><br>
 
-<br><a class="texto">Em caso de empate na soma dos pontos, ser&aacute; nomeado vencedor o participante que tiver o maior n&uacute;mero de acertos na seguinte ordem: placar correto, empate incerto, vit&oacute;ria simples, derrota simples, saldo de gols e indicativo do vencedor. Permanecendo ainda o empate o pr&ecirc;mio ser&aacute; dividido entre os dois "cag&otilde;es" que conseguiram essa proeza.</a><br><br>
+<br><a class="texto">Em caso de empate na soma dos pontos, será nomeado vencedor o participante que tiver o maior número de acertos na seguinte ordem: placar correto, empate incerto, vitória simples, derrota simples, saldo de gols e indicativo do vencedor. Permanecendo ainda o empate o prêmio será dividido entre os dois “cagões” que conseguiram essa proeza.</a><br><br>
 <div align="center">
 <table class="Grupos" width="80%">
 <thead>
@@ -83,20 +83,20 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><a class="texto">25</td>
 </tr>
 <tr>
-	<td><b class="texto">Empate incerto</td>
-	<td><a class="texto">10</td>
-	<td><a class="texto">12</td>
-	<td><a class="texto">15</td>
-	<td><a class="texto">18</td>
-	<td><a class="texto">20</td>
-</tr>
-<tr>
 	<td><b class="texto">Vit&oacute;ria simples</td>
 	<td><a class="texto">9</td>
 	<td><a class="texto">10</td>
 	<td><a class="texto">12</td>
 	<td><a class="texto">15</td>
 	<td><a class="texto">18</td>
+</tr>
+<tr>
+	<td><b class="texto">Empate incerto</td>
+	<td><a class="texto">8</td>
+	<td><a class="texto">9</td>
+	<td><a class="texto">10</td>
+	<td><a class="texto">13</td>
+	<td><a class="texto">16</td>
 </tr>
 <tr>
 	<td><b class="texto">Derrota simples</td>

@@ -19,10 +19,10 @@ if (isset($_POST["idjogo"])) {
 $time1 = "";
 $time2 = "";
 $local = "";
-		
+
 if (isset($_GET['acao'])) {
 		$acao = $_GET['acao'];
-		
+
 		if ($acao == "U") {
 			$golt1 = ($_POST["time1"]);
 			$golt2 = ($_POST["time2"]);
@@ -36,17 +36,17 @@ if (isset($_GET['acao'])) {
 				$pt1 = "1";
 				$pt2 = "1";
 			}
-			
+
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("delete  from resultados where jo_codigo = '$ida'") or die(mysql_error());  
+			mysql_query("delete  from resultados where jo_codigo = '$ida'") or die(mysql_error());
 			$q = "update jogos set jo_result_golp1 = '$golt1', jo_result_golp2 = '$golt2', jo_time1_pt = '$pt1' , jo_time2_pt = '$pt2' where jo_codigo = '$ida' ";
 			//echo $q;
 			$rs = mysql_query($q);
 			if (!$rs) {
    				die('Could not query:' . mysql_error());
 			}
-			$msg = "Dados Alterados com sucesso com sucesso.";	
+			$msg = "Dados Alterados com sucesso com sucesso.";
 			$q = "select * from aposta inner join jogos on aposta.jo_codigo = jogos.jo_codigo where ativa = 0 and aposta.jo_codigo = '$ida' ";
 			$rs = mysql_query($q);
 			if (!$rs) {
@@ -65,7 +65,7 @@ if (isset($_GET['acao'])) {
 				if ( (($golp1 > $golp2) && ($golt1 > $golt2)) || (($golp1 < $golp2) && ($golt1 < $golt2)) ) {
 				//Acertou o vitorioso
 					if (($golp1 == $golt1) && ($golt2 == $golp2)) {
-					
+
 						 $Acerto = "A";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
 						 $pt = "25";
@@ -78,7 +78,7 @@ if (isset($_GET['acao'])) {
 						} else {
 						 $pt = "12";
 						}
-						
+                   //Vitória simples
 					} elseif ( (($golp1 > $golp2) && ($golp1 == $golt1)) || (($golp2 > $golp1) && ($golp2 == $golt2)) ) {
 						$Acerto = "C";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
@@ -92,8 +92,8 @@ if (isset($_GET['acao'])) {
 						} else {
 						 $pt = "9";
 						}
-						
-					} elseif ( (($golp1 > $golp2) && ($golp2 == $golt2)) || (($golp2 > $golp1) && ($golp1 == $golt1)) ) { 
+                    // Derrota Simples
+					} elseif ( (($golp1 > $golp2) && ($golp2 == $golt2)) || (($golp2 > $golp1) && ($golp1 == $golt1)) ) {
 						$Acerto = "D";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
 						 $pt = "15";
@@ -106,7 +106,8 @@ if (isset($_GET['acao'])) {
 						} else {
 						 $pt = "7";
 						}
-					} elseif ($golp1 - $golp2 == $golt1 - $golt2)  { 
+					//Saldo de gols
+					} elseif ($golp1 - $golp2 == $golt1 - $golt2)  {
 						$Acerto = "E";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
 						 $pt = "12";
@@ -119,7 +120,7 @@ if (isset($_GET['acao'])) {
 						} else {
 						 $pt = "5";
 						}
-						 						 
+                    //Indicativo de Vencedor
 					} else {
 						 $Acerto = "F";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
@@ -134,8 +135,8 @@ if (isset($_GET['acao'])) {
 						 $pt = "3";
 						}
 					}
-					
-					mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', '$Acerto', '$pt')") or die(mysql_error());  
+
+					mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', '$Acerto', '$pt')") or die(mysql_error());
 
 				} elseif (($golp1 == $golp2) && ($golt1 == $golt2)) {
 				//Acertou o empate
@@ -157,41 +158,41 @@ if (isset($_GET['acao'])) {
 					} else {
 						 $Acerto = "B";
 						if (($fase == "Final") || ($fase == "3º Lugar")) {
-						 $pt = "20";
+						 $pt = "16";
 						} elseif ($fase == "Semi-Final") {
-						 $pt = "18";
+						 $pt = "13";
 						} elseif ($fase == "Quarta") {
-						 $pt = "15";
-						} elseif ($fase == "Oitava") {
-						 $pt = "12";
-						} else {
 						 $pt = "10";
+						} elseif ($fase == "Oitava") {
+						 $pt = "9";
+						} else {
+						 $pt = "8";
 						}
 					}
-					mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', '$Acerto', '$pt')") or die(mysql_error());  
-				
+					mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', '$Acerto', '$pt')") or die(mysql_error());
+
 				} else {
 				//errou
-				mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', 'X', 0)") or die(mysql_error());  
-				
+				mysql_query("INSERT INTO resultados (idusu, jo_codigo, Acerto, pontos) VALUES ('$idusuAp', '$ida', 'X', 0)") or die(mysql_error());
+
 				}
-				
+
 			$i++;
 			}
-			
-			
+
+
 			inserirColocacoes($ida);
-			
-			
-			
+
+
+
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de reultado de jogos', '$idusu', 'Cadastro admin - jogo: $ida ',LOCALTIME()  )") or die(mysql_error());  
+			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de reultado de jogos', '$idusu', 'Cadastro admin - jogo: $ida ',LOCALTIME()  )") or die(mysql_error());
 			$q = "select idusu from usuarios where email = '$email'";
 			$rs = mysql_query($q);
 			$ida = mysql_result($rs,0,"idusu");
-				
-				
+
+
 		}	elseif ($acao == "C") {
 		// ANULA RESULTADO
 			mysql_connect($host, $login_db, $senha_db);
@@ -202,12 +203,12 @@ if (isset($_GET['acao'])) {
 			if (!$rs) {
    				die('Could not query:' . mysql_error());
 			}
-			$msg = "Dados Alterados com sucesso com sucesso.";	
+			$msg = "Dados Alterados com sucesso com sucesso.";
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de reultado de jogos', '$idusu', 'Cadastro admin - Cancelamento - jogo: $ida ',LOCALTIME()  )") or die(mysql_error());  
-			mysql_query("delete  from resultados where jo_codigo = '$ida'") or die(mysql_error());  
-	
+			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de reultado de jogos', '$idusu', 'Cadastro admin - Cancelamento - jogo: $ida ',LOCALTIME()  )") or die(mysql_error());
+			mysql_query("delete  from resultados where jo_codigo = '$ida'") or die(mysql_error());
+
 		}
 $ida = "";
 
@@ -227,7 +228,7 @@ $ida = "";
 			$goltime2 = mysql_result($rs,0,"jo_result_golp2");
 			$local = mysql_result($rs,0,"jo_hora");
 		}
-	
+
 }
 
 function Resultado_Aposta($golp1,$golp2,$golt1,$golt2) {
@@ -237,7 +238,7 @@ function Resultado_Aposta($golp1,$golp2,$golt1,$golt2) {
 <html>
 <head>
     <title>
-        Bolco 2010
+        Bolco 2014
     </title>
 </head>
 <script language=javascript>
@@ -254,7 +255,7 @@ alert("<?php echo $msg; ?>");
 
 
 <style>
-BODY { 
+BODY {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -265,25 +266,25 @@ scrollbar-shadow-color:#D6D7D6}
 </style>
 <link rel="STYLESHEET" type="text/css" href="../bolco.css">
    <div align="center"><BODY marginheight="0" marginwidth="0" rightmargin="0" leftmargin="0" topmargin="0" bgcolor="#ffffff" >
-<h1 class="tit">Resultados</h1><br><br> 
-<font class="texto">Administra&ccedil;&atilde;o de Resultados</font><br><br> 
+<h1 class="tit">Resultados</h1><br><br>
+<font class="texto">Administra&ccedil;&atilde;o de Resultados</font><br><br>
 <table width="70%">
 <form name="FormComent"  action="resultados.php" method="Post">
 <tr valign="top" align="left">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Jogo</a>&nbsp;<a class="rodape">.: *</a></td>
 <td>
   <select name="idjogo" size=1 onChange="FormComent.submit();">
-  
-  
+
+
 <?php if ($ida == "") { ?>
-  <option value=''>Time1 X Time2 - Data</option> 
+  <option value=''>Time1 X Time2 - Data</option>
 
 <?php } else {
 echo "<option value='$ida'>$time1 X- $time2 - $local</option> "; ?>
 
 <?php }  ?>
 
-<?php 
+<?php
 mysql_connect($host, $login_db, $senha_db);
 mysql_select_db($database);
 $q = "SELECT * FROM jogos inner join $database.paises p1 on p1.idpaises = jo_time1 inner join $database.estadio est on est.idestadio = jo_estadio inner join $database.paises p2 on p2.idpaises = jo_time2  order by jo_hora";

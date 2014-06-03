@@ -62,7 +62,7 @@ document.submit();
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<b class="titulo">Senha</b><br></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;<input value=""  type="password" name="senha" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  onfocus="control_onfocus(this);" onblur="control_onblur(this);"></td><td>&nbsp;&nbsp;&nbsp;<input type="submit" value="Esqueceu a senha?" STYLE="border:1 outset #efefef;font-size:8pt;color:#707070;"  onclick="return ValidaformRe()"><br></td><td colspan="1" width="1" bgcolor="#2B59AE" ></td></tr>
 <tr><td colspan="1" width="1" bgcolor="#2B59AE" ></td><td height="25">&nbsp;
-	<a href="visitante.php?a=i"><strong><p style="font-size:9px;text-align:right">Visitante</p></strong></a></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" >
+	<a href="visitante.php?a=i"><strong><p style="font-size:12px;">Visitante</p></strong></a></td><td></td><td colspan="1" width="1" bgcolor="#2B59AE" >
 </td></tr>
 			<tr><td colspan="4" height="1" bgcolor="#2B59AE" ></td></tr>
 </table>

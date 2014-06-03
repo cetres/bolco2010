@@ -180,8 +180,8 @@ function proximos_Jogos($ng) {
 	printf ("<tr>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><img src='imagens/lapis.jpg' width=16 height=16></td>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
-		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".gif' border='0' alt=''></a></td>");
-		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
+		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
+		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p1.Nome")))."</a></td>");
 		if ( strtotime(mysql_result($rs,$i,"jo_hora")) >= $horario) {
 			printf ("<td><input class='formAp'  onkeypress='return OnlyNumbers(event)'   type='text' name='p1".$i."' size='2' value='".mysql_result($rs,$i,"golp1")."'></td>");
 		} else {
@@ -193,8 +193,8 @@ function proximos_Jogos($ng) {
 		} else {
 			printf ("<td><input  onkeypress='return OnlyNumbers(event)'   class='formAp' readonly  type='text' name='p2".$i."' size='2' value='".mysql_result($rs,$i,"golp2")."'></td>");
 		}
-		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
-		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".gif' border='0' alt=''></a></td>");
+		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p2.Nome")))."</a></td>");
+		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a></td>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".mysql_result($rs,$i,"est.nome")."</a></td>");
 	printf ("<input class='formAp' type='hidden' name='j".$i."' size='2' value='".mysql_result($rs,$i,"jo_codigo")."'></tr>\n");
 
@@ -240,9 +240,9 @@ function grupos($g) {
 	while ($i < $num) {
 	printf ("<tr>");
 		printf ("<td><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
-		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".gif' border='0' alt=''></a><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
+		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p1.Nome")))."</a></td>");
 		printf ("<td><a class='texto'>X</td>");
-		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".gif' border='0' alt=''></a><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
+		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
 		if ( strtotime(mysql_result($rs,$i,"jo_hora")) >= $horario) {
 			printf ("<td><input class='formAp'  onkeypress='return OnlyNumbers(event)'   type='text' name='p1".$i."' size='2' value='".mysql_result($rs,$i,"golp1")."'></td>");
 		} else {
@@ -318,7 +318,7 @@ global $database;
 		$c = mysql_result($rs,$i,"golscontra");
 		$s = $p - $c;
 		printf ("<td><a class='texto'>".($i+1)."</a></td>");
-		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".gif' border='0' alt=''></a></td>");
+		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
 		printf ("<td><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
 		printf ("<td><a class='texto'>".mysql_result($rs,$i,"ponto")."</a></td>");
 		printf ("<td><a class='texto'>".mysql_result($rs,$i,"jogos")."</a></td>");
@@ -820,11 +820,11 @@ function mresultados($g) {
 	while ($i < $num) {
 	printf ("<tr>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
-		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".gif' border='0' alt=''></a></td>");
+		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>X</td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
-		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".gif' border='0' alt=''></a></td>");
+		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a></td>");
 
 		if (($idusu == $_SESSION["id"]) || ($mostrapalpite == 0) || (strtotime(mysql_result($rs,$i,"jo_hora")) < $horario)){
 			printf ("<td height='20' valign='middle'><a class='texto'>".mysql_result($rs,$i,"golp1")."</a></td>");

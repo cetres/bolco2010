@@ -13,7 +13,7 @@ if(!isset($_GET['g']))  {
 <html>
 <head>
     <title>
-        Jogos - BolC&oacute; 2010
+        Jogos - BolC&oacute; 2014
     </title>
 <SCRIPT LANGUAGE="JavaScript1.2" SRC="bolco.js" TYPE='text/javascript'></SCRIPT>
 <script> 

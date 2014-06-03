@@ -6,7 +6,7 @@ require_once("protecao.php");
 <html>
 <head>
     <title>
-        Regulamento - BolCó 2010
+        Regulamento - BolCó 2014
     </title>
 </head>
 <script language=javascript>
@@ -45,18 +45,18 @@ scrollbar-shadow-color:#D6D7D6}
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff"><tr><td>
 
 
-<a class="texto">O Bolão "Rumo ao Hexa", referente à Copa do Mundo de 2010 realizada na África do Sul, é uma competição de prognósticos esportivos, sem fins lucrativos, com o intuito de promover o lado psicosocioesportivo de seus participantes. As apostas serão para toda a competição da Copa do Mundo, cujos jogos já estão pré-estabelecidos pela FIFA - Fédération Internationale de Football Association - e correspondem àqueles da fase classificatória da Copa.</a><br><br>
+<a class="texto">O Bolão "Rumo ao Hexa", referente à Copa do Mundo de 2014 realizada no Brasil, é uma competição de prognósticos esportivos, sem fins lucrativos, com o intuito de promover o lado psicosocioesportivo de seus participantes. As apostas serão para toda a competição da Copa do Mundo, cujos jogos já estão pré-estabelecidos pela FIFA - Fédération Internationale de Football Association - e correspondem àqueles da fase classificatória da Copa.</a><br><br>
 <a class="texto">A vinculação e promoção do Bolão "Rumo ao Hexa" está sendo feita através do site: http://www.bolco.com.br . Todo e qualquer uso e divulgação é de responsabilidade única e exclusiva de seus criadores, sendo proibida cópia, execução pública e rádioteledifusão.</a><br>
 <br><b class="texto">Da Inscrição</b><br><br>
 <a class="texto">O apostador, após indicado pelos criadores ou por um notório, deverá se cadastrar no site citado para fazer os seus prognósticos. O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores.</a><br>
 <br><b class="texto">Dos Palpites</b><br><br>
 <a class="texto">Os prognósticos deverão ser efetuados até 5 (cinco) minutos antes de cada partida, através do site, já inúmeras vezes citado.</a><br>
-<a class="texto">A aposta de um jogador poderá ficar invisível (caso ele deseje) a outros participantes até 5 (cinco) minutos antes de cada evento futebolístico, quando será enviado um e-mail com as apostas de todos os participantes. Essa é uma forma de todos os apostadores comprovarem a integridade do BolCó 2010.</a><br>
+<a class="texto">A aposta de um jogador poderá ficar invisível (caso ele deseje) a outros participantes até 5 (cinco) minutos antes de cada evento futebolístico, quando será enviado um e-mail com as apostas de todos os participantes. Essa é uma forma de todos os apostadores comprovarem a integridade do BolCó 2014.</a><br>
 <br><b class="texto">Da Pontuação</b><br><br>
 <a class="texto">A pontuação adotada será a seguinte:</a><br>
 <a class="texto">* <strong>Placar Correto</strong>: acerto integral do placar do jogo</a><br>
-<a class="texto">* <strong>Empate incerto</strong>: acerto do empate no jogo, mas com placar incorreto</a><br>
 <a class="texto">* <strong>Vitória simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do vencedor da partida</a><br>
+<a class="texto">* <strong>Empate incerto</strong>: acerto do empate no jogo, mas com placar incorreto</a><br>
 <a class="texto">* <strong>Derrota simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do perdedor da partida</a><br>
 <a class="texto">* <strong>Saldo de gols</strong>: Acerto do saldo de gols entre os dois times lembrando que o time vencedor deve coincidir</a><br>
 <a class="texto">* <strong>Indicativo do vencedor</strong>: indicação do vencedor e perdedor, com desacerto do número de gols marcados por ambos</a><br>
@@ -123,20 +123,20 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><a class="texto">9</td>
 </tr>
 </table></div>
-<br><a class="texto">Na <b>Segunda Fase</b> o resultado dos jogos ao término dos 90 minutos será considerado para efeito de pontuação, o resultado da prorrogação e da disputa de penalt's não será considerado. </a><br><br>
+<br><a class="texto">Na <b>Segunda Fase</b> o resultado dos jogos ao término dos 90 minutos será considerado para efeito de pontuação, o resultado da prorrogação e da disputa de penaltis não será considerado. </a><br><br>
 
-<br><b class="texto">Da Premia&ccedil;&atilde;o</b><br><br>
+<br><b class="texto">Da Premiação</b><br><br>
 
-<a class="texto">A premia&ccedil;&atilde;o ficar&aacute; condicionada ao pagamento n&atilde;o obrigat&oacute;rio da taxa de R$ 15,00 a ser feita em uma conta corrente do Banco do Brasil at&eacute; as 23:59h do dia 11/06/2010. O procedimento de pagamento ser&aacute; devidamente explicado em um local espec&iacute;fico do site do Bolc&oacute; (www.bolco.com.br).</a><br><br>
-<a class="texto">Lembrando que toda a renda arrecadada ser&aacute; utilizada somente para o pagamento da premia&ccedil;&atilde;o. TodA e qualquer tipo de doa&ccedil;&atilde;o aos criadores e administradores do site ser&aacute; muito bem-vinda.</a><br><br>
-<a class="texto">Caso o vencedor n&atilde;o tenha realizado o pagamento da taxa, a premia&ccedil;&atilde;o ser&aacute; destinada ao apostador pagante melhor colocado. A premia&ccedil;&atilde;o ser&aacute; dividida da seguinte forma:</a><br><br>
+<a class="texto">A premiação ficará condicionada ao pagamento não obrigatório da taxa de R$ 15,00 a ser feita em uma conta corrente do Banco do Brasil até as 23:59h do dia 11/06/2014. O procedimento de pagamento será devidamente explicado em um local específico do site do Bolcó (www.bolco.com.br).</a><br><br>
+<a class="texto">Lembrando que toda a renda arrecadada será utilizada somente para o pagamento da premiação. Toda e qualquer tipo de doação aos criadores e administradores do site será muito bem-vinda.</a><br><br>
+<a class="texto">Caso o vencedor não tenha realizado o pagamento da taxa, a premiação será destinada ao apostador pagante melhor colocado. A premiação será dividida da seguinte forma:</a><br><br>
 
-<br><b class="texto">* 1&ordm; Colocado - 60%</b>
-<br><b class="texto">* 2&ordm; Colocado - 30%</b>
-<br><b class="texto">* 3&ordm; Colocado - 10% </b>
+<br><b class="texto">* 1º Colocado - 60%</b>
+<br><b class="texto">* 2º Colocado - 30%</b>
+<br><b class="texto">* 3º Colocado - 10%</b>
 
 <br><br><b class="texto">Dos Participantes</b><br><br>
-<a class="texto">Esta &eacute; uma competi&ccedil;&atilde;o de cunho psicosocioesportivo e voltada &agrave; integra&ccedil;&atilde;o social da fam&iacute;lia "Medeiros de Oliveira" e seus amigos.</a><br><br>
+<a class="texto">Esta é uma competição de cunho psicosocioesportivo e voltada à integração social da família “Medeiros de Oliveira” e seus amigos.</a><br><br>
 </td></tr></table>
 
    </td></tr>

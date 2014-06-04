@@ -22,7 +22,7 @@ $EMAIL_ERR = array('mikhail.eirado@florestal.gov.br','fellipepaulino@gmail.com',
 
 function enviarEmail($email,$assunto,$template,$apelido,$C) {
 	global $metodo, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
-	
+
     $SMTP_SERVER="smtp.gmail.com";
     $SMTP_USER="contato@bolco.com.br";
     $SMTP_PASS="girafa";
@@ -42,28 +42,28 @@ function enviarEmail($email,$assunto,$template,$apelido,$C) {
   	}
   	fclose($fp);
 	if ($metodo == 1) {
-		$remetente = 'From: BolCo2010 <contato@bolco.com.br>';
+		$remetente = 'From: BolCo2014 <contato@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
              'Reply-To: contato@bolco.com.br' . "\r\n" .
              'X-Mailer: BolCo/v.'.$versao. "\r\n" .
-			 'Disposition-Notification-To: contato@bolco.com.br'; 
+			 'Disposition-Notification-To: contato@bolco.com.br';
 		$enviado = mail($para,$assunto,$bufferTotal,$headers);
 	} else {
 		$mail = new PHPMailer();
-		$mail->IsSMTP(); 
+		$mail->IsSMTP();
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		$mail->Host = $SMTP_SERVER;
 		$mail->Port = 465;
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
-		$mail->Password = $SMTP_PASS; 
+		$mail->Password = $SMTP_PASS;
 		$mail->Hostname = 'b.ap1.com.br';
    		$mail->From = "contato@bolco.com.br";
-    	$mail->FromName = "BolCo 2010";
+    	$mail->FromName = "BolCo 2014";
     	$mail->AddAddress($email,$apelido);
-    	$mail->AddBCC('bolco2010@gmail.com');
+    	$mail->AddBCC('bolco2014@gmail.com');
         //$mail->AddReplyTo($webmaster_email,"Webmaster");
         //$mail->WordWrap = 50;
         //$mail->AddAttachment("/var/tmp/file.tar.gz");
@@ -73,7 +73,7 @@ function enviarEmail($email,$assunto,$template,$apelido,$C) {
         //$mail->AltBody = "This is the body when user views in plain text format"; //Text Body
 		if ($TESTE_EMAIL) {
 		    echo "TESTE: " . var_dump($mail);
-			$enviado=false;	
+			$enviado=false;
 		} else {
 			$enviado = $mail->Send();
 		}
@@ -108,30 +108,30 @@ function enviarEmailJogo($obj) {
 	}
 	$bufferTotalHTML .= "</pre>\n";
 	$bufferTotalHTML .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=<br>";
-	$bufferTotalHTML .= "BolCo2010: http://www.bolco.com.br/\n";
+	$bufferTotalHTML .= "BolCo2014: http://www.bolco.com.br/\n";
     $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
-    $bufferTotal .= "BolCo2010: http://www.bolco.com.br/\n";
+    $bufferTotal .= "BolCo2014: http://www.bolco.com.br/\n";
 	if ($metodo == 1) {
-		$remetente = 'From: BolCo2010 <contato@bolco.com.br>';
+		$remetente = 'From: BolCo2014 <contato@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
              'Reply-To: contato@bolco.com.br' . "\r\n" .
              'X-Mailer: BolCo/v.'.$versao. "\r\n" .
-			 'Disposition-Notification-To: contato@bolco.com.br'; 
+			 'Disposition-Notification-To: contato@bolco.com.br';
 		$enviado = mail($para,$assunto,$bufferTotal,$headers);
 	} else {
 		$mail = new PHPMailer();
-		$mail->IsSMTP(); 
+		$mail->IsSMTP();
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		$mail->Host = $SMTP_SERVER;
 		$mail->Port = 465;
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
-		$mail->Password = $SMTP_PASS; 
+		$mail->Password = $SMTP_PASS;
 		$mail->Hostname = 'b.ap1.com.br';
     	$mail->From = "contato@bolco.com.br";
-    	$mail->FromName = "BolCo 2010";
+    	$mail->FromName = "BolCo 2014";
 		$mail->AddReplyTo('contato@bolco.com.br',"Contato BolCo");
 		$mail->IsHTML(true);
 		$mail->Subject = "[BolCo] Palpites de ".utf8_decode($obj->jogo);

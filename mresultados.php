@@ -1,7 +1,7 @@
 <?php
 require_once("protecao.php");
 if(!isset($_GET['g']))  {
-	$ng = 64; 
+	$ng = 64;
 } else {
 	$ng = $_GET['g'];
 }
@@ -9,13 +9,13 @@ if(!isset($_GET['g']))  {
 <html>
 <head>
     <title>
-        Meus Resultados - BolC&oacute; 2010
+        Meus Resultados - BolC&oacute; 2014
     </title>
 </head>
 
 
 <style>
-BODY { 
+BODY {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -30,7 +30,7 @@ scrollbar-shadow-color:#D6D7D6}
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-   
+
 
 <?php menu();?>
 
@@ -40,15 +40,15 @@ scrollbar-shadow-color:#D6D7D6}
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff">
    <tr>
    	<td width="100%" valign="top" align="left" >
-<b class="tit">Resultados Jogo a Jogo</b><br><br> 
+<b class="tit">Resultados Jogo a Jogo</b><br><br>
 <table width="750" >
 <tr>
 	<td align="center"  valign="top">
-		<?php 
+		<?php
 		if (isset($_GET["us"])) {
-		mresultados($_GET["us"]); 
+		mresultados($_GET["us"]);
 		} else	{
-		mresultados('0'); 
+		mresultados('0');
 		}?>
 	</td>
 </tr>
@@ -64,7 +64,7 @@ scrollbar-shadow-color:#D6D7D6}
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>

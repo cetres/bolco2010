@@ -18,13 +18,13 @@ if (isset($_REQUEST["p1"]) && isset($_REQUEST["p2"])) {
   	$p1=intval($_REQUEST["p1"]);
   	$p2=intval($_REQUEST["p2"]);
   	$ip=$_SERVER["REMOTE_ADDR"];
-  	$q = "update aposta set ativa = 1, dataExclusao = CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'), ipExclusao = ? WHERE jo_codigo = ? and idusu = ? and ativa = 0"; 
+  	$q = "update aposta set ativa = 1, dataExclusao = CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'), ipExclusao = ? WHERE jo_codigo = ? and idusu = ? and ativa = 0";
   	$res = $db->query($q,array($ip,$j,$_SESSION["id"]));
   	if (PEAR::isError($res)) {
 		error_log($res->getMessage()." / ".$res->getDebugInfo());
 		die("Erro ao enviar o seu palpite. Tente novamente mais tarde...");
   	}
-  	$q = "insert into aposta (jo_codigo,idusu,golp1,golp2,ativa,dataCriacao,ipcriacao) values (?,?,?,?,0,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?)"; 
+  	$q = "insert into aposta (jo_codigo,idusu,golp1,golp2,ativa,dataCriacao,ipcriacao) values (?,?,?,?,0,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?)";
   	$res = $db->query($q,array($j,$_SESSION["id"],$p1,$p2,$ip));
   	if (PEAR::isError($res)) {
 		error_log($res->getMessage()." / ".$res->getDebugInfo());
@@ -38,12 +38,12 @@ if (isset($_REQUEST["p1"]) && isset($_REQUEST["p2"])) {
 }
 
 $q = <<< EOL
-SELECT p1.nome pn1, p1.figura pi1, p2.nome pn2, p2.figura pi2, j.jo_hora hora, e.nome estadio,  
-       j.jo_result_golp1 re1, j.jo_result_golp2 re2, a.golp1 ap1, a.golp2 ap2, b.bw_time1 bw1, 
+SELECT p1.nome pn1, p1.figura pi1, p2.nome pn2, p2.figura pi2, j.jo_hora hora, e.nome estadio,
+       j.jo_result_golp1 re1, j.jo_result_golp2 re2, a.golp1 ap1, a.golp2 ap2, b.bw_time1 bw1,
        b.bw_time2 bw2, b.bw_empate bwe, j.jo_fase fase, b.bw_data atualizacao
-FROM jogos j 
-  LEFT JOIN paises p1 ON p1.idpaises = j.jo_time1 
-  LEFT JOIN paises p2 ON p2.idpaises = j.jo_time2 
+FROM jogos j
+  LEFT JOIN paises p1 ON p1.idpaises = j.jo_time1
+  LEFT JOIN paises p2 ON p2.idpaises = j.jo_time2
   LEFT JOIN aposta a ON a.jo_codigo = j.jo_codigo AND a.idusu=? AND a.ativa = 0
   LEFT JOIN estadio e ON e.idestadio = j.jo_estadio
   LEFT JOIN bwin b ON b.bw_jogo = j.jo_codigo AND b.bw_data = (SELECT MAX(ba.bw_data) FROM bwin ba WHERE ba.bw_jogo = j.jo_codigo)
@@ -62,8 +62,8 @@ for ($ct=-5;$ct<=5;$ct++) {
 $JOG=array();
 
 $q = <<< EOL
-select a.golp1 ap1,a.golp2 ap2,a.idusu idusu,u.apelido apelido, u.mostrapalpite mostra, 
-  if(CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')>SUBDATE(jo_hora, INTERVAL 5 minute),1,0) jafoi from aposta a, usuarios u, jogos j 
+select a.golp1 ap1,a.golp2 ap2,a.idusu idusu,u.apelido apelido, u.mostrapalpite mostra,
+  if(CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')>SUBDATE(jo_hora, INTERVAL 5 minute),1,0) jafoi from aposta a, usuarios u, jogos j
 WHERE a.idusu=u.idusu AND a.jo_codigo = j.jo_codigo AND a.ativa = 0 AND a.jo_codigo=? ORDER BY u.apelido;
 EOL;
 $res =& $db->query($q,array($j));
@@ -91,8 +91,8 @@ $max=$SAL[0]+2;
 	 	 die('Could not query:' . mysql_error());
 	}
 	$num = mysql_num_rows($rs);
-	
-$idx = array_search($j, $ordem_jogos); 
+
+$idx = array_search($j, $ordem_jogos);
 $jogoAnt = ($idx > 1)?$ordem_jogos[$idx-1]:0;
 $jogoPos = ($idx < 63)?$ordem_jogos[$idx+1]:0;
 
@@ -103,7 +103,7 @@ $jogoPos = ($idx < 63)?$ordem_jogos[$idx+1]:0;
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-    <title>Jogo - BolC&oacute; 2010</title>
+    <title>Jogo - BolC&oacute; 2014</title>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" language="Javascript">
 var jid=<?php echo $j ?>;
@@ -203,7 +203,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 
 <tr>
 	<td align="center"  valign="top">
-		
+
 		<table width="100%">
 			<tr>
 				<td align="center"  valign="top"><a href="jogos.php" class="texto"><img src="imagens/todos.gif" width="30" height="43" border="0" alt=""></a><br><a href="jogos.php" class="texto">Todos os Jogos</a></td>
@@ -218,7 +218,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>
@@ -261,7 +261,7 @@ $('.palpite').change(function() {
 	$('.linha_palpite').css('background-color', '#5A8BCE');
   }
   return true;
-  
+
 });
 </script>
 <?php include("analytics.inc"); ?>

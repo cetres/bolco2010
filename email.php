@@ -5,7 +5,7 @@ class Email {
     public static function validar($email) {
        return eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $email);
     }
-    
+
   	protected function enviar($destino,$assunto,$data,$template,$campos) {
   		global $db;
   		$data = array($destino,
@@ -25,7 +25,7 @@ class Email {
       		die($res->getMessage());
   		}
   		if (count($campos) > 0 ) {
-      		$res = $db->getOne("SELECT LAST_INSERT_ID() FROM `enviarEmail`");  
+      		$res = $db->getOne("SELECT LAST_INSERT_ID() FROM `enviarEmail`");
     		if (PEAR::isError($res)) {
 			    error_log($res->getMessage()." / ".$res->getDebugInfo());
       			die($res->getMessage());
@@ -46,7 +46,7 @@ class Email {
     		}
 		}
   	}
-  
+
   	public function convidarNotorio($usuarioDestino) {
   		global $db;
 		$res = $db->getAll("SELECT u.email email, u.senha senha FROM usuarios u WHERE u.idusu=?;",array($usuarioDestino),DB_FETCHMODE_ASSOC);
@@ -55,12 +55,12 @@ class Email {
     		die($res->getMessage());
   		}
 		$this->enviar($usuarioDestino,
-		              "Convite do BolCo 2010",
+		              "Convite do BolCo 2014",
 					  strftime("%Y-%m-%d %H:%M:%S"),
 					  "emailConvite1",
 					  array($res[0]["email"],$res[0]["senha"]));
   	}
-	
+
   	public function convidarConhecido($usuarioDestino,$comentario) {
 	    global $db;
 		$res = $db->getAll("SELECT n.nome nome, u.email email, u.senha senha FROM usuarios u, usuarios n WHERE u.quemchamou=n.idusu and u.idusu=?;",array($usuarioDestino),DB_FETCHMODE_ASSOC);
@@ -69,12 +69,12 @@ class Email {
     		die($res->getMessage());
   		}
   		$this->enviar($usuarioDestino,
-					  "Convite do BolCo 2010",
+					  "Convite do BolCo 2014",
 					  strftime("%Y-%m-%d %H:%M:%S"),
 					  "emailConvite2",
 					  array($res[0]["nome"],$res[0]["email"],$res[0]["senha"],$comentario));
   	}
-  
+
   	public function enviarSenha($emailDestino) {
 	    global $db;
 			$res = $db->getAll("SELECT idusu ,apelido, email, senha  FROM usuarios WHERE email=?;",array(strtolower($emailDestino)),DB_FETCHMODE_ASSOC);
@@ -92,7 +92,7 @@ class Email {
 			}else {
 				return false;
 			}
-  	}  
+  	}
 }
 
 

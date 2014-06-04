@@ -7,10 +7,10 @@
               "Content-Transfer-Encoding: 7bit\r\n\r\n".
               "Teste de assinatura");
   fclose($fp);
-  $headersOSSL = array("From" => "BolCo2010-Audit <contato@bolco.com.br>",
+  $headersOSSL = array("From" => "BolCo2014-Audit <contato@bolco.com.br>",
 	                     "Reply-To" => "suporte@apto101.com.br",
 											 "X-Mailer" => "BolCo/v.".$versao);
-											 
+
  openssl_pkcs7_sign("$path/jogo_00.uns", "$path/jogo_00.sig", "contatoBolco.pem", array("contatoBolco.pem", ""), $headersOSSL);
 
 $data = file_get_contents("$path/jogo_00.sig");

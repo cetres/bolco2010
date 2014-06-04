@@ -25,7 +25,7 @@ if (isset($_POST["Apelido"])) {
 	$palpite = (isset($_POST["palpite"]))?strip_tags($_POST["palpite"]):"";
 	$receberPalpites = (isset($_POST["receberPalpites"]))?strip_tags($_POST["receberPalpites"]):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
-	
+
 
 	if ($_SESSION["tipo"] != "Visitante")  {
 		$idusu =  $_SESSION["id"];
@@ -37,14 +37,14 @@ if (isset($_POST["Apelido"])) {
 		if (!$rs) {
 	   	  die('Could not query:' . mysql_error());
 		}
-			$msg = "Dados alterados com sucesso.";	
+			$msg = "Dados alterados com sucesso.";
 			$_SESSION["nome"] = $Apelido;
 			$_SESSION["senha"] = $senha;
 			$_SESSION["Aceitou"] = $contrato;
 			// manda email
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', '$idusu', 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )") or die(mysql_error());  
+			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', '$idusu', 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )") or die(mysql_error());
 // Se existe monstra mensagem avisando
 	}
 } else {
@@ -69,23 +69,23 @@ if (isset($_POST["Apelido"])) {
 <html>
 <head>
     <title>
-        Cadastro - BolC&oacute; 2010
+        Cadastro - BolC&oacute; 2014
     </title>
 <SCRIPT LANGUAGE="JavaScript1.2" SRC="bolco.js" TYPE='text/javascript'></SCRIPT>
-<script> 
-function Validaform() { 
-  with (document.FormComent)	{ 
-    if (nome.value=="") { alert("Preencha o campo Nome!"); return false; } 
-    if (email.value=="") { alert("Preencha o campo email!"); return false; } 
-    if (Apelido.value=="") { alert("Preencha o campo Apelido!"); return false; } 
-    if (senha.value=="") { alert("Preencha o campo Senha!"); return false; } 
-    if (confirma.value=="") { alert("Preencha o campo Confirma Senha!"); return false; } 
-    if (senha.value!=confirma.value) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; } 
+<script>
+function Validaform() {
+  with (document.FormComent)	{
+    if (nome.value=="") { alert("Preencha o campo Nome!"); return false; }
+    if (email.value=="") { alert("Preencha o campo email!"); return false; }
+    if (Apelido.value=="") { alert("Preencha o campo Apelido!"); return false; }
+    if (senha.value=="") { alert("Preencha o campo Senha!"); return false; }
+    if (confirma.value=="") { alert("Preencha o campo Confirma Senha!"); return false; }
+    if (senha.value!=confirma.value) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; }
 } }
 <?php if (isset($msg) && ($msg != "")) { ?>
 alert("<?php echo $msg; ?>");
 <?php }?>
-</script> 
+</script>
 <link rel="STYLESHEET" type="text/css" href="bolco.css">
 </head>
 <body marginheight="0" marginwidth="0" rightmargin="0" leftmargin="0" topmargin="0" bgcolor="#ffffff" >
@@ -94,7 +94,7 @@ alert("<?php echo $msg; ?>");
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-   
+
 
 <?php menu();?>
 
@@ -104,9 +104,9 @@ alert("<?php echo $msg; ?>");
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff">
    <tr>
    	<td width="100%" valign="top" align="left" >
-<b class="tit">Cadastro</b><br><br> 
+<b class="tit">Cadastro</b><br><br>
 <font class="texto">Voc&ecirc; foi convidado a participar deste bol&atilde;o por&eacute;m &eacute; preciso preencher alguns dados antes de come&ccedil;ar. Leia o regulamento e ent&atilde;o aceite-o para continuar </font>
- 
+
 <table width="70%">
 <form name="FormComent"  action="cadastro.php" method="Post"  onSubmit="return Validaform()" >
 <input type=hidden name="operacao" value="<?php echo $operacao; ?>">
@@ -140,8 +140,8 @@ alert("<?php echo $msg; ?>");
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Palpites P&uacute;blicos?</a>&nbsp;<a class="rodape">.: *</a></td>
 <td>
   <select name="palpite" size=1>
-  <option value='0' <?php echo ($palpite == "0")?"selected":"" ?>>Sim</option> 
-  <option value='1'<?php echo ($palpite == "0")?"":"selected" ?>>Nao</option> 
+  <option value='0' <?php echo ($palpite == "0")?"selected":"" ?>>Sim</option>
+  <option value='1'<?php echo ($palpite == "0")?"":"selected" ?>>Nao</option>
 </select><br></td>
 </tr>
 
@@ -149,7 +149,7 @@ alert("<?php echo $msg; ?>");
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Li e aceito o regulamento.</a>&nbsp;<a class="rodape">.: *</a></td>
 <td>
   <select name="contrato" readonly size=1>
-  <option value='0'>Sim</option> 
+  <option value='0'>Sim</option>
 </select><br></td>
 </tr>
 
@@ -157,8 +157,8 @@ alert("<?php echo $msg; ?>");
 <tr valign="top">
   <td><a class="rodape">:.</a>&nbsp;<a class="texto">Receber palpites 5 min antes por email</a>&nbsp;<a class="rodape">.: *</a></td>
   <td><select name="receberPalpites" readonly size=1>
-  <option value='0' <?php echo ($receberPalpites == "0")?"selected":"" ?>>Sim</option> 
-  <option value='1'<?php echo ($receberPalpites == "0")?"":"selected" ?>>Nao</option> 
+  <option value='0' <?php echo ($receberPalpites == "0")?"selected":"" ?>>Sim</option>
+  <option value='1'<?php echo ($receberPalpites == "0")?"":"selected" ?>>Nao</option>
   </select></td>
 </tr>
 <tr valign="top">
@@ -190,7 +190,7 @@ alert("<?php echo $msg; ?>");
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>

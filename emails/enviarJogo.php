@@ -13,7 +13,7 @@ $options = array(
 
 $db =& DB::connect($dsn, $options);
 syslog(1,"[BolCo] Enviando e-mail para os participantes");
-chdir($path);	
+chdir($path);
 $q = "SELECT j.jo_codigo,t1.ti_grupo, t1.ti_nome , t1.ti_acron , ";
 $q.= "t2.ti_nome, t2.ti_acron, j.jo_hora, j.jo_aposta_encerrada FROM jogos j ";
 $q.= "LEFT JOIN times t1 ON t1.ti_codigo =. j.jo_time1 ";
@@ -70,7 +70,7 @@ while ($res1->fetchInto($row) || $TESTE) {
     $bufferTotal .= $nome.str_repeat(" ", 40 - strlen($nome))." ".$row[1]." x ".$row[2]."\n";
   }
   $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
-  $bufferTotal .= "BolCo2010: http://www.bolco.com.br/\n";
+  $bufferTotal .= "BolCo2014: http://www.bolco.com.br/\n";
 
 
 
@@ -83,19 +83,19 @@ if ($SSL) {
   $fp = fopen("$path/jogo_$jidStr.uns", "w");
   fwrite($fp, $bufferTotal);
   fclose($fp);
-  $headersOSSL = array("From" => "BolCo2010-Audit <contato@bolco.com.br>",
+  $headersOSSL = array("From" => "BolCo2014-Audit <contato@bolco.com.br>",
 	                   "Reply-To" => "suporte@apto101.com.br",
 					   "X-Mailer" => "BolCo/v.3.0.0");
-										 
+
   openssl_pkcs7_sign("$path/jogo_$jidStr.uns", "$path/jogo_$jidStr.sig", "contatoBolco.pem", array("contatoBolco.pem", ""), $headersOSSL);
   $bufferTotal = file_get_contents("$path/jogo_$jidStr.sig");
   $parts = explode("\n\n", $bufferTotal, 2);
      /*  fim do teste */
 } else {
-  $headers = "From: BolCo2010-Audit <contato@bolco.com.br>\r\n" .
+  $headers = "From: BolCo2014-Audit <contato@bolco.com.br>\r\n" .
            "Reply-To: contato@bolco.com.br\r\n" .
            "X-Mailer: BolCo/v.3.0.0\r\n";
-//		   "Disposition-Notification-To: suporte@apto101.com.br\r\n"; 
+//		   "Disposition-Notification-To: suporte@apto101.com.br\r\n";
 
 }
   $q = "SELECT designacao,email FROM participanteBolCo WHERE palpitesEmail = 1 AND inativo=0";
@@ -108,10 +108,10 @@ if ($SSL) {
   while ($res2->fetchInto($row)) {
     if (!$TESTE) {
       if ($SSL) {
-        mail($row[1],"[BolCo2010] Jogo $jidStr",$parts[1], $parts[0]);
+        mail($row[1],"[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
 	  } else {
         $destino = imap_8bit(utf8_decode("To: ".$row[0]." <".$row[1].">"));
-        mail($row[1],"[BolCo2010] Jogo ".sprintf("%02d",$C[1]),$bufferTotal,$headers.$destino);
+        mail($row[1],"[BolCo2014] Jogo ".sprintf("%02d",$C[1]),$bufferTotal,$headers.$destino);
 	  }
 	}
     $ct++;
@@ -125,7 +125,7 @@ if ($SSL) {
       die($res2->getMessage());
     }
   } else {
-    mail("bolco2010@gmail.com","[BolCo2010] Jogo $jidStr",$parts[1], $parts[0]);
+    mail("bolco2014@gmail.com","[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
 	$TESTE = false;
   }
   syslog(1,"[BolCo] Envio finalizado para o jogo $j");

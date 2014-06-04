@@ -15,11 +15,11 @@ $cor["U"]="#050";
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>Usuarios - BolC&oacute; 2010</title>
+<title>Usuarios - BolC&oacute; 2014</title>
 <link rel="stylesheet" type="text/css" href="bolco.css" />
 </head>
 <body>
-<pre><?php 
+<pre><?php
 if (isset($RES)) {
 	echo "Resultado do envio:";
 	print_r($RES);
@@ -42,7 +42,7 @@ if (isset($RES)) {
 $q = <<< EOL
 	SELECT u.idusu idusu, u.apelido apelido, u.nome nome, u.tipo tipo, u.email email, c.apelido chamador, u.pago pago, u.ultimoacesso ultimoacesso, p.apelido recebedor
 	from usuarios u
-    left join usuarios c on u.quemchamou = c.idusu 
+    left join usuarios c on u.quemchamou = c.idusu
 	left join usuarios p on u.pago = p.idusu and u.pago > 0
     where u.tipo not in ('Visitante','Convidado') and u.ativo = 0;
 EOL;

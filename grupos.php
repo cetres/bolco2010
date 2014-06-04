@@ -9,7 +9,7 @@ $g = $_GET['g'];
 <html>
 <head>
     <title>
-        Grupos - BolC&oacute; 2010
+        Grupos - BolC&oacute; 2014
     </title>
 </head>
 <script language=javascript>
@@ -23,20 +23,20 @@ function troca_cor(src,nova_cor) {
 <script language="Javascript">
 <!--
 // use via onkeypress="SoNumeros()" no textbox
-function OnlyNumbers(e) { 
+function OnlyNumbers(e) {
 
-        if (window.event) //IE 
-        { 
-        tecla = e.keyCode; 
-        } 
+        if (window.event) //IE
+        {
+        tecla = e.keyCode;
+        }
 
-   else if (e.which) //FF 
-   { 
-        tecla = e.which; 
-   } 
+   else if (e.which) //FF
+   {
+        tecla = e.which;
+   }
         //teclas dos numemros(0 - 9) de 48 a 57
    //techa==8 é para permitir o backspace funcionar para apagar
-        
+
            if ( (tecla >= 48 && tecla <= 57)||(tecla == 8 ) ) {
                            return true;
                   }
@@ -48,22 +48,22 @@ function OnlyNumbers(e) {
 //-->
 </script>
 <SCRIPT LANGUAGE="JavaScript1.2" SRC="bolco.js" TYPE='text/javascript'></SCRIPT>
-<script> 
-function Validaform() { 
-with (document.FormComent)	{ 
-if (nome.value=="") { alert("Preencha o campo Nome!"); return false; } 
-if (email.value=="") { alert("Preencha o campo email!"); return false; } 
-if (Apelido.value=="") { alert("Preencha o campo Apelido!"); return false; } 
-if (senha.value=="") { alert("Preencha o campo Senha!"); return false; } 
-if (confirma.value=="") { alert("Preencha o campo Confirma Senha!"); return false; } 
-if (senha.value!=confirma.value) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; } 
+<script>
+function Validaform() {
+with (document.FormComent)	{
+if (nome.value=="") { alert("Preencha o campo Nome!"); return false; }
+if (email.value=="") { alert("Preencha o campo email!"); return false; }
+if (Apelido.value=="") { alert("Preencha o campo Apelido!"); return false; }
+if (senha.value=="") { alert("Preencha o campo Senha!"); return false; }
+if (confirma.value=="") { alert("Preencha o campo Confirma Senha!"); return false; }
+if (senha.value!=confirma.value) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; }
 } }
 <?php if ($msg != "") { ?>
 alert("<?php echo $msg; ?>");
 <?php }?>
-</script> 
+</script>
 <style>
-body { 
+body {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -78,7 +78,7 @@ scrollbar-shadow-color:#D6D7D6}
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-   
+
 
 <?php menu();?>
 
@@ -88,7 +88,7 @@ scrollbar-shadow-color:#D6D7D6}
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff">
    <tr>
    	<td width="100%" valign="top" align="left" >
-<b class="tit">Jogos e Apostas</b><br><br> 
+<b class="tit">Jogos e Apostas</b><br><br>
 <a class="texto">
 Em 2 de Dezembro, a FIFA anunciou oficialmente os cabe&ccedil;as de chaves e as divis&otilde;es dos potes para o sorteio. A grande surpresa foi a presen&ccedil;a da Holanda no pote dos cabe&ccedil;as de chave.
 Foi realizado em 4 de Dezembro de 2009, na Cidade do Cabo, &Aacute;frica do Sul. As 32 sele&ccedil;&otilde;es classificadas para o est&aacute;gio final da Copa do Mundo foram divididas em 8 grupos (A, B, C, D, E, F, G e H) de 4 pa&iacute;ses cada.<br>
@@ -135,7 +135,7 @@ As equipes participantes disputaram a fase de grupos da Copa no sistema de &quot
 </tr>
 <tr>
 	<td align="center"  valign="top">
-		
+
 		<table width="100%">
 			<tr>
 				<td align="center"  valign="top"><a href="jogos.php" class="texto"><img src="imagens/todos.gif" width="30" height="43" border="0" alt=""></a><br><a href="jogos.php" class="texto">Todos os Jogos</a></td>
@@ -143,7 +143,7 @@ As equipes participantes disputaram a fase de grupos da Copa no sistema de &quot
 				<td align="center"  valign="top"><a href="fase2.php" class="texto"><img src="imagens/2fase.gif" width="60" height="45" border="0" alt=""></a><br><a href="fase2.php" class="texto">Segunda Fase</a></td>
 			</tr>
 
-	
+
 		</table>
 	</td>
 </tr>
@@ -159,7 +159,7 @@ As equipes participantes disputaram a fase de grupos da Copa no sistema de &quot
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>

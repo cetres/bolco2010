@@ -5,7 +5,7 @@ if ($_SESSION["tipo"] == "Visitante")  {
   exit();
 }
 if(!isset($_GET['g']))  {
-	$ng = 64; 
+	$ng = 64;
 } else {
 	$ng = $_GET['g'];
 }
@@ -13,26 +13,26 @@ if(!isset($_GET['g']))  {
 <html>
 <head>
     <title>
-        Fase 2 - BolC&oacute; 2010
+        Fase 2 - BolC&oacute; 2014
     </title>
 </head>
 <script language="Javascript">
 <!--
 // use via onkeypress="SoNumeros()" no textbox
-function OnlyNumbers(e) { 
+function OnlyNumbers(e) {
 
-        if (window.event) //IE 
-        { 
-        tecla = e.keyCode; 
-        } 
+        if (window.event) //IE
+        {
+        tecla = e.keyCode;
+        }
 
-   else if (e.which) //FF 
-   { 
-        tecla = e.which; 
-   } 
+   else if (e.which) //FF
+   {
+        tecla = e.which;
+   }
         //teclas dos numemros(0 - 9) de 48 a 57
    //techa==8 é para permitir o backspace funcionar para apagar
-        
+
            if ( (tecla >= 48 && tecla <= 57)||(tecla == 8 ) ) {
                            return true;
                   }
@@ -50,8 +50,8 @@ function troca_cor(src,nova_cor) {
 }
 //-->
 
-function Validaform() { 
-with (document.FormComent)	{ 
+function Validaform() {
+with (document.FormComent)	{
      for ( i = 0 ; i < form .elements.length; i++ ) {
          if ( form .elements [ i ] .type == "text" && form .elements [ i ] .value == "" ){
              alert ( "Please fill out all fields." )
@@ -64,9 +64,9 @@ with (document.FormComent)	{
 <?php if ($msg != "") { ?>
 alert("<?php echo $msg; ?>");
 <?php }?>
-</script> 
+</script>
 <style>
-body { 
+body {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -81,7 +81,7 @@ scrollbar-shadow-color:#D6D7D6}
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-   
+
 
 <?php menu();?>
 
@@ -91,7 +91,7 @@ scrollbar-shadow-color:#D6D7D6}
 <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff">
    <tr>
    	<td width="100%" valign="top" align="left" >
-<b class="tit">Jogos e Apostas</b><br><br> 
+<b class="tit">Jogos e Apostas</b><br><br>
 <a class="texto">
 As fases de oitavas-de-final, quartas-de-final, semifinais e final ser&atilde;o disputadas em sistema eliminat&oacute;rio ou MATA MATA!!!
 </a>
@@ -111,7 +111,7 @@ As fases de oitavas-de-final, quartas-de-final, semifinais e final ser&atilde;o 
 </tr>
 <tr>
 	<td align="center"  valign="top">
-		
+
 		<table width="100%">
 			<tr>
 				<td align="center"  valign="top"><a href="jogos.php" class="texto"><img src="imagens/todos.gif" width="30" height="43" border="0" alt=""></a><br><a href="jogos.php" class="texto">Todos os Jogos</a></td>
@@ -133,7 +133,7 @@ As fases de oitavas-de-final, quartas-de-final, semifinais e final ser&atilde;o 
    </td></tr>
    <tr><td><br><div align="center" class="divRodape">2002 &copy; <a href="http://www.apto101.com.br/">Apartamento 101</a></div><br></td></tr>
 </table>
-   
+
   </td><td background="imagens/lado_dir.jpg" width="12"> </td>
    </tr>
    </table>

@@ -3,14 +3,14 @@ require_once("protecao.php");
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
-<title>BolC&oacute; 2010</title>
+<title>BolC&oacute; 2014</title>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
 <script language=javascript>
 <!--
 $(document).ready(function() {
-  proxJogo = new Date(2010,5,11,11,0,0); 
-  $('#proxJogo').countdown({until: proxJogo, format: 'dHMS'}); 
+  proxJogo = new Date(2010,5,11,11,0,0);
+  $('#proxJogo').countdown({until: proxJogo, format: 'dHMS'});
 });
 //-->
 </script>
@@ -29,29 +29,29 @@ $(document).ready(function() {
     </tr>
       <tr>
       <td width="800" valign="top" >
-    
+
     <table cellpadding="5" cellspacing="5" border="0" bordercolor="#ffffff">
         <tr>
-      
+
         <td width="35%" valign="top" align="center" >
-      
+
       <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
         <tr>
           <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
         </tr>
         <tr>
           <td colspan="1" width="1" bgcolor="#1c5e29" ></td>
-          <td height="250" align="justify"><!-- Inicio Twitter --> 
-            <script src="http://widgets.twimg.com/j/2/widget.js"></script> 
+          <td height="250" align="justify"><!-- Inicio Twitter -->
+            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
             <script>
-//search: '" " OR from:bolco2010 OR #bolco2010',
+//search: '" " OR from:bolco2014 OR #bolco2014',
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: 'from:bolco2010 OR #bolco2010',
+  search: 'from:bolco2014 OR #bolco2014',
   interval: 6000,
-  title: 'Bol&atilde;o da Copa - Africa do Sul 2010',
-  subject: 'Twitter BolC&oacute; 2010',
+  title: 'Bol&atilde;o da Copa - Brasil 2014',
+  subject: 'Twitter BolC&oacute; 2014',
   width: 250,
   height: 280,
   footer: 'Se aprochegue',
@@ -77,20 +77,20 @@ new TWTR.Widget({
     behavior: 'default'
   }
 }).render().start();
-</script> 
-            
+</script>
+
             <!-- Fim Twitter --></td>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
         </tr>
           </td>
           </tr>
-        
+
         <tr>
           <td colspan="2" height="1" bgcolor="#2B59AE" ></td>
         </tr>
       </table>
         </td>
-      
+
         <td width="65%" valign="top" align="center" >
         <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
           <tr>
@@ -114,7 +114,7 @@ new TWTR.Widget({
           </tr>
             </td>
             </tr>
-          
+
           <tr>
             <td colspan="2" height="1" bgcolor="#2B59AE" ></td>
           </tr>
@@ -122,7 +122,7 @@ new TWTR.Widget({
           </td>
       </tr>
         <tr>
-      
+
       <!-- Inicio Convite -->
       <?php if (($_SESSION["tipo"] == "admin") || ($_SESSION["tipo"] == "notorio")) {  ?>
       <td valign="top" align="center" ><table bordercolor="#ffffff"  cellpadding="4"  cellspacing="0">
@@ -167,10 +167,10 @@ new TWTR.Widget({
         </table></td>
       <td><?php } else {  ?>
         <td colspan=2 valign="top" align="center" >
-      
+
       <?php } ?>
       <!-- Fim Convite -->
-      
+
       <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
         <tr>
           <td colspan="3" bgcolor="#2B59AE" height="25" >&nbsp;&nbsp;<b class="titulo">Avisos</b></td>
@@ -181,7 +181,7 @@ new TWTR.Widget({
         <tr>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
           <td height="250" align="justify" class="noticia">
-          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2010</p>
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
            <blockquote><strong>Amigos apostadores,</strong></blockquote>
 Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$15,00</strong>.
 <br><br>
@@ -189,10 +189,10 @@ Boa sorte a todos!!<br>
 Comiss&atilde;o Organizadora
           <br> <br>
           <hr>
-          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 30 de maio de 2010</p>
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
           <blockquote><strong>Caros admiradores do futebol,</strong></blockquote>
             <br>
-            J&aacute; virou tradi&ccedil;&atilde;o!! Ap&oacute;s longos 4 anos, o BolC&oacute; retorna para ser mais um ingrediente na festa da Copa do Mundo de Futebol 2010. E para este ano temos novidades:<br>
+            J&aacute; virou tradi&ccedil;&atilde;o!! Ap&oacute;s longos 4 anos, o BolC&oacute; retorna para ser mais um ingrediente na festa da Copa do Mundo de Futebol 2014. E para este ano temos novidades:<br>
             <br>
             - O BolC&oacute; ganhou um endere&ccedil;o pr&oacute;prio: www.bolco.com.br<br>
             - O apostador poder&aacute; verificar as tend&ecirc;ncias de apostas na &aacute;rea &quot;Balc&atilde;o de Apostas&quot;. Nesta &aacute;rea, ser&atilde;o apresentados sugest&otilde;es de resultados, de acordo com a casa de aposta austriaca <a href="http://www.bwin.com/">BWin</a>.<br>
@@ -209,20 +209,20 @@ Comiss&atilde;o Organizadora
         </tr>
           </td>
           </tr>
-        
+
         <tr>
           <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
         </tr>
       </table>
         </td>
-      
+
         </tr>
-      
+
     </table>
     <?php //echo $_SESSION["tipo"]; ?>
       </td>
       </tr>
-    
+
     <tr>
       <td></td>
     </tr>

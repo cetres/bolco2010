@@ -17,24 +17,24 @@ if ($_SESSION["tipo"] != "admin")  {
 		$Convite = "";
 		$ida ="";
 		$tipo = "";
-		$Ativo = 0;		
+		$Ativo = 0;
 		$tipo = "";
 		$Comentarioadm = "";
-		
+
 if (isset($_GET['acao'])) {
 $acao = $_GET['acao'];
-	
+
 	if ($acao == "E") {
-	
+
 		$ida =$_GET['id'];
 		mysql_connect($host, $login_db, $senha_db);
 		mysql_select_db($database);
 		$q = "update usuario set ativo = '1' where idusu = '$ida'";
 		$rs = mysql_query($q);
 		$Ativo = 1;
-		
+
 	} elseif ($acao == "I") {
-	
+
 		$Apelido = ($_POST["Apelido"]);
 		$nome = ($_POST["nome"]);
 		$email = ($_POST["email"]);
@@ -63,16 +63,16 @@ $acao = $_GET['acao'];
 			if (!$rs) {
    				die('Could not query:' . mysql_error());
 			}
-			$msg = "Dados cadastrados com sucesso.";	
+			$msg = "Dados cadastrados com sucesso.";
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de Dados do usuário', '$idusu', 'Cadastro admin - usuario: $email ',LOCALTIME()  )") or die(mysql_error());  
+			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Cadastro de Dados do usuário', '$idusu', 'Cadastro admin - usuario: $email ',LOCALTIME()  )") or die(mysql_error());
 
 				$q = "select idusu from usuarios where email = '$email'";
 				$rs = mysql_query($q);
-				$ida = mysql_result($rs,0,"idusu");	
+				$ida = mysql_result($rs,0,"idusu");
 		}
-		////// INSERIR EMAIL DE CONVITE ????? /////////		
+		////// INSERIR EMAIL DE CONVITE ????? /////////
 	} elseif ($acao == "N") {
 		$nome = "";
 		$Telefone = "";
@@ -82,7 +82,7 @@ $acao = $_GET['acao'];
 		$Apelido = "";
 		$Convite = "";
 		$ida ="0";
-		
+
 	} elseif ($acao == "U") {
 		$ida =$_GET['id'];
 
@@ -117,17 +117,17 @@ $acao = $_GET['acao'];
 			if (!$rs) {
    				die('Could not query:' . mysql_error());
 			}
-			$msg = "Dados atualizados com sucesso.";	
+			$msg = "Dados atualizados com sucesso.";
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', '$idusu', 'Alteração de Cadastro admin - usuario: $email ',LOCALTIME()  )") or die(mysql_error());  
+			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', '$idusu', 'Alteração de Cadastro admin - usuario: $email ',LOCALTIME()  )") or die(mysql_error());
 
 				$q = "select idusu from usuarios where email = '$email'";
 				$rs = mysql_query($q);
-				$ida = mysql_result($rs,0,"idusu");	
+				$ida = mysql_result($rs,0,"idusu");
 		}
-		
-		
+
+
 	} elseif ($acao == "P") {
 		   $ida =$_GET['id'];
 
@@ -137,11 +137,11 @@ $acao = $_GET['acao'];
 	 			error_log($res->getMessage()." / ".$res->getDebugInfo());
 				die("Erro ao atualizar pagamento");
    			}
-			
+
 			$msg="Pagamento realizado - ".$_SESSION["id"]."/".$ida;
 		}
-	
-} else { 
+
+} else {
 	$acao = "";
 	if (isset($_REQUEST["idusu"])) {
 		$ida = $_REQUEST["idusu"];
@@ -172,7 +172,7 @@ $acao = $_GET['acao'];
 <html>
 <head>
     <title>
-        Bolco 2010
+        Bolco 2014
     </title>
 </head>
 <script language=javascript>
@@ -189,7 +189,7 @@ alert("<?php echo $msg; ?>");
 
 
 <style>
-BODY { 
+BODY {
 scrollbar-3d-light-color:#C7AE52;
 scrollbar-arrow-color:#34317D;
 scrollbar-base-color:#ffffff;
@@ -200,8 +200,8 @@ scrollbar-shadow-color:#D6D7D6}
 </style>
 <link rel="STYLESHEET" type="text/css" href="../bolco.css">
    <div align="center"><BODY marginheight="0" marginwidth="0" rightmargin="0" leftmargin="0" topmargin="0" bgcolor="#ffffff" >
-<h1 class="tit">Cadastro</h1><br><br> 
-<font class="texto">Administra&ccedil;&atilde;o de Usu&aacute;rios </font><br><br> 
+<h1 class="tit">Cadastro</h1><br><br>
+<font class="texto">Administra&ccedil;&atilde;o de Usu&aacute;rios </font><br><br>
 <table width="70%">
 <form name="FormComent"  action="cadastro.php" method="Post" >
 <tr valign="top" align="left">
@@ -213,18 +213,18 @@ scrollbar-shadow-color:#D6D7D6}
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Usu&aacute;rio</a>&nbsp;<a class="rodape">.: *</a></td>
 <td>
   <select name="idusu" size=1 onChange="FormComent.submit();">
-  
-  
+
+
 <?php if ($ida == "") { ?>
-  <option value=''>Nome - Email - Apelido - Perfil</option> 
+  <option value=''>Nome - Email - Apelido - Perfil</option>
 
 <?php } else {
 echo "<option value='$ida'>$nome - $email - $Apelido</option> "; ?>
-  <option value=''>Nome - Email - Apelido - Perfil</option> 
+  <option value=''>Nome - Email - Apelido - Perfil</option>
 
 <?php }  ?>
 
-<?php 
+<?php
 mysql_connect($host, $login_db, $senha_db);
 mysql_select_db($database);
 $q = "select nome, idusu, email, apelido, tipo from usuarios where tipo <> 'Visitante'";
@@ -262,7 +262,7 @@ $i = 0;
  <?php if (intval($pagamento) > 0) { ?>
    Sim - <?php echo $pagamento ?>
  <?php } else { ?>
-   N&atilde;o - <input type="button" value="Pagar" onClick="window.location='cadastro.php?acao=P&amp;id=<?php echo $ida ?>'">  
+   N&atilde;o - <input type="button" value="Pagar" onClick="window.location='cadastro.php?acao=P&amp;id=<?php echo $ida ?>'">
  <?php }?>
   <br></td>
 </tr>
@@ -271,11 +271,11 @@ $i = 0;
 <td>
   <select name="ativo" size=1>
 <?php if ($ativo == "0") { ?>
-  <option value='0'>Ativo</option> 
-  <option value='1'>Excluído</option> 
+  <option value='0'>Ativo</option>
+  <option value='1'>Excluído</option>
 <?php } elseif ($ativo == "1") { ?>
-  <option value='1'>Excluído</option> 
-  <option value='0'>Ativo</option> 
+  <option value='1'>Excluído</option>
+  <option value='0'>Ativo</option>
 <?php } ?>
 
 </select><br></td>
@@ -285,15 +285,15 @@ $i = 0;
 <td>
   <select name="tipo" size=1>
 <?php if ($tipo == "Usuario") { ?>
-  <option value='Usuario'>Usuario</option> 
-  <option value='Notorio'>Notorio</option> 
+  <option value='Usuario'>Usuario</option>
+  <option value='Notorio'>Notorio</option>
 <?php } elseif ($tipo == "Notorio") { ?>
-  <option value='Notorio'>Notorio</option> 
-  <option value='Usuario'>Usuario</option> 
+  <option value='Notorio'>Notorio</option>
+  <option value='Usuario'>Usuario</option>
 <?php } else  { ?>
-  <option value='<?php echo $tipo; ?>'><?php echo $tipo; ?></option> 
-  <option value='Notorio'>Notorio</option> 
-  <option value='Usuario'>Usuario</option> 
+  <option value='<?php echo $tipo; ?>'><?php echo $tipo; ?></option>
+  <option value='Notorio'>Notorio</option>
+  <option value='Usuario'>Usuario</option>
 
 <?php } ?>
 

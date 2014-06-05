@@ -42,8 +42,10 @@ $(document).ready(function() {
         <tr>
           <td colspan="1" width="1" bgcolor="#1c5e29" ></td>
           <td height="250" align="justify">
-          <a class="twitter-timeline" href="https://twitter.com/search?q=%23bolco" data-widget-id="474377679664193536">Tweets #bolco</a>
+          <a class="twitter-timeline" href="https://twitter.com/search?q=%23bolco" data-widget-id="474377679664193536">Tweets sobre "#bolco"</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
    
           </td>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>

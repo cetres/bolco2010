@@ -83,18 +83,18 @@ if ($SSL) {
   $fp = fopen("$path/jogo_$jidStr.uns", "w");
   fwrite($fp, $bufferTotal);
   fclose($fp);
-  $headersOSSL = array("From" => "BolCo2014-Audit <contato@bolco.com.br>",
-	                   "Reply-To" => "suporte@apto101.com.br",
+  $headersOSSL = array("From" => "BolCo2014-Audit <juiz@bolco.com.br>",
+	                   "Reply-To" => "contato@bolco.com.br",
 					   "X-Mailer" => "BolCo/v.3.0.0");
 
-  openssl_pkcs7_sign("$path/jogo_$jidStr.uns", "$path/jogo_$jidStr.sig", "contatoBolco.pem", array("contatoBolco.pem", ""), $headersOSSL);
+  openssl_pkcs7_sign("$path/jogo_$jidStr.uns", "$path/jogo_$jidStr.sig", "contatoBolco2014.pem", array("contatoBolco2014.pem", ""), $headersOSSL);
   $bufferTotal = file_get_contents("$path/jogo_$jidStr.sig");
   $parts = explode("\n\n", $bufferTotal, 2);
      /*  fim do teste */
 } else {
-  $headers = "From: BolCo2014-Audit <contato@bolco.com.br>\r\n" .
+  $headers = "From: BolCo2014-Audit <juiz@bolco.com.br>\r\n" .
            "Reply-To: contato@bolco.com.br\r\n" .
-           "X-Mailer: BolCo/v.3.0.0\r\n";
+           "X-Mailer: BolCo/v.3.1.0\r\n";
 //		   "Disposition-Notification-To: suporte@apto101.com.br\r\n";
 
 }
@@ -125,7 +125,7 @@ if ($SSL) {
       die($res2->getMessage());
     }
   } else {
-    mail("bolco2014@gmail.com","[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
+    mail("juiz@bolco.com.br","[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
 	$TESTE = false;
   }
   syslog(1,"[BolCo] Envio finalizado para o jogo $j");

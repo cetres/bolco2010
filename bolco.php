@@ -41,45 +41,11 @@ $(document).ready(function() {
         </tr>
         <tr>
           <td colspan="1" width="1" bgcolor="#1c5e29" ></td>
-          <td height="250" align="justify"><!-- Inicio Twitter -->
-            <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-            <script>
-//search: '" " OR from:bolco2014 OR #bolco2014',
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: 'from:bolco2014 OR #bolco2014',
-  interval: 6000,
-  title: 'Bol&atilde;o da Copa - Brasil 2014',
-  subject: 'Twitter BolC&oacute; 2014',
-  width: 250,
-  height: 280,
-  footer: 'Se aprochegue',
-  rpp: 10,
-  theme: {
-    shell: {
-      background: '#2B59AE',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#444444',
-      links: '#1985b5'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
-
-            <!-- Fim Twitter --></td>
+          <td height="250" align="justify">
+          <a class="twitter-timeline" href="https://twitter.com/search?q=%23bolco" data-widget-id="474377679664193536">Tweets #bolco</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+   
+          </td>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
         </tr>
           </td>

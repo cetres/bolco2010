@@ -113,8 +113,6 @@ function menu() {
 		}
 		printf ("<td width='230' align='right'><a class='titulo'>Usu&aacute;rio: </a><b class='titulo'>".$_SESSION["nome"]."</b></td>");
 	}
-	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
-	printf ("<td><a class='titulo' href='/'>Sair</b></td>");
 printf ("</tr></table>  ");
 }
 
@@ -244,7 +242,7 @@ function grupos($g) {
 		printf ("<td><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
 		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p1.Nome")))."</a></td>");
 		printf ("<td><a class='texto'>X</td>");
-		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
+		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p2.Nome")))."</a></td>");
 		if ( strtotime(mysql_result($rs,$i,"jo_hora")) >= $horario) {
 			printf ("<td><input class='formAp'  onkeypress='return OnlyNumbers(event)'   type='text' name='p1".$i."' size='2' value='".mysql_result($rs,$i,"golp1")."'></td>");
 		} else {
@@ -321,7 +319,7 @@ global $database;
 		$s = $p - $c;
 		printf ("<td><a class='texto'>".($i+1)."</a></td>");
 		printf ("<td><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
-		printf ("<td><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
+		printf ("<td><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p1.Nome")))."</a></td>");
 		printf ("<td><a class='texto'>".mysql_result($rs,$i,"ponto")."</a></td>");
 		printf ("<td><a class='texto'>".mysql_result($rs,$i,"jogos")."</a></td>");
 		printf ("<td><a class='texto'>".mysql_result($rs,$i,"vitorias")."</a></td>");

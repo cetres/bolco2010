@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('America/Sao_Paulo');
+
 $SERVIDOR = 0;
 
 if ($_SERVER["DOCUMENT_ROOT"] == "/home/cetres/webapps/bolco") {
@@ -28,8 +30,6 @@ if (PEAR::isError($db)) {
     die($db->getMessage());
 }
 
-date_default_timezone_set('America/Sao_Paulo');
-
-$versao="3.0.0";
+$versao="3.1.0";
 
 ?>

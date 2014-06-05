@@ -1,5 +1,5 @@
 <?php
-$metodo = 2; // 1 = nativo; 2 = gmail
+$metodo = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
 
 $TESTE_JOGO=false;
@@ -130,7 +130,7 @@ function enviarEmailJogo($obj) {
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
 		$mail->Hostname = 'b.ap1.com.br';
-    	$mail->From = "contato@bolco.com.br";
+    	$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "BolCo 2014";
 		$mail->AddReplyTo('contato@bolco.com.br',"Contato BolCo");
 		$mail->IsHTML(true);

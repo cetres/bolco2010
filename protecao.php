@@ -113,6 +113,8 @@ function menu() {
 		}
 		printf ("<td width='230' align='right'><a class='titulo'>Usu&aacute;rio: </a><b class='titulo'>".$_SESSION["nome"]."</b></td>");
 	}
+	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
+	printf ("<td><a class='titulo' href='/'>Sair</b></td>");
 printf ("</tr></table>  ");
 }
 

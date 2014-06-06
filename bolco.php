@@ -46,7 +46,7 @@ $(document).ready(function() {
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
-   
+
           </td>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
         </tr>
@@ -164,7 +164,7 @@ Comiss&atilde;o Organizadora
             <br>
             - O BolC&oacute; ganhou um endere&ccedil;o pr&oacute;prio: www.bolco.com.br<br>
             - O apostador poder&aacute; verificar as tend&ecirc;ncias de apostas na &aacute;rea &quot;Balc&atilde;o de Apostas&quot;. Nesta &aacute;rea, ser&atilde;o apresentados sugest&otilde;es de resultados, de acordo com a casa de aposta austriaca <a href="http://www.bwin.com/">BWin</a>.<br>
-            - O BolC&oacute; estar&aacute; mandando not&iacute;cias atrav&eacute;s do Twitter (<a href="http://www.twitter.com/bolco2010">@bolco2010</a>)<br>
+            - O BolC&oacute; estar&aacute; mandando not&iacute;cias atrav&eacute;s do Twitter (<a href="http://www.twitter.com/bolco2014">@bolco2014</a>)<br>
             <br>
             Como voc&ecirc;s podem ver, este ano estamos mais interativos visando entreter ainda mais todos os apostadores.<br>
             <br>

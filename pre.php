@@ -4,8 +4,10 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $SERVIDOR = 0;
 
-if ($_SERVER["DOCUMENT_ROOT"] == "/home/cetres/webapps/bolco") {
-  $SERVIDOR = 1;
+if ("/home/cetres/webapps/bolco" == $_SERVER["DOCUMENT_ROOT"]) {
+	$SERVIDOR = 1;
+} else if ("web72.webfaction.com" == getenv("HOSTNAME")) {
+	$SERVIDOR = 1;
 }
 
 if ($SERVIDOR==1) {

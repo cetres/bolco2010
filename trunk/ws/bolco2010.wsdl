@@ -4,7 +4,7 @@
 	<types>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.bolco.com.br/ws/bolco/" targetNamespace="http://www.bolco.com.br/ws/bolco/">
 			<annotation>
-				<documentation>BolCo 2010 - Bolao da Copa</documentation>
+				<documentation>BolCo - Bolao da Copa</documentation>
 			</annotation>
 			<element name="parametro"/>
 			<element name="envioEmail">
@@ -127,10 +127,10 @@
 	<service name="bolco">
 		<documentation>WebService do BolCo 2010</documentation>
 		<port name="envioEmail" binding="tns:envioEmailBinding">
-			<soap:address location="http://w1.bolco.com.br/emails/"/>
+			<soap:address location="http://www.bolco.com.br/emails/"/>
 		</port>
 		<port name="palpites" binding="tns:palpiteBinding">
-			<soap:address location="http://w1.bolco.com.br/palpites/"/>
+			<soap:address location="http://www.bolco.com.br/palpites/"/>
 		</port>
 	</service>
 </definitions>

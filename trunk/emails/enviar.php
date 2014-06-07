@@ -1,4 +1,10 @@
 <?php
+/*
+ Codigo fonte parece ser de 2006 uma vez que em 2010 nao foi utilizada criptografia
+
+
+*/
+
 $metodo = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
 
@@ -20,11 +26,11 @@ $LIMITE_LOTE = 50;
 $EMAIL_ERR = array('mikhail.eirado@florestal.gov.br','fellipepaulino@gmail.com','alexandre@iel.org.br','regiane@iel.org.br','giovanni@iel.org.br','paulohenrique@iel.org.br','dreligereiluminato@gmail.com','mmiranda18@hotmail.com','rrechia2004@yahoo.com.br','adrianacostabsb@gmail.com','hayla_silva@hotmail.com','afobasilio@gmail.com','ovidio.p.rocha@gmail.com','fernandoagnello@ig.com.br','enemae@gmail.com','rogerioof@globo.com','joelalexandre.df@gmail.com','mvborgesdf@gmail.com','igxavier@gmail.com','moyabsb@yahoo.com.br','laismaximiano@gmail.com','gustavo.sales@cidades.gov.br','wladi@terra.com.br','patricia.barbosa@iel.org.br','mafra.leonardo@gmail.com','felipe@volk.com.br','malena@cni.org.br','roberrrto@gmail.com','ricardo.facincani@gmail.com','angelarochamail@gmail.com','luanna.pinardon@gmail.com','jaem@bol.com.br','guejima@hotmail.com');
 
 
-function enviarEmail($email,$assunto,$template,$apelido,$C) {
+function enviarEmail($email, $assunto, $template, $apelido, $C) {
 	global $metodo, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
 
     $SMTP_SERVER="smtp.gmail.com";
-    $SMTP_USER="contato@bolco.com.br";
+    $SMTP_USER="juiz@bolco.com.br";
     $SMTP_PASS="girafa";
 
 	$bufferTotal = "";
@@ -42,7 +48,7 @@ function enviarEmail($email,$assunto,$template,$apelido,$C) {
   	}
   	fclose($fp);
 	if ($metodo == 1) {
-		$remetente = 'From: BolCo2014 <contato@bolco.com.br>';
+		$remetente = 'From: Juiz BolCo <contato@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
              'Reply-To: contato@bolco.com.br' . "\r\n" .
@@ -60,8 +66,8 @@ function enviarEmail($email,$assunto,$template,$apelido,$C) {
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
 		$mail->Hostname = 'b.ap1.com.br';
-   		$mail->From = "contato@bolco.com.br";
-    	$mail->FromName = "BolCo 2014";
+   		$mail->From = "juiz@bolco.com.br";
+    	$mail->FromName = "Juiz BolCo";
     	$mail->AddAddress($email,$apelido);
     	$mail->AddBCC('bolco2014@gmail.com');
         //$mail->AddReplyTo($webmaster_email,"Webmaster");
@@ -108,11 +114,11 @@ function enviarEmailJogo($obj) {
 	}
 	$bufferTotalHTML .= "</pre>\n";
 	$bufferTotalHTML .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=<br>";
-	$bufferTotalHTML .= "BolCo2014: http://www.bolco.com.br/\n";
+	$bufferTotalHTML .= "BolCo: http://www.bolco.com.br/\n";
     $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
-    $bufferTotal .= "BolCo2014: http://www.bolco.com.br/\n";
+    $bufferTotal .= "BolCo: http://www.bolco.com.br/\n";
 	if ($metodo == 1) {
-		$remetente = 'From: BolCo2014 <contato@bolco.com.br>';
+		$remetente = 'From: Juiz BolCo <juiz@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
              'Reply-To: contato@bolco.com.br' . "\r\n" .

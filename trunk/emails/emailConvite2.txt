@@ -4,16 +4,16 @@ Se você recebeu esse e-mail é porque você foi convidado por ${C01}
 para participar do BolCó 2014 (Bolão da Copa). Para  maiores informações  acesse
 http://www.bolco.com.br/
 
-Mas se você  estiver com preguiça  ou achando que  esse e-mail é  vírus, spam ou
+Mas se você estiver com preguiça ou achando que  esse e-mail é  vírus, spam ou
 algum engraçadinho querendo tirar uma onda com a sua cara, vamos explicar o  que
 está acontecendo.
 
-Com o sucesso do BolCó 2002, 2006 e 2010 resolvemos  recriar e melhorar o sítio para o
+Com o sucesso do BolCó 2002, 2006 e 2010 resolvemos recriar e melhorar o sítio para o
 Bolão da Copa do Mundo 2014. O pagamento desta  vez será  facultativo contudo  
-não receberá  o prêmio  quem não tiver pago antes do início do torneio.
+não receberá o prêmio quem não tiver pago antes do início do torneio.
 
 Portanto, não perca tempo!! Entre  no sítio, cadastre-se, convide seus  amigos e
-aposte. Mas  lembre-se de  ler o  regulamento antes.  Para fazer  o seu registro
+aposte. Mas lembre-se de ler o regulamento antes. Para fazer o seu registro
 inicial basta clicar no endereço abaixo:
 
 http://www.bolco.com.br/?e=${C02}
@@ -23,7 +23,7 @@ abaixo:
 
 http://www.bolco.com.br/
 
-A sua senha é: ${C03}
+A sua senha inicial é: ${C03}
 
 Abraços e Boa Sorte!!!
 

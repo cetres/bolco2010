@@ -1,4 +1,9 @@
 <?php
+/*
+ Codigo fonte parece ser de 2006 uma vez que em 2010 nao foi utilizada criptografia
+
+
+*/
 set_time_limit(200);
 require_once "DB.php";
 $dsn = "mysql://bolco:girafaganso@localhost/bolco";
@@ -70,7 +75,7 @@ while ($res1->fetchInto($row) || $TESTE) {
     $bufferTotal .= $nome.str_repeat(" ", 40 - strlen($nome))." ".$row[1]." x ".$row[2]."\n";
   }
   $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
-  $bufferTotal .= "BolCo2014: http://www.bolco.com.br/\n";
+  $bufferTotal .= "BolCo: http://www.bolco.com.br/\n";
 
 
 
@@ -83,7 +88,7 @@ if ($SSL) {
   $fp = fopen("$path/jogo_$jidStr.uns", "w");
   fwrite($fp, $bufferTotal);
   fclose($fp);
-  $headersOSSL = array("From" => "BolCo2014-Audit <juiz@bolco.com.br>",
+  $headersOSSL = array("From" => "Juiz BolCo <juiz@bolco.com.br>",
 	                   "Reply-To" => "contato@bolco.com.br",
 					   "X-Mailer" => "BolCo/v.3.0.0");
 
@@ -92,7 +97,7 @@ if ($SSL) {
   $parts = explode("\n\n", $bufferTotal, 2);
      /*  fim do teste */
 } else {
-  $headers = "From: BolCo2014-Audit <juiz@bolco.com.br>\r\n" .
+  $headers = "From: Juiz BolCo <juiz@bolco.com.br>\r\n" .
            "Reply-To: contato@bolco.com.br\r\n" .
            "X-Mailer: BolCo/v.3.1.0\r\n";
 //		   "Disposition-Notification-To: suporte@apto101.com.br\r\n";
@@ -108,10 +113,10 @@ if ($SSL) {
   while ($res2->fetchInto($row)) {
     if (!$TESTE) {
       if ($SSL) {
-        mail($row[1],"[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
+        mail($row[1],"[BolCo] Jogo $jidStr",$parts[1], $parts[0]);
 	  } else {
         $destino = imap_8bit(utf8_decode("To: ".$row[0]." <".$row[1].">"));
-        mail($row[1],"[BolCo2014] Jogo ".sprintf("%02d",$C[1]),$bufferTotal,$headers.$destino);
+        mail($row[1],"[BolCo] Jogo ".sprintf("%02d",$C[1]),$bufferTotal,$headers.$destino);
 	  }
 	}
     $ct++;
@@ -125,7 +130,7 @@ if ($SSL) {
       die($res2->getMessage());
     }
   } else {
-    mail("juiz@bolco.com.br","[BolCo2014] Jogo $jidStr",$parts[1], $parts[0]);
+    mail("juiz@bolco.com.br","[BolCo] Jogo $jidStr",$parts[1], $parts[0]);
 	$TESTE = false;
   }
   syslog(1,"[BolCo] Envio finalizado para o jogo $j");

@@ -1,4 +1,9 @@
 <?php
+/*
+ Parece que esse codigo nao foi utilizado em produção
+
+
+*/
 		$host = "localhost";
 	$database = "bolco";
 	$login_db = "bolco";

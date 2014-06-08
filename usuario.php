@@ -18,7 +18,7 @@ class Usuario {
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE email = ?',strtolower($email)));
   }
   
-   public static function aceitarRegulamento() {
+   public function aceitarRegulamento() {
     global $db;
 	$db->query('UPDATE usuarios SET aceitaReg=0 WHERE idusu = ?', $this->idusu);
 	$_SESSION["Aceitou"] = 0;

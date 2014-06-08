@@ -50,7 +50,6 @@ class Usuario {
   }
 
   public function alterar($apelido,$nome,$telefone,$senha){
-    global $db;
     if((strlen($apelido) > 0) && ($apelido != $this->apelido)) {
 	  if (!self::apelidoExiste($apelido)) {
 	    $update[]='apelido=?';
@@ -72,7 +71,7 @@ class Usuario {
     if (count($update) > 0) {
 	  $sql='UPDATE usuarios SET ' . implode(',',$update) . ' WHERE idusu=?';
 	  $data[]=$this->id;
-	  $res =& $db->query($sql);
+	  $res =& $this->db->query($sql);
 	}
   }
 }
@@ -80,23 +79,24 @@ class Usuario {
 class ConviteUsuario extends Usuario {
 	public function __construct($email, $tipo, $idConvidador) {
     	global $db;
+		$this->db = $db;
 		$this->senha = $this->criarSenha();
 	 	$this->email = strtolower($email);
 		$parts = explode("@", $this->email);
 		$this->apelido = $parts[0];
-     	$q = "INSERT INTO usuarios (apelido, senha, dateCreated, pago, tipo, email, ativo, quemchamou, aceitouReg) VALUES (?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?,?,?,?,?,?)";
-	 	$res = $db->query($q,array($this->apelido, $this->senha,0,$tipo,$this->email,0,intval($idConvidador),1));
+     	$q = "INSERT INTO usuarios (apelido, senha, dateCreated, pago, tipo, email, ativo, quemchamou, aceitouReg) VALUES (?,?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?,?,?,?,?,?)";
+	 	$res = $this->db->query($q,array($this->apelido, $this->senha,0,$tipo,$this->email,0,intval($idConvidador),1));
 	 	if (PEAR::isError($res)) {
 			error_log($res->getMessage()." / ".$res->getDebugInfo());
   	    	die($res->getMessage());
 	 	} 
-	 	$this->id = $db->getOne("SELECT LAST_INSERT_ID() FROM `enviarEmail`");  
-    	if (PEAR::isError($res)) {
-			error_log($res->getMessage()." / ".$res->getDebugInfo());
-      		die($res->getMessage());
+	 	$this->id = $this->db->getOne("SELECT LAST_INSERT_ID() FROM `enviarEmail`");  
+    	if (PEAR::isError($this->id)) {
+			error_log($this->id->getMessage()." / ".$this->id->getDebugInfo());
+      		die($this->id->getMessage());
     	}
 		$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES (?,?,?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'))";  
-    	$res = $db->query($q,array('Envio de convite',$idConvidador,'Envio de convite para $email'));
+    	$res = $this->db->query($q,array('Envio de convite',$idConvidador,'Envio de convite para $email'));
     	if (PEAR::isError($res)) {
 			error_log($res->getMessage()." / ".$res->getDebugInfo());
       		die($res->getMessage());

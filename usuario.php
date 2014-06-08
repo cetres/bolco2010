@@ -18,8 +18,6 @@ class Usuario {
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE email = ?',strtolower($email)));
   }
   
-
-  
   public static function apelidoExiste($apelido) {
     global $db;
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE apelido = ?',$apelido));
@@ -80,7 +78,7 @@ class Usuario {
 }
 
 class ConviteUsuario extends Usuario {
-	public function __construct($email,$tipo,$idConvidador) {
+	public function __construct($email, $tipo, $idConvidador) {
     	global $db;
 		$this->senha = $this->criarSenha();
 	 	$this->email = strtolower($email);

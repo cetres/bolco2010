@@ -2,6 +2,7 @@
 require_once("protecao.php");
 require_once("pre.php");
 require_once("email.php");
+require_once("usuario.php");
 
 $email = strtolower($_POST["email"]);
 $comentario = $_POST["Comentario"];
@@ -10,43 +11,19 @@ $idconvidador = $_POST["idconvidador"];
 $senha = rand(1000, 9999);
 $idusu = $_SESSION["id"];
 
-$res = $db->getOne("select idusu from usuarios where email = ?",array($email));
-if (PEAR::isError($res)) {
-	error_log($res->getMessage()." / ".$res->getDebugInfo());
-	die($res->getMessage());
-}  
-if($res){
+if (Usuario::emailExiste($email)) {
 	$msg = "Este email já esta cadastrado no site!";
+} else if (!Email::validar($email)) {
+	$msg = "Email invalido. Digite novamente";
 } else {
+	$convite = new ConviteUsuario($email, $tipo, $idconvidador);
 	$e = new Email();
-	if (!Email::validar($email)) {
-		$msg = "Email invalido. Digite novamente";
-		
+	if ($tipo=="notorio") {
+		$e->convidarNotorio($id);
 	} else {
-		$q = "INSERT INTO usuarios (senha, dateCreated, pago, tipo, email, ativo, quemchamou, aceitouReg) VALUES (?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?,?,?,?,?,?)";
-		$res = $db->query($q,array($senha,0,$tipo,$email,0,$idconvidador,1));
-		if (PEAR::isError($res)) {
-			error_log($res->getMessage()." / ".$res->getDebugInfo());
-  		die($res->getMessage());
-		}  
-		$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES (?,?,?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'))";  
-    $res = $db->query($q,array('Envio de convite',$idusu,'Envio de convite para $email'));
-		if (PEAR::isError($res)) {
-			error_log($res->getMessage()." / ".$res->getDebugInfo());
-  		die($res->getMessage());
-		}  
-		$id = $db->getOne("select idusu from usuarios where email = ?",array($email));
-		if (PEAR::isError($id)) {
-			error_log($id->getMessage()." / ".$id->getDebugInfo());
-  		die($res->getMessage());
-		}  
-		if ($tipo=="notorio") {
-			$e->convidarNotorio($id);
-		} else {
-			$e->convidarConhecido($id,$comentario);
-		}
-		$msg = "Convite enviado com sucesso.";
+		$e->convidarConhecido($id, $comentario);
 	}
+	$msg = "Convite enviado com sucesso.";
 }
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>

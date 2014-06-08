@@ -7,19 +7,20 @@
 
 $metodo = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
+$PROVEDOR = 2; // 1 = gmail; 2 = webfaction
 
 $TESTE_JOGO=false;
 $TESTE_EMAIL=false;
 
-
-//$SMTP_SERVER="smtp.gmail.com";
-//$SMTP_USER="contato@bolco.com.br";
-//$SMTP_PASS="girafa";
-
-
-$SMTP_SERVER="smtp.webfaction.com";
-$SMTP_USER="cetres_bolco";
-$SMTP_PASS="925cbe63";
+if ($PROVEDOR == 1) {
+	$SMTP_SERVER="smtp.gmail.com";
+	$SMTP_USER="contato@bolco.com.br";
+	$SMTP_PASS="girafaganso";
+} else {
+	$SMTP_SERVER="smtp.webfaction.com";
+	$SMTP_USER="cetres_bolco";
+	$SMTP_PASS="925cbe63";
+}
 
 $LIMITE_LOTE = 50;
 
@@ -28,10 +29,6 @@ $EMAIL_ERR = array('mikhail.eirado@florestal.gov.br','fellipepaulino@gmail.com',
 
 function enviarEmail($email, $assunto, $template, $apelido, $C) {
 	global $metodo, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
-
-    $SMTP_SERVER="smtp.gmail.com";
-    $SMTP_USER="juiz@bolco.com.br";
-    $SMTP_PASS="girafaganso";
 
 	$bufferTotal = "";
 	$fn = $template.".txt";
@@ -91,12 +88,6 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 
 function enviarEmailJogo($obj) {
 	global $metodo, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $EMAIL_ERR, $LIMITE_LOTE;
-    //$SMTP_SERVER="smtp.gmail.com";
-    //$SMTP_USER="palpites@bolco.com.br";
-    //$SMTP_PASS="girafa";
-	$SMTP_SERVER="smtp.webfaction.com";
-	$SMTP_USER="cetres_bolco";
-	$SMTP_PASS="925cbe63";
 	$enviado=null;
 
 	$bufferTotal= "Este e-mail é para informar os palpites dos participantes do bolão fazendo,\n";

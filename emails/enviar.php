@@ -69,7 +69,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
    		$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "Juiz BolCo";
     	$mail->AddAddress($email,$apelido);
-    	$mail->AddBCC('bolco2014@gmail.com');
+    	$mail->AddBCC('bolco2010@gmail.com');
         //$mail->AddReplyTo($webmaster_email,"Webmaster");
         //$mail->WordWrap = 50;
         //$mail->AddAttachment("/var/tmp/file.tar.gz");

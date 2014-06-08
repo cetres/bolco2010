@@ -8,8 +8,8 @@ import logging
 from optparse import OptionParser
 
 
-BD_CONF = {"h": "localhost", "u": "bolco",
-           "p": "girafaganso", "b": "bolco"}
+BD_CONF = {"h": "localhost", "u": "cetres_bolco",
+           "p": "girafaganso", "b": "cetres_bolco"}
 
 def carregar_arquivo(arquivo):
     resultado = []

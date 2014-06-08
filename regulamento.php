@@ -141,7 +141,7 @@ scrollbar-shadow-color:#D6D7D6}
 </td></tr><tr><td align="center">
 <?php
 if ($_SESSION["tipo"] != "Visitante")  {
-	$usuario =  Usuario($_SESSION["id"]);
+	$usuario = new Usuario($_SESSION["id"]);
     if ($usuario->aceitouReg==0) {
 		echo "<form method='get'>";
 		echo "<input type='hidden' name='aceita' value='1' />";

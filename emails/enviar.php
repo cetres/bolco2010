@@ -5,7 +5,7 @@
 
 */
 
-$metodo = 2; // 1 = nativo; 2 = smtp
+$METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
 $PROVEDOR = 2; // 1 = gmail; 2 = webfaction
 
@@ -28,7 +28,7 @@ $EMAIL_ERR = array('mikhail.eirado@florestal.gov.br','fellipepaulino@gmail.com',
 
 
 function enviarEmail($email, $assunto, $template, $apelido, $C) {
-	global $metodo, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
+	global $METODO, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
 
 	$bufferTotal = "";
 	$fn = $template.".txt";
@@ -44,7 +44,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 		$bufferTotal .= $buffer;
   	}
   	fclose($fp);
-	if ($metodo == 1) {
+	if ($METODO == 1) {
 		$remetente = 'From: Juiz BolCo <contato@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
@@ -87,7 +87,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 }
 
 function enviarEmailJogo($obj) {
-	global $metodo, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $EMAIL_ERR, $LIMITE_LOTE;
+	global $METODO, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $EMAIL_ERR, $LIMITE_LOTE;
 	$enviado=null;
 
 	$bufferTotal= "Este e-mail é para informar os palpites dos participantes do bolão fazendo,\n";
@@ -108,7 +108,7 @@ function enviarEmailJogo($obj) {
 	$bufferTotalHTML .= "BolCo: http://www.bolco.com.br/\n";
     $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
     $bufferTotal .= "BolCo: http://www.bolco.com.br/\n";
-	if ($metodo == 1) {
+	if ($METODO == 1) {
 		$remetente = 'From: Juiz BolCo <juiz@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
 		$headers = $remetente . "\r\n" .
@@ -215,7 +215,7 @@ if ($TIPO=="soap") {
   			if ($enviado) {
 				$client->ConfirmarEnvioEmail($obj->id);
 			} else {
-				error_log("Erro ao enviar o e-mail para " . $obj->email . " - " . $ERR);
+				error_log("Erro ao enviar o e-mail para " . $obj->email . " - " . $ERR . " / SOAP," . $PROVEDOR . "," . $METODO);
 			}
 			$obj = $client->ObterEnvioEmail("");
 		}
@@ -234,7 +234,7 @@ if ($TIPO=="soap") {
 			error_log("Erro ao enviar o e-mail para o jogo " . utf8_decode($obj->jogo));
 		}
 	}
-} else {
+} else { // Tipo de conexao direto. Nao SOAP
   	$q = "SELECT e.*, p.apelido, p.email FROM enviarEmail e ";
   	$q.= "LEFT JOIN usuarios p ON p.idusu = e.ee_usuario ";
   	$q.= "WHERE e.ee_programado < CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00') ";

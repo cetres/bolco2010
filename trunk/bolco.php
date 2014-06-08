@@ -83,11 +83,8 @@ Comiss&atilde;o Organizadora
             <br>
             J&aacute; virou tradi&ccedil;&atilde;o!! Ap&oacute;s longos 4 anos, o BolC&oacute; retorna para ser mais um ingrediente na festa da Copa do Mundo de Futebol 2014. E para este ano temos novidades:<br>
             <br>
-            - O BolC&oacute; ganhou um endere&ccedil;o pr&oacute;prio: www.bolco.com.br<br>
             - O apostador poder&aacute; verificar as tend&ecirc;ncias de apostas na &aacute;rea &quot;Balc&atilde;o de Apostas&quot;. Nesta &aacute;rea, ser&atilde;o apresentados sugest&otilde;es de resultados, de acordo com a casa de aposta austriaca <a href="http://www.bwin.com/">BWin</a>.<br>
-            - O BolC&oacute; estar&aacute; mandando not&iacute;cias atrav&eacute;s do Twitter (<a href="http://www.twitter.com/bolco2014">@bolco2014</a>)<br>
             <br>
-            Como voc&ecirc;s podem ver, este ano estamos mais interativos visando entreter ainda mais todos os apostadores.<br>
             <br>
             Em breve voc&ecirc; receber&aacute; um e-mail com os dados de acesso ao BolC&oacute;. <br>
             Tenham uma &oacute;tima Copa do Mundo de Futebol e boas apostas.<br>

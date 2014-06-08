@@ -30,6 +30,7 @@ class Usuario {
 	  $this->apelido = $row['apelido'];
 	  $this->nome = $row['nome'];
 	  $this->email = $row['email'];
+	  $this->aceitouReg = $row['aceitouReg']?$row['aceitouReg']:0;
 	  return true;
 	} else {
 	  return false;

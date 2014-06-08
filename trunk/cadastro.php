@@ -21,7 +21,6 @@ if (isset($_POST["Apelido"])) {
 	$Telefone = (isset($_POST["Telefone"]))?strip_tags($_POST["Telefone"]):"";
 	$Comentario = (isset($_POST["Comentario"]))?strip_tags($_POST["Comentario"]):"";
 	$senha = (isset($_POST["senha"]))?strip_tags($_POST["senha"]):"";
-	$contrato = (isset($_POST["contrato"]))?strip_tags($_POST["contrato"]):"";
 	$palpite = (isset($_POST["palpite"]))?strip_tags($_POST["palpite"]):"";
 	$receberPalpites = (isset($_POST["receberPalpites"]))?strip_tags($_POST["receberPalpites"]):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
@@ -31,7 +30,7 @@ if (isset($_POST["Apelido"])) {
 		$idusu =  $_SESSION["id"];
 			mysql_connect($host, $login_db, $senha_db);
 			mysql_select_db($database);
-			$q = "update usuarios set mostrapalpite = '$palpite', aceitouReg  = '$contrato', nome = '$nome', apelido = '$Apelido', Telefone  = '$Telefone' ,Comentario  = '$Comentario' , senha = '$senha', receberPalpites = '$receberPalpites' where idusu = '$idusu' ";
+			$q = "update usuarios set mostrapalpite = '$palpite', nome = '$nome', apelido = '$Apelido', Telefone  = '$Telefone' ,Comentario  = '$Comentario' , senha = '$senha', receberPalpites = '$receberPalpites' where idusu = '$idusu' ";
 			//echo $q;
 			$rs = mysql_query($q);
 		if (!$rs) {
@@ -50,7 +49,7 @@ if (isset($_POST["Apelido"])) {
 } else {
 	mysql_connect($host, $login_db, $senha_db);
 	mysql_select_db($database);
-	$q = "select nome, Telefone,Comentario,pago,mostrapalpite,aceitouReg,receberPalpites from usuarios where email = '$email' and senha = '$senha'";
+	$q = "select nome, Telefone,Comentario,pago,mostrapalpite,receberPalpites from usuarios where email = '$email' and senha = '$senha'";
 	$rs = mysql_query($q);
 	if (!$rs) {
 		die('Could not query:' . mysql_error());
@@ -61,7 +60,6 @@ if (isset($_POST["Apelido"])) {
 		$Comentario = mysql_result($rs,0,"comentario");
 		$pagamento = mysql_result($rs,0,"pago");
 		$palpite = mysql_result($rs,0,"mostrapalpite");
-		$contrato = mysql_result($rs,0,"aceitouReg");
 		$receberPalpites = mysql_result($rs,0,"receberpalpites");
 	}
 }
@@ -144,15 +142,6 @@ alert("<?php echo $msg; ?>");
   <option value='1'<?php echo ($palpite == "0")?"":"selected" ?>>Nao</option>
 </select><br></td>
 </tr>
-
-<tr valign="top">
-<td><a class="rodape">:.</a>&nbsp;<a class="texto">Li e aceito o regulamento.</a>&nbsp;<a class="rodape">.: *</a></td>
-<td>
-  <select name="contrato" readonly size=1>
-  <option value='0'>Sim</option>
-</select><br></td>
-</tr>
-
 
 <tr valign="top">
   <td><a class="rodape">:.</a>&nbsp;<a class="texto">Receber palpites 5 min antes por email</a>&nbsp;<a class="rodape">.: *</a></td>

@@ -3,6 +3,14 @@
 require_once("protecao.php");
 require_once("usuario.php");
 
+if ($_SESSION["tipo"] != "Visitante")  {
+	$usuario = new Usuario($_SESSION["id"]);
+}
+
+if (isset($usuario) && isset($_GET["aceita"]) && $_GET["aceita"]=="1") {
+	$usuario->aceitarRegulamento();
+}
+
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
@@ -55,7 +63,7 @@ scrollbar-shadow-color:#D6D7D6}
 <span class="texto">A aposta de um jogador poderá ficar invisível (caso ele deseje) a outros participantes até 5 (cinco) minutos antes de cada evento futebolístico, quando será enviado um e-mail com as apostas de todos os participantes. Essa é uma forma de todos os apostadores comprovarem a integridade do BolCó 2014.</span><br>
 <br><b class="texto">Da Pontuação</b><br><br>
 <span class="texto">A pontuação adotada será a seguinte:</span><br>
-<span class="texto">* <strong>Placar Correto</strong>: acerto integral do placar do jogo</a><br>
+<span class="texto">* <strong>Placar Correto</strong>: acerto integral do placar do jogo</span><br>
 <span class="texto">* <strong>Vitória simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do vencedor da partida</span><br>
 <span class="texto">* <strong>Empate incerto</strong>: acerto do empate no jogo, mas com placar incorreto</span><br>
 <span class="texto">* <strong>Derrota simples</strong>: Indicação do time vencedor e acerto somente do nº de gols do perdedor da partida</span><br>
@@ -140,14 +148,11 @@ scrollbar-shadow-color:#D6D7D6}
 <a class="texto">Esta é uma competição de cunho psicosocioesportivo e voltada à integração social da família “Medeiros de Oliveira” e seus amigos.</a><br><br>
 </td></tr><tr><td align="center">
 <?php
-if ($_SESSION["tipo"] != "Visitante")  {
-	$usuario = new Usuario($_SESSION["id"]);
-    if ($usuario->aceitouReg==0) {
-		echo "<form method='get'>";
-		echo "<input type='hidden' name='aceita' value='1' />";
-		echo "<input type='submit' value='Aceita'/>";
-		echo "</form>";
-	}
+if (isset($usuario) && $usuario->aceitouReg==1) {
+	echo "<form method='get'>";
+	echo "<input type='hidden' name='aceita' value='1' />";
+	echo "<input type='submit' value='Aceitar Regulamento'/>";
+	echo "</form>";
 }
 ?>
 </td></tr></table>

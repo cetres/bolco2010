@@ -69,8 +69,10 @@ class ConviteUsuario extends Usuario {
     	global $db;
 		$this->senha = $this->criarSenha();
 	 	$this->email = strtolower($email);
-     	$q = "INSERT INTO usuarios (senha, dateCreated, pago, tipo, email, ativo, quemchamou, aceitouReg) VALUES (?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?,?,?,?,?,?)";
-	 	$res = $db->query($q,array($this->senha,0,$tipo,$this->email,0,intval($idConvidador),1));
+		$parts = explode("@", $this->email);
+		$this->apelido = $parts[0];
+     	$q = "INSERT INTO usuarios (apelido, senha, dateCreated, pago, tipo, email, ativo, quemchamou, aceitouReg) VALUES (?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),?,?,?,?,?,?)";
+	 	$res = $db->query($q,array($this->apelido, $this->senha,0,$tipo,$this->email,0,intval($idConvidador),1));
 	 	if (PEAR::isError($res)) {
 			error_log($res->getMessage()." / ".$res->getDebugInfo());
   	    	die($res->getMessage());

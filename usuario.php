@@ -18,11 +18,7 @@ class Usuario {
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE email = ?',strtolower($email)));
   }
   
-   public function aceitarRegulamento() {
-    global $db;
-	$db->query('UPDATE usuarios SET aceitaReg=0 WHERE idusu = ?', $this->idusu);
-	$_SESSION["Aceitou"] = 0;
-  }
+
   
   public static function apelidoExiste($apelido) {
     global $db;
@@ -31,6 +27,7 @@ class Usuario {
 
   public function __construct($id) {
     global $db;
+	$this->db = $db;
 	$res =& $db->query('SELECT * FROM usuarios WHERE idusu = ?',$id);
 	if ($res->fetchInto($row,DB_FETCHMODE_ASSOC)) {
 	  $this->idusu = $row['idusu'];
@@ -42,6 +39,16 @@ class Usuario {
 	} else {
 	  return false;
     }
+  }
+
+   public function aceitarRegulamento() {
+		$this->aceitouReg = 0;
+		$this->db->query('UPDATE usuarios SET aceitouReg=0 WHERE idusu = ?', $this->idusu);
+		if (PEAR::isError($this->db)) {
+			error_log($this->db->getMessage()." / ".$this->db->getDebugInfo());
+  	    	die($this->db->getMessage());
+	 	} 
+		$_SESSION["Aceitou"] = 0;
   }
 
   public function alterar($apelido,$nome,$telefone,$senha){

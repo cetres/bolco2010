@@ -126,7 +126,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
    <tr>
    	<td width="100%" valign="top" align="left" >
 <b class="tit">
-<?php echo $r['fase'] ?>: <?php echo htmlentities($r['pn1']) ?> X <?php echo  htmlentities($r['pn2']) ?> - <?php echo arrumadata($r['hora']) ?>
+<?php echo $r['fase'] ?>: <?php echo htmlentities(utf8_encode($r['pn1'])) ?> X <?php echo  htmlentities(utf8_encode($r['pn2'])) ?> - <?php echo arrumadata($r['hora']) ?>
 </b>
 
 <table width="750" id="panorama">
@@ -151,15 +151,15 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 </tr>
 </thead>
 <tr>
-	<td height="20" class="nTime" width="33%"><b class="texto"><?php echo htmlentities(utf8_encode($r['pn1'])) ?></td>
+	<td height="20" class="nTime" width="33%"><?php echo htmlentities(utf8_encode($r['pn1'])) ?></td>
 	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi1'] ?>.jpg" width="29" height="20" /></td>
-	<td height="20" width="11%" class="nTime"><b class="texto">X</td>
+	<td height="20" width="11%" class="nTime">X</td>
 	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi2'] ?>.jpg" width="29" height="20" /></td>
-	<td height="20" width="33%" class="nTime"><b class="texto"><?php echo htmlentities(utf8_encode($r['pn2'])) ?></td>
+	<td height="20" width="33%" class="nTime"><?php echo htmlentities(utf8_encode($r['pn2'])) ?></td>
 </tr>
 <tr class="linha_palpite">
 	<td><input type="text" name="p1" id="ap1" maxlength="2" size="2" value="<?php echo $r['ap1']?>" class="palpite" <?php echo ($jafoi==1)?"disabled":"";?> /></td>
-	<td colspan='3' id="comando_palpite"><b class="texto">Seu palpite</td>
+	<td colspan='3' id="comando_palpite">Seu palpite</td>
 	<td><input type="text" name="p2" id="ap2" maxlength="2" size="2" value="<?php echo $r['ap2']?>" class="palpite" <?php echo ($jafoi==1)?"disabled":"";?> /></td>
 </tr>
 </table><br>

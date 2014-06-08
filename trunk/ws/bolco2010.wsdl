@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.bolco.com.br/ws/bolco/wsdl/" xmlns:xsd1="http://www.bolco.com.br/ws/bolco/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="bolco2010" targetNamespace="http://www.bolco.com.br/ws/bolco/wsdl/">
 	<types>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.bolco.com.br/ws/bolco/" targetNamespace="http://www.bolco.com.br/ws/bolco/">
@@ -125,7 +124,7 @@
 		</operation>
 	</binding>
 	<service name="bolco">
-		<documentation>WebService do BolCo 2010</documentation>
+		<documentation>WebService do BolCo</documentation>
 		<port name="envioEmail" binding="tns:envioEmailBinding">
 			<soap:address location="http://www.bolco.com.br/emails/"/>
 		</port>

@@ -151,11 +151,11 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 </tr>
 </thead>
 <tr>
-	<td height="20" class="nTime" width="33%"><b class="texto"><?php echo utf8_encode(htmlentities($r['pn1'])) ?></td>
-	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi1'] ?>.jpg" width="29" height="13" /></td>
+	<td height="20" class="nTime" width="33%"><b class="texto"><?php echo htmlentities(utf8_encode($r['pn1'])) ?></td>
+	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi1'] ?>.jpg" width="29" height="20" /></td>
 	<td height="20" width="11%" class="nTime"><b class="texto">X</td>
-	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi2'] ?>.jpg" width="20" height="13" /></td>
-	<td height="20" width="33%" class="nTime"><b class="texto"><?php echo utf8_encode(htmlentities($r['pn2'])) ?></td>
+	<td height="20" width="11%" ><img src="/imagens/paises/<?php echo $r['pi2'] ?>.jpg" width="29" height="20" /></td>
+	<td height="20" width="33%" class="nTime"><b class="texto"><?php echo htmlentities(utf8_encode($r['pn2'])) ?></td>
 </tr>
 <tr class="linha_palpite">
 	<td><input type="text" name="p1" id="ap1" maxlength="2" size="2" value="<?php echo $r['ap1']?>" class="palpite" <?php echo ($jafoi==1)?"disabled":"";?> /></td>

@@ -60,33 +60,49 @@ $(document).ready(function() {
         </td>
 
         <td width="65%" valign="top" align="center" >
-        <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
-          <tr>
-            <td colspan="3" bgcolor="#2B59AE" height="25" >&nbsp;&nbsp;<b class="titulo">TV BolC&oacute;</b></td>
+      <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
+        <tr>
+          <td colspan="3" bgcolor="#2B59AE" height="25" >&nbsp;&nbsp;<b class="titulo">Avisos</b></td>
+        </tr>
+        <tr>
+          <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
+        </tr>
+        <tr>
+          <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
+          <td height="250" align="justify" class="noticia">
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
+           <blockquote><strong>Amigos apostadores,</strong></blockquote>
+Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$20,00</strong>.
+<br><br>
+Boa sorte a todos!!<br>
+Comiss&atilde;o Organizadora
+          <br> <br>
+          <hr>
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
+          <blockquote><strong>Caros admiradores do futebol,</strong></blockquote>
+            <br>
+            J&aacute; virou tradi&ccedil;&atilde;o!! Ap&oacute;s longos 4 anos, o BolC&oacute; retorna para ser mais um ingrediente na festa da Copa do Mundo de Futebol 2014. E para este ano temos novidades:<br>
+            <br>
+            - O BolC&oacute; ganhou um endere&ccedil;o pr&oacute;prio: www.bolco.com.br<br>
+            - O apostador poder&aacute; verificar as tend&ecirc;ncias de apostas na &aacute;rea &quot;Balc&atilde;o de Apostas&quot;. Nesta &aacute;rea, ser&atilde;o apresentados sugest&otilde;es de resultados, de acordo com a casa de aposta austriaca <a href="http://www.bwin.com/">BWin</a>.<br>
+            - O BolC&oacute; estar&aacute; mandando not&iacute;cias atrav&eacute;s do Twitter (<a href="http://www.twitter.com/bolco2014">@bolco2014</a>)<br>
+            <br>
+            Como voc&ecirc;s podem ver, este ano estamos mais interativos visando entreter ainda mais todos os apostadores.<br>
+            <br>
+            Em breve voc&ecirc; receber&aacute; um e-mail com os dados de acesso ao BolC&oacute;. <br>
+            Tenham uma &oacute;tima Copa do Mundo de Futebol e boas apostas.<br>
+            <br>
+            Abra&ccedil;os,<br>
+            Comiss&atilde;o organizadora. </td>
+          <td colspan="1" width="1" bgcolor="#1c5e29" ></td>
+        </tr>
+          </td>
           </tr>
-          <tr>
-            <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
-          </tr>
-          <tr>
-            <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
-            <td height="250" align="justify"><object width="560" height="340">
-                <param name="movie" value="http://www.youtube.com/v/jsyNx-LUKXo&hl=en_US&fs=1&rel=0&color1=0x2B59AE&color2=0x2B59AE">
-                </param>
-                <param name="allowFullScreen" value="true">
-                </param>
-                <param name="allowscriptaccess" value="always">
-                </param>
-                <embed src="http://www.youtube.com/v/jsyNx-LUKXo&hl=en_US&fs=1&rel=0&color1=0x2B59AE&color2=0x2B59AE" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed>
-              </object></td>
-            <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
-          </tr>
-            </td>
-            </tr>
 
-          <tr>
-            <td colspan="2" height="1" bgcolor="#2B59AE" ></td>
-          </tr>
-        </table>
+        <tr>
+          <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
+        </tr>
+      </table>
           </td>
       </tr>
         <tr>
@@ -139,49 +155,7 @@ $(document).ready(function() {
       <?php } ?>
       <!-- Fim Convite -->
 
-      <table bordercolor="#ffffff"  cellpadding="0"  cellspacing="0">
-        <tr>
-          <td colspan="3" bgcolor="#2B59AE" height="25" >&nbsp;&nbsp;<b class="titulo">Avisos</b></td>
-        </tr>
-        <tr>
-          <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
-        </tr>
-        <tr>
-          <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
-          <td height="250" align="justify" class="noticia">
-          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
-           <blockquote><strong>Amigos apostadores,</strong></blockquote>
-Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$15,00</strong>.
-<br><br>
-Boa sorte a todos!!<br>
-Comiss&atilde;o Organizadora
-          <br> <br>
-          <hr>
-          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
-          <blockquote><strong>Caros admiradores do futebol,</strong></blockquote>
-            <br>
-            J&aacute; virou tradi&ccedil;&atilde;o!! Ap&oacute;s longos 4 anos, o BolC&oacute; retorna para ser mais um ingrediente na festa da Copa do Mundo de Futebol 2014. E para este ano temos novidades:<br>
-            <br>
-            - O BolC&oacute; ganhou um endere&ccedil;o pr&oacute;prio: www.bolco.com.br<br>
-            - O apostador poder&aacute; verificar as tend&ecirc;ncias de apostas na &aacute;rea &quot;Balc&atilde;o de Apostas&quot;. Nesta &aacute;rea, ser&atilde;o apresentados sugest&otilde;es de resultados, de acordo com a casa de aposta austriaca <a href="http://www.bwin.com/">BWin</a>.<br>
-            - O BolC&oacute; estar&aacute; mandando not&iacute;cias atrav&eacute;s do Twitter (<a href="http://www.twitter.com/bolco2014">@bolco2014</a>)<br>
-            <br>
-            Como voc&ecirc;s podem ver, este ano estamos mais interativos visando entreter ainda mais todos os apostadores.<br>
-            <br>
-            Em breve voc&ecirc; receber&aacute; um e-mail com os dados de acesso ao BolC&oacute;. <br>
-            Tenham uma &oacute;tima Copa do Mundo de Futebol e boas apostas.<br>
-            <br>
-            Abra&ccedil;os,<br>
-            Comiss&atilde;o organizadora. </td>
-          <td colspan="1" width="1" bgcolor="#1c5e29" ></td>
-        </tr>
-          </td>
-          </tr>
 
-        <tr>
-          <td colspan="3" height="1" bgcolor="#2B59AE" ></td>
-        </tr>
-      </table>
         </td>
 
         </tr>

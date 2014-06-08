@@ -31,7 +31,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 
     $SMTP_SERVER="smtp.gmail.com";
     $SMTP_USER="juiz@bolco.com.br";
-    $SMTP_PASS="girafa";
+    $SMTP_PASS="girafaganso";
 
 	$bufferTotal = "";
 	$fn = $template.".txt";

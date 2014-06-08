@@ -18,6 +18,12 @@ class Usuario {
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE email = ?',strtolower($email)));
   }
   
+   public static function aceitarRegulamento() {
+    global $db;
+	$db->query('UPDATE usuarios SET aceitaReg=0 WHERE idusu = ?', $this->idusu);
+	$_SESSION["Aceitou"] = 0;
+  }
+  
   public static function apelidoExiste($apelido) {
     global $db;
 	return intval($db->getOne('SELECT idusu FROM usuarios WHERE apelido = ?',$apelido));
@@ -27,10 +33,11 @@ class Usuario {
     global $db;
 	$res =& $db->query('SELECT * FROM usuarios WHERE idusu = ?',$id);
 	if ($res->fetchInto($row,DB_FETCHMODE_ASSOC)) {
+	  $this->idusu = $row['idusu'];
 	  $this->apelido = $row['apelido'];
 	  $this->nome = $row['nome'];
 	  $this->email = $row['email'];
-	  $this->aceitouReg = $row['aceitouReg']?$row['aceitouReg']:0;
+	  $this->aceitouReg = $row['aceitouReg']?$row['aceitouReg']:1;
 	  return true;
 	} else {
 	  return false;

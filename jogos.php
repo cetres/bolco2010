@@ -94,8 +94,8 @@ Para maiores detalhes sobre um jogo como por exemplo as apostas de outros jogado
 <?php } else { ?>
 <tr>
 	<td align="center"  valign="top">
-		<a class="texto"&gt;Voc&ecirc; deve aceitar o regulamento para poder apostar!!</a><br>
-		<a class="texto">Acesse <strong>"Regulamento"</strong> leia o conte&uacute;do e em seguida acesse <strong>"Meus dados"</strong> para aceita&ccedil;&atilde;o. </a><br>
+		<span class="texto"&gt;Voc&ecirc; deve aceitar o regulamento para poder apostar!!</span><br>
+		<span class="texto">Acesse <a href="regulamento.php"><strong>"Regulamento"</strong></a> leia o conte&uacute;do e aceite para poder apostar. </span><br>
 	</td>
 </tr>
 <?php } 

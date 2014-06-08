@@ -89,17 +89,16 @@ scrollbar-shadow-color:#D6D7D6}
    <tr>
    	<td width="100%" valign="top" align="left" >
 <b class="tit">Jogos e Apostas</b><br><br>
-<a class="texto">
-Em 2 de Dezembro, a FIFA anunciou oficialmente os cabe&ccedil;as de chaves e as divis&otilde;es dos potes para o sorteio. A grande surpresa foi a presen&ccedil;a da Holanda no pote dos cabe&ccedil;as de chave.
-Foi realizado em 4 de Dezembro de 2009, na Cidade do Cabo, &Aacute;frica do Sul. As 32 sele&ccedil;&otilde;es classificadas para o est&aacute;gio final da Copa do Mundo foram divididas em 8 grupos (A, B, C, D, E, F, G e H) de 4 pa&iacute;ses cada.<br>
+<span class="texto">
+A FIFA anunciou oficialmente os cabe&ccedil;as de chaves e as divis&otilde;es dos potes para o sorteio. As 32 sele&ccedil;&otilde;es classificadas para o est&aacute;gio final da Copa do Mundo foram divididas em 8 grupos (A, B, C, D, E, F, G e H) de 4 pa&iacute;ses cada.<br>
 As equipes participantes disputaram a fase de grupos da Copa no sistema de &quot;todos contra todos&quot; em turno &uacute;nico. Os crit&eacute;rios de desempate desta fase ser&atilde;o aplicados na seguinte ordem:<br>
    1. Saldo de gols/diferen&ccedil;a de gols<br>
    2. Gols feitos<br>
    3. Resultado do confronto direto entre as equipes empatadas<br>
    4. Sorteio pelo Comit&ecirc; Organizador da FIFA ou play-off (de acordo com o calend&aacute;rio)<br><br>
+</span>
 
-
-<a class="texto"><strong>Selecione o grupo e palpite!</strong>
+<span class="texto"><strong>Selecione o grupo e palpite!</strong></span>
 
 
 <br><br>

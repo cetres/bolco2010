@@ -19,9 +19,9 @@ if (Usuario::emailExiste($email)) {
 	$convite = new ConviteUsuario($email, $tipo, $idconvidador);
 	$e = new Email();
 	if ($tipo=="notorio") {
-		$e->convidarNotorio($id);
+		$e->convidarNotorio($convite->id);
 	} else {
-		$e->convidarConhecido($id, $comentario);
+		$e->convidarConhecido($convite->id, $comentario);
 	}
 	$msg = "Convite enviado com sucesso.";
 }

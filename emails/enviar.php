@@ -7,14 +7,14 @@
 
 $METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
-$PROVEDOR = 2; // 1 = gmail; 2 = webfaction
+$PROVEDOR = 1; // 1 = gmail; 2 = webfaction
 
 $TESTE_JOGO=false;
 $TESTE_EMAIL=false;
 
 if ($PROVEDOR == 1) {
 	$SMTP_SERVER="smtp.gmail.com";
-	$SMTP_USER="contato@bolco.com.br";
+	$SMTP_USER="juiz@bolco.com.br";
 	$SMTP_PASS="girafaganso";
 } else {
 	$SMTP_SERVER="smtp.webfaction.com";

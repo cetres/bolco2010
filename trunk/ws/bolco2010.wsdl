@@ -6,6 +6,13 @@
 				<documentation>BolCo - Bolao da Copa</documentation>
 			</annotation>
 			<element name="parametro"/>
+			<element name="dataInicio">
+				<complexType>
+					<sequence>
+						<element name="dataInicio" type="string" minOccurs="1" maxOccurs="1"/>
+					</sequence>
+				</complexType>
+			</element>
 			<element name="envioEmail">
 				<complexType>
 					<sequence>
@@ -42,7 +49,7 @@
 		</schema>
 	</types>
 	<message name="ObterEnvioEmailEntrada">
-		<part name="dataInicio" type="xsd:string"/>
+		<part name="body" element="xsd1:dataInicio"/>
 	</message>
 	<message name="ObterEnvioEmailSaida">
 		<part name="body" element="xsd1:envioEmail"/>

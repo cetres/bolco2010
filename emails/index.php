@@ -1,6 +1,6 @@
 <?php
 
-ini_set("soap.wsdl_cache_enabled", "1");
+ini_set("soap.wsdl_cache_enabled", "0");
 require_once("../pre.php");
 
 function ObterEnvioEmail($data) {

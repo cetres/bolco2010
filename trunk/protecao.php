@@ -582,10 +582,12 @@ SUM(IF(r.Acerto='C',1,0)) c,
 SUM(IF(r.Acerto='D',1,0)) d,
 SUM(IF(r.Acerto='E',1,0)) e,
 SUM(IF(r.Acerto='F',1,0)) f,
-sum(r.pontos) pts FROM resultados r, jogos j, usuarios u
+sum(r.pontos) pts 
+FROM usuarios u 
+left outer join resultados r on r.idusu=u.idusu 
+left outer join jogos j on r.jo_codigo = j.jo_codigo 
 WHERE
-r.idusu=u.idusu AND u.tipo not in ('Visitante','Convidado') AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' AND
-r.jo_codigo = j.jo_codigo AND
+u.tipo not in ('Visitante','Convidado') AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' AND
 j.jo_hora < (SELECT MAX(d.jo_hora) FROM jogos d WHERE d.jo_result_golp1 is not NULL)
 group by r.idusu
 order by pts desc, A desc, B desc, C desc, D desc, E desc, F desc;

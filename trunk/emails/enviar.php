@@ -62,7 +62,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
-		$mail->Hostname = 'b.ap1.com.br';
+		//$mail->Hostname = 'b.ap1.com.br';
    		$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "Juiz BolCo";
     	$mail->AddAddress($email,$apelido);

@@ -84,7 +84,7 @@
 	<binding name="envioEmailBinding" type="tns:EnvioEmailPortType">
 		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<operation name="ObterEnvioEmail">
-			<soap:operation soapAction="urn:xmethods-delayed-quotes#ObterEnvioEmail"/>
+			<soap:operation soapAction="ObterEnvioEmail"/>
 			<input>
 				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
 			</input>
@@ -96,7 +96,7 @@
 			</fault>
 		</operation>
 		<operation name="ConfirmarEnvioEmail">
-			<soap:operation soapAction="urn:xmethods-delayed-quotes#ConfirmarEnvioEmail"/>
+			<soap:operation soapAction="ConfirmarEnvioEmail"/>
 			<input>
 				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
 			</input>
@@ -111,7 +111,7 @@
 	<binding name="palpiteBinding" type="tns:PalpitePortType">
 		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
 		<operation name="ObterPalpites">
-			<soap:operation soapAction="urn:xmethods-delayed-quotes#ObterPalpites"/>
+			<soap:operation soapAction="ObterPalpites"/>
 			<input>
 				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:xmethods-delayed-quotes"/>
 			</input>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.bolco.com.br/ws/bolco/wsdl/" xmlns:xsd1="http://www.bolco.com.br/ws/bolco/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="bolco2010" targetNamespace="http://www.bolco.com.br/ws/bolco/wsdl/">
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.bolco.com.br/ws/bolco/wsdl/" xmlns:xsd1="http://www.bolco.com.br/ws/bolco/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" name="bolco2010" targetNamespace="http://www.bolco.com.br/ws/bolco/wsdl/">
 	<types>
 		<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.bolco.com.br/ws/bolco/" targetNamespace="http://www.bolco.com.br/ws/bolco/">
 			<annotation>
@@ -41,19 +41,19 @@
 			</element>
 		</schema>
 	</types>
-	<message name="ObterEnvioEmailEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<message name="ObterEnvioEmailEntrada">
 		<part name="dataInicio" type="xsd:string"/>
 	</message>
 	<message name="ObterEnvioEmailSaida">
 		<part name="body" element="xsd1:envioEmail"/>
 	</message>
-	<message name="ConfirmarEnvioEmailEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<message name="ConfirmarEnvioEmailEntrada">
 		<part name="id" type="xsd:integer"/>
 	</message>
-	<message name="ConfirmarEnvioEmailSaida" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<message name="ConfirmarEnvioEmailSaida">
 		<part name="resultado" type="xsd:integer"/>
 	</message>
-	<message name="ObterPalpiteEntrada" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<message name="ObterPalpiteEntrada">
 		<part name="jid" type="xsd:integer"/>
 	</message>
 	<message name="ObterPalpiteSaida">

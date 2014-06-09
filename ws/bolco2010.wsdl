@@ -13,7 +13,7 @@
 					</sequence>
 				</complexType>
 			</element>
-			<element name="envioEmail">
+			<element name="ObterEnvioEmailResponse">
 				<complexType>
 					<sequence>
 						<element name="id" type="integer" minOccurs="1" maxOccurs="1"/>
@@ -52,7 +52,7 @@
 		<part name="body" element="xsd1:ObterEnvioEmail"/>
 	</message>
 	<message name="ObterEnvioEmailSaida">
-		<part name="body" element="xsd1:envioEmail"/>
+		<part name="body" element="xsd1:ObterEnvioEmailResponse"/>
 	</message>
 	<message name="ConfirmarEnvioEmailEntrada">
 		<part name="id" type="xsd:integer"/>

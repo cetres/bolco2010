@@ -663,12 +663,16 @@ SUM(IF(r.Acerto='D',1,0)) d,
 SUM(IF(r.Acerto='E',1,0)) e,
 SUM(IF(r.Acerto='F',1,0)) f,
 COUNT(r.idusu) jogos,
-SUM(r.pontos) pontos FROM resultados r, jogos j, usuarios u
+SUM(r.pontos) pontos 
+FROM 
+usuarios u
+left join resultados r on r.idusu=u.idusu
+left join jogos j on r.jo_codigo = j.jo_codigo
 left join usuarios c on u.quemchamou = c.idusu and u.tipo='usuario'
 WHERE
-r.idusu=u.idusu AND u.tipo not in ('Visitante','Convidado') AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' AND
-r.jo_codigo = j.jo_codigo 
-group by r.idusu
+u.tipo not in ('Visitante','Convidado') 
+AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' 
+group by u.idusu
 order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc;
 EOL;
 

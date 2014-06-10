@@ -192,9 +192,9 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 <?php foreach ($JOG as $apelido => $valores ) { ?>
 
 <tr class="jogadas">
-	<td class="<?php echo ($valores[1]>$valores[2])?"ganha":"" ?>"><b class="texto"><?php echo $valores[1] ?></td>
-	<td class="<?php echo ($valores[1]==$valores[2])?"empata":"" ?>" colspan='3'><a href="mresultados.php?us=<?php echo $valores[0] ?>"><?php echo $apelido?></a></td>
-	<td class="<?php echo ($valores[2]>$valores[1])?"ganha":"" ?>"><b class="texto"><?php echo $valores[2] ?></td>
+	<td class="<?php echo (($valores[1]>$valores[2])?"ganha":"").($valores[1]==$valores[2])?"empata":"" ?>"><b class="texto"><?php echo $valores[1] ?></td>
+	<td colspan='3'><a href="mresultados.php?us=<?php echo $valores[0] ?>"><?php echo $apelido?></a></td>
+	<td class="<?php echo (($valores[2]>$valores[1])?"ganha":"").($valores[1]==$valores[2])?"empata":"" ?>"><b class="texto"><?php echo $valores[2] ?></td>
 </tr>
 <?php } ?>
 </table>

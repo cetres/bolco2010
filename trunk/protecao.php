@@ -673,7 +673,7 @@ WHERE
 u.tipo not in ('Visitante','Convidado') 
 AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' 
 group by u.idusu
-order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc;
+order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc,u.apelido asc;
 EOL;
 
 	$res =& $db->query($q);

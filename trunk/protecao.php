@@ -655,7 +655,7 @@ order by IF(ISNULL(pontos),1,0),pontos desc, A desc, B desc, C desc, D desc, E d
 EOL;
 */
 	$q = <<< EOL
-SELECT u.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo,
+SELECT u.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo, u.aceitouReg Reg,
 SUM(IF(r.Acerto='A',1,0)) a,
 SUM(IF(r.Acerto='B',1,0)) b,
 SUM(IF(r.Acerto='C',1,0)) c,
@@ -689,6 +689,7 @@ EOL;
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>Pos.</b></td>");
 	printf ("<td nowrap colspan='1' width='28%%'><b class='texto'>Bolcó</b></td>");
 	printf ("<td nowrap colspan='1' width='10%%'><b class='texto'>Boc-mor</b></td>");
+	printf ("<td nowrap colspan='1' width='10%%'><b class='texto'>Reg*</b></td>");
 	printf ("<td nowrap colspan='1' width='5%%'><b class='texto'>Pago</b></td>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>A</b></td>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>B</b></td>");
@@ -737,6 +738,11 @@ EOL;
 		//}
 		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"].$CARTAO_AMARELO."</a></b></td>");
 		printf ("<td><a class='texto'>".$row["chamador"]."</a></td>");
+		if (intval($row["Reg"]) > 0) {
+			printf ("<td><a class='texto'>Sim</a></td>");
+		} else {
+			printf ("<td><a class='texto' style='color:#C20000'>N&atilde;o</a></td>");
+		}
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");
 		} else {

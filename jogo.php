@@ -100,6 +100,16 @@ $jogoPos = ($idx < 63)?$ordem_jogos[$idx+1]:0;
 //$q="select jo_codigo from jogos where jo_hora > CONVERT(?,DATETIME) order by jo_hora limit 1";
 //$jogoPos =& $db->getOne($q,$r['hora']);
 
+function getIndiClass($t1, $t2) {
+  if ($t1 > $t2) {
+	  return "ganha";
+  } elseif ($t1==$t2) {
+	  return "empata";
+  }
+  return "";
+}
+
+
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
@@ -192,9 +202,9 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 <?php foreach ($JOG as $apelido => $valores ) { ?>
 
 <tr class="jogadas">
-	<td class="<?php echo (($valores[1]>$valores[2])?"ganha":"").($valores[1]==$valores[2])?"empata":"" ?>"><b class="texto"><?php echo $valores[1] ?></td>
+	<td class="<?php echo getIndiClass($valores[1],$valores[2]) ?>"><b class="texto"><?php echo $valores[1] ?></td>
 	<td colspan='3'><a href="mresultados.php?us=<?php echo $valores[0] ?>"><?php echo $apelido?></a></td>
-	<td class="<?php echo (($valores[2]>$valores[1])?"ganha":"").($valores[1]==$valores[2])?"empata":"" ?>"><b class="texto"><?php echo $valores[2] ?></td>
+	<td class="<?php echo getIndiClass($valores[2],$valores[1]) ?>"><b class="texto"><?php echo $valores[2] ?></td>
 </tr>
 <?php } ?>
 </table>

@@ -8,6 +8,7 @@ class Usuario {
   public $nome;
   public $email;
   public $telefone;
+  public $aceitouReg;
   
   protected function criarSenha() {
       return rand(1000, 9999);
@@ -32,7 +33,10 @@ class Usuario {
 	  $this->apelido = $row['apelido'];
 	  $this->nome = $row['nome'];
 	  $this->email = $row['email'];
-	  $this->aceitouReg = intval($row['aceitouReg']);
+	  $this->aceitouReg = intval($row['aceitoureg']);
+          if (!isset($row['aceitoureg'])) {
+              error_log(print_r($row,true));
+          }
 	  return true;
 	} else {
 	  return false;

@@ -671,7 +671,7 @@ left join jogos j on r.jo_codigo = j.jo_codigo
 left join usuarios c on u.quemchamou = c.idusu and u.tipo='usuario'
 WHERE
 u.tipo not in ('Visitante','Convidado')
-AND u.aceitouReg = 0 AND u.apelido <> ''
+AND u.ativo = 0 AND u.apelido <> ''
 group by u.idusu
 order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc,u.apelido asc;
 EOL;

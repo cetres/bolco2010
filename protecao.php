@@ -874,7 +874,7 @@ function mresultados($g) {
 			$posAnt=$posNova;
 			$pos=$posNova;
 		}
-		printf ("<td height='20' valign='middle'><a class='texto'>".$pos."</a></td>");
+
 		printf ("<td height='20' valign='middle'><a class='texto'>".$vari."</a></td>");
 
 	$i++;

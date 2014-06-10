@@ -655,7 +655,7 @@ order by IF(ISNULL(pontos),1,0),pontos desc, A desc, B desc, C desc, D desc, E d
 EOL;
 */
 	$q = <<< EOL
-SELECT u.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo, u.aceitouReg Reg,
+SELECT u.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo, u.tipo tipo,
 SUM(IF(r.Acerto='A',1,0)) a,
 SUM(IF(r.Acerto='B',1,0)) b,
 SUM(IF(r.Acerto='C',1,0)) c,
@@ -671,7 +671,7 @@ left join jogos j on r.jo_codigo = j.jo_codigo
 left join usuarios c on u.quemchamou = c.idusu and u.tipo='usuario'
 WHERE
 u.tipo not in ('Visitante','Convidado')
-AND u.ativo = 0 AND u.apelido <> ''
+AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> ''
 group by u.idusu
 order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc,u.apelido asc;
 EOL;
@@ -684,7 +684,7 @@ EOL;
 	$i = 0;
 	//$msg = $ultimoJogo."<br>";
 	printf ("<table  class='grupos'  width='95%%'>");
-	printf ("<thead><tr><td colspan='14'><b class='texto'>Classifica&ccedil;&atilde;o Geral</b></td></tr>");
+	printf ("<thead><tr><td colspan='13'><b class='texto'>Classifica&ccedil;&atilde;o Geral</b></td></tr>");
 	printf ("<tr>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>Pos.</b></td>");
 	printf ("<td nowrap colspan='1' width='28%%'><b class='texto'>Bolcó</b></td>");
@@ -738,10 +738,6 @@ EOL;
 		//}
 		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"].$CARTAO_AMARELO."</a></b></td>");
 		printf ("<td><a class='texto'>".$row["chamador"]."</a></td>");
-		
-
-			printf ("<td><a class='texto' style='color:#C20000'>".$row["Reg"]."N&atilde;o</a></td>");
-	
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");
 		} else {

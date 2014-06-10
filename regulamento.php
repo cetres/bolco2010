@@ -76,60 +76,60 @@ scrollbar-shadow-color:#D6D7D6}
 <thead>
 <tr>
 <td></td>
-	<td>Fase de Grupos</td>
-	<td>Oitavas-de-Final</td>
-	<td>Quartas-de-Final</td>
-	<td>Semi-Final</td>
-	<td>Final e 3º Lugar</td>
+	<td><b class="texto">Fase de Grupos</td>
+	<td><b class="texto">Oitavas-de-Final</td>
+	<td><b class="texto">Quartas-de-Final</td>
+	<td><b class="texto">Semi-Final</td>
+	<td><b class="texto">Final e 3º Lugar</td>
 </tr>
 </thead>
 <tr>
 	<td>Placar Correto</td>
-	<td>12</td>
-	<td>15</td>
-	<td>18</td>
-	<td>20</td>
-	<td>25</td>
+	<td><b class="texto">12</td>
+	<td><b class="texto">15</td>
+	<td><b class="texto">18</td>
+	<td><b class="texto">20</td>
+	<td><b class="texto">25</td>
 </tr>
 <tr>
 	<td>Vit&oacute;ria simples</td>
-	<td>9</td>
-	<td>10</td>
-	<td>12</td>
-	<td>15</td>
-	<td>18</td>
+	<td><b class="texto">9</td>
+	<td><b class="texto">10</td>
+	<td><b class="texto">12</td>
+	<td><b class="texto">15</td>
+	<td><b class="texto">18</td>
 </tr>
 <tr>
 	<td>Empate incerto</td>
-	<td>8</td>
-	<td>9</td>
-	<td>10</td>
-	<td>13</td>
-	<td>16</td>
+	<td><b class="texto">8</td>
+	<td><b class="texto">9</td>
+	<td><b class="texto">10</td>
+	<td><b class="texto">13</td>
+	<td><b class="texto">16</td>
 </tr>
 <tr>
 	<td>Derrota simples</td>
-	<td>7</td>
-	<td>8</td>
-	<td>9</td>
-	<td>12</td>
-	<td>15</td>
+	<td><b class="texto">7</td>
+	<td><b class="texto">8</td>
+	<td><b class="texto">9</td>
+	<td><b class="texto">12</td>
+	<td><b class="texto">15</td>
 </tr>
 <tr>
 	<td>Saldo de gols</td>
-	<td>5</td>
-	<td>6</td>
-	<td>7</td>
-	<td>9</td>
-	<td>12</td>
+	<td><b class="texto">5</td>
+	<td><b class="texto">6</td>
+	<td><b class="texto">7</td>
+	<td><b class="texto">9</td>
+	<td><b class="texto">12</td>
 </tr>
 <tr>
 	<td>Indicativo do vencedor</td>
-	<td>3</td>
-	<td>4</td>
-	<td>5</td>
-	<td>7</td>
-	<td>9</td>
+	<td><b class="texto">3</td>
+	<td><b class="texto">4</td>
+	<td><b class="texto">5</td>
+	<td><b class="texto">7</td>
+	<td><b class="texto">9</td>
 </tr>
 </table></div>
 <br><a class="texto">Na <b>Segunda Fase</b> o resultado dos jogos ao término dos 90 minutos será considerado para efeito de pontuação, o resultado da prorrogação e da disputa de penaltis não será considerado. </a><br><br>

@@ -689,7 +689,6 @@ EOL;
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>Pos.</b></td>");
 	printf ("<td nowrap colspan='1' width='28%%'><b class='texto'>Bolcó</b></td>");
 	printf ("<td nowrap colspan='1' width='10%%'><b class='texto'>Boc-mor</b></td>");
-	printf ("<td nowrap colspan='1' width='10%%'><b class='texto'>Reg*</b></td>");
 	printf ("<td nowrap colspan='1' width='5%%'><b class='texto'>Pago</b></td>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>A</b></td>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>B</b></td>");

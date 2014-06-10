@@ -7,7 +7,7 @@ $TESTE_JOGO=false;
 
 function ObterPalpites($jid) {
 	global $db;
-	error_log("Iniciando pesquisa de palpites - " . $jid);
+	//error_log("Iniciando pesquisa de palpites - " . $jid);
 	$TEMPLATE='envioJogo';
 	$q = <<< EOL
 SELECT j.jo_codigo jid, p1.nome pn1, p2.nome pn2, j.jo_hora hora, j.jo_fase fase
@@ -15,14 +15,15 @@ FROM jogos j
   LEFT JOIN paises p1 ON p1.idpaises = j.jo_time1 
   LEFT JOIN paises p2 ON p2.idpaises = j.jo_time2
   LEFT JOIN enviarEmail e ON j.jo_codigo = e.ee_usuario AND e.ee_template = ?
-WHERE e.ee_id is NULL AND 
-SUBDATE(jo_hora, INTERVAL 5 minute) < CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')
+WHERE e.ee_id is NULL
+
 EOL;
     if (intval($jid) > 0) {
 		$q.="AND j.jo_codigo=?";
-		$res =& $db->query($q,array($TEMPLATE,intval($jid)));
+		$res =& $db->query($q,array($TEMPLATE, intval($jid)));
 	} else {
-		$res =& $db->query($q,$TEMPLATE);
+		$q.="AND SUBDATE(jo_hora, INTERVAL 5 minute) < CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')";
+		$res =& $db->query($q, $TEMPLATE);
 	}
     
     if (PEAR::isError($res)) {

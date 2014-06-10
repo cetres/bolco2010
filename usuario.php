@@ -46,7 +46,7 @@ class Usuario {
 			error_log($this->db->getMessage()." / ".$this->db->getDebugInfo());
   	    	die($this->db->getMessage());
 	 	} 
-		$_SESSION["Aceitou"] = 0;
+		$_SESSION["Aceitou"] = "0";
   }
 
   public function alterar($apelido,$nome,$telefone,$senha){

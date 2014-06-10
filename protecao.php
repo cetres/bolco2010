@@ -655,7 +655,7 @@ order by IF(ISNULL(pontos),1,0),pontos desc, A desc, B desc, C desc, D desc, E d
 EOL;
 */
 	$q = <<< EOL
-SELECT r.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo,
+SELECT u.idusu, u.apelido apelido, u.quemchamou idchamador, c.apelido chamador, u.pago pago, u.tipo tipo,
 SUM(IF(r.Acerto='A',1,0)) a,
 SUM(IF(r.Acerto='B',1,0)) b,
 SUM(IF(r.Acerto='C',1,0)) c,

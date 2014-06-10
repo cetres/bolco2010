@@ -50,8 +50,8 @@ scrollbar-shadow-color:#D6D7D6}
 <tr>
 	<td align="left"  width="750"  valign="top">
 <span class="texto">
-<b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BOLCÓ. Maiores informa&ccedil;&otilde;es veja o regulamento.</b><br><br>
-Legenda da Tabela:
+<b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BolC&oacute;. Maiores informa&ccedil;&otilde;es veja o regulamento.</b><br><br>
+<span class="texto"><b>Legenda da Tabela:</b></span>
 <li>A - Placar Correto; </li>
 <li>B - Acerto em empate com n&uacute;mero de gols incorreto; </li>
 <li>C - Indica&ccedil;&atilde;o correta do vencedor e acerto do n&uacute;mero de gols do vencedor; </li>
@@ -74,8 +74,6 @@ Legenda da Tabela:
  </tr>
     <!--<a class="verm">&sup1; - A Organização do Bolco incentiva e agradece todas as participações construtivas. </b>-->
 
-	</td>
-</tr>
 <tr>
 	<td align="left"  valign="top">
 		<table width="100%">

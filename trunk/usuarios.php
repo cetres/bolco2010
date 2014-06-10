@@ -53,11 +53,11 @@ while ($res->fetchInto($row,DB_FETCHMODE_ASSOC)) {
 	echo "<tr>\n";
 	echo " <td><a href='admin/cadastro.php?idusu=".$row["idusu"]."'>".$row["idusu"]."</a></td>\n";
 	echo " <td>".$tipo."</td>\n";
-	echo " <td>".htmlentities($row["apelido"])."</td>\n";
-	echo " <td>".htmlentities($row["nome"])."</td>\n";
+	echo " <td>".htmlentities(utf8_encode($row["apelido"]))."</td>\n";
+	echo " <td>".htmlentities(utf8_encode($row["nome"]))."</td>\n";
 	echo " <td style='color:".$cor[$tipo]."'>".$row["email"]."</td>\n";
 	echo " <td>".$row["ultimoacesso"]."</td>\n";
-	echo " <td>".htmlentities($row["chamador"])."</td>\n";
+	echo " <td>".htmlentities(utf8_encode($row["chamador"]))."</td>\n";
 	echo " <td>".((intval($row["pago"])>0)?"S-".$row["recebedor"]:"N")."</td>\n";
 	echo "</tr>\n";
 }

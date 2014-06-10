@@ -52,7 +52,7 @@ function Validaform() {
 Para maiores detalhes sobre um jogo como por exemplo as apostas de outros jogadores ou a cota&ccedil;&atilde;o do favorito da partida, clique no bot&atilde;o azul referente ao jogo desejado.</p>
 
 <table width="100%" >
-<?php if ($_SESSION["Aceitou"] == "0") { ?>
+<?php if ($_SESSION["Aceitou"] == 0) { ?>
 
 				<?php if ($ng == 8) { ?>
 <form name="FormComent"  action="apostas.php?p=p" method="Post"  onSubmit="return Validaform()" >

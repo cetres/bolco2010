@@ -154,13 +154,13 @@ $acao = $_GET['acao'];
 			die('Could not query:' . mysql_error());
 		}
 		if(mysql_num_rows($rs) == 1){
-			$nome = htmlentities(mysql_result($rs,0,"nome"));
+			$nome = htmlentities(utf8_encode(mysql_result($rs,0,"nome")));
 			$Telefone = mysql_result($rs,0,"telefone");
-			$Comentario = mysql_result($rs,0,"comentario");
+			$Comentario = htmlentities(utf8_encode(mysql_result($rs,0,"comentario")));
 			$pagamento = mysql_result($rs,0,"pago");
 			$email = mysql_result($rs,0,"email");
 			$senha = mysql_result($rs,0,"senha");
-			$Apelido = htmlentities(mysql_result($rs,0,"Apelido"));
+			$Apelido = htmlentities(utf8_encode(mysql_result($rs,0,"Apelido")));
 			$Convite = mysql_result($rs,0,"Convite");
 			$tipo = mysql_result($rs,0,"tipo");
 			$ativo = mysql_result($rs,0,"ativo");

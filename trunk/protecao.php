@@ -684,7 +684,7 @@ EOL;
 	$i = 0;
 	//$msg = $ultimoJogo."<br>";
 	printf ("<table  class='grupos'  width='95%%'>");
-	printf ("<thead><tr><td colspan='13'><b class='texto'>Classifica&ccedil;&atilde;o Geral</b></td></tr>");
+	printf ("<thead><tr><td colspan='14'><b class='texto'>Classifica&ccedil;&atilde;o Geral</b></td></tr>");
 	printf ("<tr>");
 	printf ("<td nowrap colspan='1' width='4%%'><b class='texto'>Pos.</b></td>");
 	printf ("<td nowrap colspan='1' width='28%%'><b class='texto'>Bolcó</b></td>");
@@ -741,7 +741,7 @@ EOL;
 		if (intval($row["Reg"]) == 1) {
 			printf ("<td><a class='texto'>Sim</a></td>");
 		} else {
-			printf ("<td><a class='texto' style='color:#C20000'>N&atilde;o</a></td>");
+			printf ("<td><a class='texto' style='color:#C20000'>".intval($row["Reg"]."N&atilde;o</a></td>");
 		}
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");

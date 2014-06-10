@@ -70,7 +70,7 @@ scrollbar-shadow-color:#D6D7D6}
 <span class="texto">* <strong>Saldo de gols</strong>: Acerto do saldo de gols entre os dois times lembrando que o time vencedor deve coincidir</span><br>
 <span class="texto">* <strong>Indicativo do vencedor</strong>: indicação do vencedor e perdedor, com desacerto do número de gols marcados por ambos</span><br>
 
-<br><span class="texto">Em caso de empate na soma dos pontos, será nomeado vencedor o participante que tiver o maior número de acertos na seguinte ordem: placar correto, empate incerto, vitória simples, derrota simples, saldo de gols e indicativo do vencedor. Permanecendo ainda o empate o prêmio será dividido entre os dois “cagões” que conseguiram essa proeza.</span><br><br>
+<br><span class="texto">Em caso de empate na soma dos pontos, será nomeado vencedor o participante que tiver o maior número de acertos na seguinte ordem: placar correto, empate incerto, vitória simples, derrota simples, saldo de gols e indicativo do vencedor. Permanecendo ainda o empate o prêmio será dividido entre os “cagões” que conseguiram essa proeza.</span><br><br>
 <div align="center">
 <table class="Grupos" width="80%">
 <thead>

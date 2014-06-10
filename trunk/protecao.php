@@ -738,11 +738,10 @@ EOL;
 		//}
 		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"].$CARTAO_AMARELO."</a></b></td>");
 		printf ("<td><a class='texto'>".$row["chamador"]."</a></td>");
-		if ($row["Reg"] == 1) {
-			printf ("<td><a class='texto'>Sim</a></td>");
-		} else {
+		
+
 			printf ("<td><a class='texto' style='color:#C20000'>".$row["Reg"]."N&atilde;o</a></td>");
-		}
+	
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");
 		} else {

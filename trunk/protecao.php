@@ -182,7 +182,7 @@ function proximos_Jogos($ng) {
 	while ($i < $num) {
 	$j = mysql_result($rs,$i,"jo_codigo");
 	printf ("<tr>");
-		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><img src='imagens/lapis.jpg' width=16 height=16></td>");
+		printf ("<td onclick='irJogo(".$j.")' class='link_jogo' title='Detalhes do jogo'><img src='imagens/lapis.jpg' width=16 height=16></td>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
 		printf ("<td onclick='irJogo(".$j.")' class='link_jogo'><a class='texto'>".htmlentities(utf8_encode(mysql_result($rs,$i,"p1.Nome")))."</a></td>");

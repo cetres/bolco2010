@@ -43,9 +43,9 @@ function Validaform() {
    <tr>
    	<td width="100%" valign="top" align="left">
 <b class="tit">Jogos e Apostas</b><br><br> 
-<a class="texto">
+<span class="texto">
 <strong>Wikip&eacute;dia:</strong> Bol&atilde;o &eacute; uma modalidade de aposta, inoficiosa na maioria dos casos, que pode ocorrer de duas formas - numa, v&aacute;rios apostadores se juntam para adquirir uma s&eacute;rie de cart&otilde;es de apostas, aumentando assim a probabilidade de acertos, e com posterior rateamento dos pr&ecirc;mios; e a variante popular, que &eacute; a de apostar no resultado de um evento futuro, em geral esportivo como os gols de uma partida de futebol.
-</a>
+</span>
 <br><br>
 <b class="tit">Pr&oacute;ximos Jogos</b><br>
 <p class="texto">

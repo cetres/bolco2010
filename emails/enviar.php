@@ -7,7 +7,7 @@
 
 $METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
-$PROVEDOR = 1; // 1 = gmail; 2 = webfaction
+$PROVEDOR = 1; // 1 = gmail; 2 = aws; 3 = webfaction
 
 $TESTE_JOGO=false;
 $TESTE_EMAIL=false;
@@ -16,6 +16,10 @@ if ($PROVEDOR == 1) {
 	$SMTP_SERVER="smtp.gmail.com";
 	$SMTP_USER="juiz@bolco.com.br";
 	$SMTP_PASS="girafaganso";
+} else if ($PROVEDOR == 2) {
+    $SMTP_SERVER="email-smtp.us-east-1.amazonaws.com";
+    $SMTP_USER="AKIAJNNOGX7SDKTZJ3AA";
+	$SMTP_PASS="AkF2VQ8i2QofvSYTSuYLBoR4HlPl8LWrKNJnPoQGGXC3";
 } else {
 	$SMTP_SERVER="smtp.webfaction.com";
 	$SMTP_USER="cetres_bolco";
@@ -23,9 +27,6 @@ if ($PROVEDOR == 1) {
 }
 
 $LIMITE_LOTE = 50;
-
-$EMAIL_ERR = array('mikhail.eirado@florestal.gov.br','fellipepaulino@gmail.com','alexandre@iel.org.br','regiane@iel.org.br','giovanni@iel.org.br','paulohenrique@iel.org.br','dreligereiluminato@gmail.com','mmiranda18@hotmail.com','rrechia2004@yahoo.com.br','adrianacostabsb@gmail.com','hayla_silva@hotmail.com','afobasilio@gmail.com','ovidio.p.rocha@gmail.com','fernandoagnello@ig.com.br','enemae@gmail.com','rogerioof@globo.com','joelalexandre.df@gmail.com','mvborgesdf@gmail.com','igxavier@gmail.com','moyabsb@yahoo.com.br','laismaximiano@gmail.com','gustavo.sales@cidades.gov.br','wladi@terra.com.br','patricia.barbosa@iel.org.br','mafra.leonardo@gmail.com','felipe@volk.com.br','malena@cni.org.br','roberrrto@gmail.com','ricardo.facincani@gmail.com','angelarochamail@gmail.com','luanna.pinardon@gmail.com','jaem@bol.com.br','guejima@hotmail.com');
-
 
 function enviarEmail($email, $assunto, $template, $apelido, $C) {
 	global $METODO, $versao, $ERR, $TESTE_EMAIL,$SMTP_SERVER,$SMTP_USER,$SMTP_PASS;
@@ -87,7 +88,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 }
 
 function enviarEmailJogo($obj) {
-	global $METODO, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $EMAIL_ERR, $LIMITE_LOTE;
+	global $METODO, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $LIMITE_LOTE;
 	$enviado=null;
 
 	$bufferTotal= "Este e-mail é para informar os palpites dos participantes do bolão fazendo,\n";
@@ -126,7 +127,7 @@ function enviarEmailJogo($obj) {
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
-		$mail->Hostname = 'b.ap1.com.br';
+		//$mail->Hostname = 'b.ap1.com.br';
     	$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "BolCo 2014";
 		$mail->AddReplyTo('contato@bolco.com.br',"Contato BolCo");

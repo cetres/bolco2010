@@ -32,7 +32,7 @@ class Usuario {
 	  $this->apelido = $row['apelido'];
 	  $this->nome = $row['nome'];
 	  $this->email = $row['email'];
-	  $this->aceitouReg = $row['aceitouReg'];
+	  $this->aceitouReg = intval($row['aceitouReg']);
 	  return true;
 	} else {
 	  return false;

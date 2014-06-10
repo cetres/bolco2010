@@ -882,13 +882,13 @@ function Valores() {
 	global $senha_db;
 	mysql_connect($host, $login_db, $senha_db);
 	mysql_select_db($database);
-	$q = "SELECT count(*) from usuarios where pago > 0 and ativo = 0";
+	$q = "SELECT count(*) from usuarios where pago > 0 and ativo = 0 and aceitouReg = 0";
 	$rs = mysql_query($q);
 	if (!$rs) {
 	 	 die('Could not query:' . mysql_error());
 	}
 	$Total = mysql_result($rs,0,0);
-	$Total = $Total * 15;
+	$Total = $Total * 20;
 
 	printf ("<a class='texto'>At&eacute; momento foi arrecadado o total de </a><b class='texto'>R$ ".CvPV($Total)."</b><br>");
 	printf ("<a class='texto'>O primeiro colocado receber&aacute;: </a><b class='texto'>R$ ".CvPV($Total*0.6)."</b><br>");

@@ -79,17 +79,21 @@ EOL;
 		array_push($r["email"],$row[0]);
 	}
 	$res->free();
-	$q = <<< EOL
+	if (intval($jid) == 0) {
+		$q = <<< EOL
 INSERT INTO enviarEmail (ee_usuario,ee_template,ee_programado,ee_enviado) 
 VALUES (?,?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'));
 EOL;
-	$res =& $db->query($q,array($jid,$TEMPLATE));
-    if (PEAR::isError($res)) {
-		error_log($res->getMessage()." / ".$res->getDebugInfo());
-	  	die($res->getMessage());
-    }
-	error_log("Envio de palpite enviando jogo");
-    return $r;
+		$res =& $db->query($q,array($jid,$TEMPLATE));
+		if (PEAR::isError($res)) {
+			error_log($res->getMessage()." / ".$res->getDebugInfo());
+			die($res->getMessage());
+		}
+		error_log("Envio de palpite enviando jogo");
+	} else {
+		error_log("Teste do jogo " . $jid);
+	}
+	return $r;
 }
 
 $server = new SoapServer("../ws/bolco2010.wsdl");

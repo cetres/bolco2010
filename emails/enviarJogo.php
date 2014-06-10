@@ -1,6 +1,6 @@
 <?php
 /*
- Codigo fonte parece ser de 2006 uma vez que em 2010 nao foi utilizada criptografia
+ Codigo fonte parece ser de 2006 uma vez que em 2010 nao foi utilizada a funcao enviar com soap
 
 
 */

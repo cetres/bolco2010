@@ -58,16 +58,15 @@ Legenda da Tabela:
 <li>D - Indica&ccedil;&atilde;o correta do vencedor e acerto do n&uacute;mero de gols do perdedor; </li>
 <li>E - Indica&ccedil;&atilde;o correta do vencedor e acerto do saldo de gols do jogo; e </li>
 <li>F - Indica&ccedil;&atilde;o correta do vencedor. </li>
-<br>
 </span>
-<br><br>
 	</td>
 </tr>
 
 <tr>
 	<td align="left"  valign="top" width="200px">
+    <span class="texto"><b>Cores</b></span>
     <table class="tabLegenda">
-    <tr class="meuResultado"><td class="texto">Eu (ou você...)</td></tr>
+    <tr class="meuResultado"><td class="texto">Eu</td></tr>
     <tr class="amigoResultado"><td class="texto">Meu Amigo</td></tr>
     <tr class="notorio"><td class="texto">Notório</td></tr>
     </table>

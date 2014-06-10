@@ -225,6 +225,8 @@ border-bottom:1px gray dotted;
 }
 
 table.tabLegenda tr td {
+	font-family: Verdana;
+	font-size: 10px;
 	font-weight: bold;
 	padding: 5px;
 }

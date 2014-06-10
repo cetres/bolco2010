@@ -166,6 +166,6 @@ if (isset($usuario) && $usuario->aceitouReg==1) {
    </table>
 
 </div>
-<?php include("analytics.inc"); ?>
+<?php include("analytics.inc"); ?><!--<?php echo $_SESSION["Aceitou"]."/".$usuario->aceitouReg  ?> -->
    </body>
 </html>

@@ -17,12 +17,14 @@ if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
 	$options = getopt("j:p:m:t");
 	if (isset($options["t"])) {
 		$TESTE_JOGO = true;
+		print("Iniciando modo teste de jogo");
 	}
 	if (isset($options["e"])) {
 		$TESTE_EMAIL = true;
 	}
 	if (isset($options["j"])) {
 		$JOGO = $options["j"];
+		print("Jogo selecionado: " . $JOGO);
 	}
 	if (isset($options["p"])) {
 		$PROVEDOR = $options["p"];

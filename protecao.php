@@ -741,7 +741,7 @@ EOL;
 		if (intval($row["Reg"]) == 1) {
 			printf ("<td><a class='texto'>Sim</a></td>");
 		} else {
-			printf ("<td><a class='texto' style='color:#C20000'>".intval($row["Reg"]."N&atilde;o</a></td>");
+			printf ("<td><a class='texto' style='color:#C20000'>".intval($row["Reg"])."N&atilde;o</a></td>");
 		}
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");

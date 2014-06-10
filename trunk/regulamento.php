@@ -136,7 +136,7 @@ scrollbar-shadow-color:#D6D7D6}
 
 <br><b class="texto">Da Premiação</b><br><br>
 
-<span class="texto">A premiação ficará condicionada ao pagamento não obrigatório da taxa de R$ 20,00 a ser feita em uma conta corrente do Banco do Brasil até as 23:59h do dia 11/06/2014. O procedimento de pagamento será devidamente explicado em um local específico do site do Bolcó (www.bolco.com.br).</span><br><br>
+<span class="texto">A premiação ficará condicionada ao pagamento não obrigatório da taxa de R$ 20,00 a ser feita em uma conta corrente do Banco do Brasil até as 23:59h do dia 16/06/2014. O procedimento de pagamento será devidamente explicado em um local específico do site do Bolcó (www.bolco.com.br).</span><br><br>
 <span class="texto">Lembrando que toda a renda arrecadada será utilizada somente para o pagamento da premiação. Toda e qualquer tipo de doação aos criadores e administradores do site será muito bem-vinda.</span><br><br>
 <span class="texto">Caso o vencedor não tenha realizado o pagamento da taxa, a premiação será destinada ao apostador pagante melhor colocado. A premiação será dividida da seguinte forma:</span><br><br>
 

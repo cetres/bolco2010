@@ -811,7 +811,7 @@ function mresultados($g) {
 	$horario = mktime(); //date("Y-m-d H:i:s");
 	$i = 0;
 	printf ("<table  class='grupos'  width='95%%'>");
-		printf ("<thead><tr><td colspan='14'><b class='texto'>Resultados Inidividuais - Usu&aacute;rio: $Apelido </b></td></tr>");
+		printf ("<thead><tr><td colspan='16'><b class='texto'>Resultados Inidividuais - Usu&aacute;rio: $Apelido </b></td></tr>");
 		printf ("<tr>");
 		printf ("<td colspan='1'><b class='texto'>Data</b></td>");
 		printf ("<td colspan='5'><b class='texto'>Jogo</b></td>");

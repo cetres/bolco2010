@@ -772,6 +772,7 @@ printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' h
 				}	else {
 					printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>");
 				}
+
 			}
     		}
 
@@ -877,7 +878,6 @@ function mresultados($g) {
 		printf ("<td height='20' valign='middle'><a class='texto'>".$vari."</a></td>");
 
 	$i++;
-	printf ("</tr>");
 	}
 	printf ("</table>");
 }

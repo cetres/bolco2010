@@ -50,7 +50,7 @@ Legenda da Tabela:
 <li>D - Indica&ccedil;&atilde;o correta do vencedor e acerto do n&uacute;mero de gols do perdedor; </li>
 <li>E - Indica&ccedil;&atilde;o correta do vencedor e acerto do saldo de gols do jogo; e </li>
 <li>F - Indica&ccedil;&atilde;o correta do vencedor. </li>
-<b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BOLCÓ. Maiores informa&ccedil;&otilde;es veja o regulamento.<b/>
+<br><b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BOLCÓ. Maiores informa&ccedil;&otilde;es veja o regulamento.<b/>
 </font>
 <br><br>
 	</td>

@@ -148,7 +148,7 @@ scrollbar-shadow-color:#D6D7D6}
 <a class="texto">Esta é uma competição de cunho psicosocioesportivo e voltada à integração social da família “Medeiros de Oliveira” e seus amigos.</a><br><br>
 </td></tr><tr><td align="center">
 <?php
-if (isset($usuario) && $usuario->aceitouReg==1) {
+if (isset($usuario) && $usuario->aceitouReg=="1") {
 	echo "<form method='get'>";
 	echo "<input type='hidden' name='aceita' value='1' />";
 	echo "<input type='submit' value='Aceitar Regulamento'/>";

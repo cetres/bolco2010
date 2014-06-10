@@ -7,6 +7,7 @@ $TESTE_JOGO=false;
 
 function ObterPalpites($jid) {
 	global $db;
+	error_log("Iniciando pesquisa de palpites - " . $jid);
 	$TEMPLATE='envioJogo';
 	$q = <<< EOL
 SELECT j.jo_codigo jid, p1.nome pn1, p2.nome pn2, j.jo_hora hora, j.jo_fase fase

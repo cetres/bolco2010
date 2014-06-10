@@ -17,14 +17,14 @@ if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
 	$options = getopt("j:p:m:t");
 	if (isset($options["t"])) {
 		$TESTE_JOGO = true;
-		print("Iniciando modo teste de jogo");
+		print("Iniciando modo teste de jogo\n");
 	}
 	if (isset($options["e"])) {
 		$TESTE_EMAIL = true;
 	}
 	if (isset($options["j"])) {
 		$JOGO = $options["j"];
-		print("Jogo selecionado: " . $JOGO);
+		print("Jogo selecionado: " . $JOGO . "\n");
 	}
 	if (isset($options["p"])) {
 		$PROVEDOR = $options["p"];
@@ -244,6 +244,10 @@ if ($TIPO=="soap") {
 		}
 	}
 	$obj = $client->ObterPalpites($JOGO);
+	if ($TESTE_JOGO and $TESTE_EMAIL) {
+		print("Objeto obtido. Len: " . count($obj));
+		print_r($obj);
+	}
 	if (isset($obj)) {
 		syslog(LOG_INFO,"Envio Palpites - Preparando para enviar emails");
 		$enviado = enviarEmailJogo($obj);

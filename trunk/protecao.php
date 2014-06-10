@@ -67,7 +67,7 @@ function verifica_usuario($email, $senha) {
 			$_SESSION["senha"] = $senha;
 			$_SESSION["email"] = $email;
 			$_SESSION["id"] =  mysql_result($rs,0,"idusu");
-			$_SESSION["Aceitou"] =  mysql_result($rs,0,"aceitouReg");
+			$_SESSION["Aceitou"] =  intval(mysql_result($rs,0,"aceitouReg"));
 			$db->query("UPDATE usuarios SET ultimoAcesso=CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00') WHERE idusu=?",$_SESSION["id"]);
 		}
 	}

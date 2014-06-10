@@ -17,12 +17,12 @@ $contrato  = "";
 $palpite = "";
 if (isset($_POST["Apelido"])) {
 	$Apelido = ($_POST["Apelido"]);
-	$nome = (isset($_POST["nome"]))?strip_tags($_POST["nome"]):"";
-	$Telefone = (isset($_POST["Telefone"]))?strip_tags($_POST["Telefone"]):"";
-	$Comentario = (isset($_POST["Comentario"]))?strip_tags($_POST["Comentario"]):"";
-	$senha = (isset($_POST["senha"]))?strip_tags($_POST["senha"]):"";
-	$palpite = (isset($_POST["palpite"]))?strip_tags($_POST["palpite"]):"";
-	$receberPalpites = (isset($_POST["receberPalpites"]))?strip_tags($_POST["receberPalpites"]):"";
+	$nome = (isset($_POST["nome"]))?mysql_real_escape_string (strip_tags($_POST["nome"])):"";
+	$Telefone = (isset($_POST["Telefone"]))?mysql_real_escape_string (strip_tags($_POST["Telefone"])):"";
+	$Comentario = (isset($_POST["Comentario"]))?mysql_real_escape_string (strip_tags($_POST["Comentario"])):"";
+	$senha = (isset($_POST["senha"]))?mysql_real_escape_string (strip_tags($_POST["senha"])):"";
+	$palpite = (isset($_POST["palpite"]))?mysql_real_escape_string (strip_tags($_POST["palpite"])):"";
+	$receberPalpites = (isset($_POST["receberPalpites"]))?mysql_real_escape_string (strip_tags($_POST["receberPalpites"]):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
 
 

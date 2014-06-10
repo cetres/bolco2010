@@ -18,6 +18,7 @@ if ($SERVIDOR==1) {
 	$dsn = 'mysql://cetres_bolco:girafaganso@localhost/cetres_bolco';
 } else if ($SERVIDOR==2) {
 	$dsn = null;
+	define('PEAR_PATH', '/usr/share/pear');
 } else {
 	$dsn = 'mysql://bolco:girafaganso@localhost/bolco';
 }

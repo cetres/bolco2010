@@ -223,3 +223,8 @@ border-bottom:1px gray dotted;
 .notorio td {
   background-color:#C6C2FE;
 }
+
+table.tabLegenda tr td {
+	font-weight: bold;
+	padding: 5px;
+}

@@ -74,6 +74,7 @@ $(document).ready(function() {
            <blockquote><strong>Amigos apostadores,</strong></blockquote>
 Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$20,00</strong> até as 23:59h do dia 11/06/2014.
 O pagamento poderá ser feito diretamento àquele notório que lhe convidou ou transferindo o valor para a conta do Banco do Brasil (Ag. 3475-4 e CC:  1887-2) do Cacá (Carlos de Oliveira Costa).
+Por favor, se optarem por fazer a transferência, enviem o comprovante para o e-mail <a href="mailto:contato@bolco.com.br?subject=Comprovante de Pagamento"> contato@bolco.com.br</a>.
 <br><br>
 Boa sorte a todos!!<br>
 Comiss&atilde;o Organizadora

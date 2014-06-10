@@ -5,12 +5,32 @@
 
 */
 
+$TESTE_JOGO=false;
+$TESTE_EMAIL=false;
+
 $METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
 $PROVEDOR = 1; // 1 = gmail; 2 = aws; 3 = webfaction
+$JOGO = 0; // 0 = obtem o ultimo jogo; n>0 = jid
 
-$TESTE_JOGO=false;
-$TESTE_EMAIL=false;
+if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
+	$options = getopt("j:p:m:t");
+	if (isset($options["t"])) {
+		$TESTE_JOGO = true;
+	}
+	if (isset($options["e"])) {
+		$TESTE_EMAIL = true;
+	}
+	if (isset($options["j"])) {
+		$JOGO = $options["j"];
+	}
+	if (isset($options["p"])) {
+		$PROVEDOR = $options["p"];
+	}
+	if (isset($options["m"])) {
+		$METODO = $options["m"];
+	}
+}
 
 if ($PROVEDOR == 1) {
 	$SMTP_SERVER="smtp.gmail.com";
@@ -170,11 +190,11 @@ function enviarEmailJogo($obj) {
 		if ($TESTE_EMAIL) {
 		    echo "TESTE: " . var_dump($mail);
 			$enviado = false;
-		} elseif(!($LIMITE_LOTE>0)) {
+		} elseif(!($LIMITE_LOTE > 0)) {
 			$enviado = $mail->Send();
 			$ERR .= $mail->ErrorInfo;
 			if ($ERR!="") {
-				syslog(LOG_ERR,"Erro no envio de emails dos jogos - ".$ERR);
+				syslog(LOG_ERR, "Erro no envio de emails dos jogos - " . $ERR);
 			}
 		}
 		unset($mail);
@@ -221,7 +241,7 @@ if ($TIPO=="soap") {
 			$obj = $client->ObterEnvioEmail("");
 		}
 	}
-	$obj = $client->ObterPalpites(0);
+	$obj = $client->ObterPalpites($JOGO);
 	if (isset($obj)) {
 		syslog(LOG_INFO,"Envio Palpites - Preparando para enviar emails");
 		$enviado = enviarEmailJogo($obj);

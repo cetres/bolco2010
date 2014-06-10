@@ -44,7 +44,7 @@ function verifica_usuario($email, $senha) {
 	$total = mysql_result($re, 0, "total");
 	mysql_close();
 	if($total != 1)  {
-		if (isset($_POST["email"])) { 
+		if (isset($_POST["email"])) {
 			echo "<script>alert('Senha incorreta!');";
 			echo "window.location = '/';";
 			echo "</script>";
@@ -52,7 +52,7 @@ function verifica_usuario($email, $senha) {
 			echo "<script>window.location = '/';</script>";
 		}
 		exit;
-	} 
+	}
 	if(!isset($_SESSION["email"]))  {
 		mysql_connect($host, $login_db, $senha_db);
 		mysql_select_db($database);
@@ -70,8 +70,8 @@ function verifica_usuario($email, $senha) {
 			$_SESSION["Aceitou"] =  mysql_result($rs,0,"aceitouReg");
 			$db->query("UPDATE usuarios SET ultimoAcesso=CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00') WHERE idusu=?",$_SESSION["id"]);
 		}
-	} 
-} 
+	}
+}
 
 //verifico se existe a sessao e ja pego os dados que nela contem
 if(isset($_SESSION["email"])) {
@@ -103,7 +103,7 @@ function menu() {
 	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
 	printf ("<td><a class='titulo' href='regulamento.php'>Regulamento</b></td>");
 	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
-	if ($tipo != "Visitante") { 
+	if ($tipo != "Visitante") {
 		printf("<td><a class='titulo' href='cadastro.php'>Meus Dados</a></td><td width='36' align='center'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
 		printf ("<td><a class='titulo' href='jogos.php?g=8'>Palpites</b></td>");
 		printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
@@ -133,7 +133,7 @@ function menu2() {
 	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
 	printf ("<td><a class='titulo' href='regulamento.php'>Regulamento</b></td>");
 	printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
-	if ($tipo != "Visitante") { 
+	if ($tipo != "Visitante") {
 		printf("<td><a class='titulo' href='cadastro.php'>Meus Dados</a></td><td width='36' align='center'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
 		printf ("<td><a class='titulo' href='jogos.php?g=8'>Palpites</b></td>");
 		printf ("<td width='26'><img src='imagens/divide.jpg' width='2' height='29' border='0' alt=''></td>");
@@ -158,7 +158,7 @@ function proximos_Jogos($ng) {
 	mysql_connect($host, $login_db, $senha_db);
 	mysql_select_db($database);
 	$q = "SELECT * FROM jogos inner join paises p1 on p1.idpaises = jo_time1 inner join estadio est on est.idestadio = jo_estadio inner join paises p2 on p2.idpaises = jo_time2 left outer join aposta on aposta.jo_codigo = jogos.jo_codigo and aposta.idusu = '$idusu' and aposta.ativa = 0 ";
-	if ($ng != 64) { 
+	if ($ng != 64) {
 		$q .= "where jo_hora > CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00') order by jo_hora, jogos.jo_codigo limit $ng";
 	} else {
 		$q .= "order by jo_hora, jogos.jo_codigo";
@@ -204,13 +204,13 @@ function proximos_Jogos($ng) {
 
 	//echo strtotime(mysql_result($rs,$i,"jo_hora")).".";
 	//echo $horario."<br>";
-	
+
 	$i++;
 	}
 	printf ("<input class='formAp' type='hidden' name='total' size='2' value='".($i-1)."'></tr>\n");
 	printf ("</table>");
 
-	
+
 }
 
 
@@ -421,42 +421,42 @@ global $database;
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(13,mysql_result($rs,13,"jo_codigo"),mysql_result($rs,13,"p11"),mysql_result($rs,13,"p22"),mysql_result($rs,13,"golp1"),mysql_result($rs,13,"golp2"),mysql_result($rs,13,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("</tr>");
 	printf ("<tr>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(4,mysql_result($rs,4,"jo_codigo"),mysql_result($rs,4,"p11"),mysql_result($rs,4,"p22"),mysql_result($rs,4,"golp1"),mysql_result($rs,4,"golp2"),mysql_result($rs,4,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(14,mysql_result($rs,14,"jo_codigo"),mysql_result($rs,14,"p11"),mysql_result($rs,14,"p22"),mysql_result($rs,14,"golp1"),mysql_result($rs,14,"golp2"),mysql_result($rs,14,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(16,mysql_result($rs,6,"jo_codigo"),mysql_result($rs,6,"p11"),mysql_result($rs,6,"p22"),mysql_result($rs,6,"golp1"),mysql_result($rs,6,"golp2"),mysql_result($rs,6,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("</tr>");
 	printf ("<tr>");
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(8,mysql_result($rs,8,"jo_codigo"),mysql_result($rs,8,"p11"),mysql_result($rs,8,"p22"),mysql_result($rs,8,"golp1"),mysql_result($rs,8,"golp2"),mysql_result($rs,8,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(11,mysql_result($rs,11,"jo_codigo"),mysql_result($rs,11,"p11"),mysql_result($rs,11,"p22"),mysql_result($rs,11,"golp1"),mysql_result($rs,11,"golp2"),mysql_result($rs,11,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("</tr>");
 	printf ("<tr>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(5,mysql_result($rs,5,"jo_codigo"),mysql_result($rs,5,"p11"),mysql_result($rs,5,"p22"),mysql_result($rs,5,"golp1"),mysql_result($rs,5,"golp2"),mysql_result($rs,5,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
 	printf ("<td></td>");
@@ -464,7 +464,7 @@ global $database;
 	printf ("<td></td>");
 	printf ("<td width='14%%'>");
 	jogo_fase2(7,mysql_result($rs,7,"jo_codigo"),mysql_result($rs,7,"p11"),mysql_result($rs,7,"p22"),mysql_result($rs,7,"golp1"),mysql_result($rs,7,"golp2"),mysql_result($rs,7,"jo_hora"));
-	printf ("</td>");	
+	printf ("</td>");
 	printf ("</tr>");
 	printf ("<input class='formAp' type='hidden' name='total' size='2' value='9'></tr>\n");
 	printf ("</table>");
@@ -483,13 +483,13 @@ function gravaaposta(){
 	$idusu = $_SESSION["id"];
 	foreach($_POST as $campo => $valor){
 	if (($campo{0} == "p") && ($campo{1} == "1")) {
-		$p1 = $valor; 
+		$p1 = $valor;
 	}
 	if (($campo{0} == "p") && ($campo{1} == "2")) {
-		$p2 = $valor; 
+		$p2 = $valor;
 	}
 	if ($campo{0} == "j") {
-	
+
 	$horario = mktime();
 	$horario = $horario + 300;
 
@@ -508,13 +508,13 @@ function gravaaposta(){
 		$rs = mysql_query($q);
 		if (!$rs) {
 			die('Could not query:' . mysql_error());
-		}	
+		}
 		if(mysql_num_rows($rs) >= 1){
 			if (($p1 != mysql_result($rs,0,"golp1")) || ($p2 != mysql_result($rs,0,"golp2"))) {
 				$rs2 = mysql_query("update aposta set ativa = 1, dataExclusao = CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'), ipExclusao = '$ip' where jo_codigo = '$j' and idusu = '$idusu' and ativa = 0");
 				if (!$rs2) {
 		  			die('Could not query:' . mysql_error());
-				}	
+				}
 				$rs3 = mysql_query("insert into aposta (jo_codigo,idusu,golp1,golp2,ativa,dataCriacao,ipcriacao) values ('$j','$idusu','$p1','$p2',0,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),'$ip')");
 				if (!$rs3) {
 					die('Could not query:' . mysql_error());
@@ -525,7 +525,7 @@ function gravaaposta(){
 				$rs4 = mysql_query("insert into aposta (jo_codigo,idusu,golp1,golp2,ativa,dataCriacao,ipcriacao) values ('$j','$idusu','$p1','$p2',0,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),'$ip')");
 				if (!$rs4) {
 			   		die('Could not query:' . mysql_error());
-				}	
+				}
 				}
 			}
 		}
@@ -568,7 +568,7 @@ function resultados() {
 	//echo mysql_result($rs,0,"jo_codigo");
 	//echo mysql_num_rows($rs);
 if(mysql_num_rows($rs) >= 1){
-	$ultimoJogo = mysql_result($rs,0,"jo_codigo");	
+	$ultimoJogo = mysql_result($rs,0,"jo_codigo");
 } else {
 	$ultimoJogo = 0;
 }
@@ -619,7 +619,7 @@ EOL;
 	$pontuacaoAnterior="";
 	while ($c < $numA) {
 		$pontuacao=mysql_result($rs,$c,"a").mysql_result($rs,$c,"b").mysql_result($rs,$c,"c").mysql_result($rs,$c,"d").mysql_result($rs,$c,"e").mysql_result($rs,$c,"f");
-		$usuarios[$c] = mysql_result($rs,$c,"idusu");	
+		$usuarios[$c] = mysql_result($rs,$c,"idusu");
 		$pos++;
 		if ($pontuacao!=$pontuacaoAnterior) {
 			$posAnt=$pos;
@@ -634,7 +634,7 @@ EOL;
 	}
 
 	$USUSEM="select distinct(u.idusu),u.apelido, u.email from usuarios u left join aposta a on u.idusu=a.idusu and jo_codigo=49 where ativo=0 and apelido <>'' and idaposta is null and apelido <> 'visitante';";
-	
+
     global $db;
 	$idusu =  $_SESSION["id"];
 /*
@@ -663,15 +663,15 @@ SUM(IF(r.Acerto='D',1,0)) d,
 SUM(IF(r.Acerto='E',1,0)) e,
 SUM(IF(r.Acerto='F',1,0)) f,
 COUNT(r.idusu) jogos,
-SUM(r.pontos) pontos 
-FROM 
+SUM(r.pontos) pontos
+FROM
 usuarios u
 left join resultados r on r.idusu=u.idusu
 left join jogos j on r.jo_codigo = j.jo_codigo
 left join usuarios c on u.quemchamou = c.idusu and u.tipo='usuario'
 WHERE
-u.tipo not in ('Visitante','Convidado') 
-AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> '' 
+u.tipo not in ('Visitante','Convidado')
+AND u.aceitouReg = 0 AND u.ativo = 0 AND u.apelido <> ''
 group by u.idusu
 order by pontos desc, A desc, B desc, C desc, D desc, E desc, F desc,u.apelido asc;
 EOL;
@@ -727,14 +727,14 @@ EOL;
 			if ($row["idchamador"]==$idChamador) {
 				$classeLinha = "amigoResultado";
 			}
-			
+
 		}
 		printf ("<tr class='".$classeLinha."'>");
 		printf ("<td class='texto'>".$posicaoExibir."</td>");
 		$CARTAO_AMARELO='';
 		//if ($row["idusu"] == "206") {
 		//	$CARTAO_AMARELO = " &nbsp; <img src='imagens/cartaoAmarelo.png' border='0' width=6 height=10 alt='C.A.' title='Cartao Amarelo' style='display:inline'>";
-		//} 
+		//}
 		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"].$CARTAO_AMARELO."</a></b></td>");
 		printf ("<td><a class='texto'>".$row["chamador"]."</a></td>");
 		if (intval($row["pago"]) > 0) {
@@ -745,7 +745,7 @@ EOL;
 		if ($row["jogos"] > 0) {
 			$Media = ($row["pontos"] / $row["jogos"]);
 		} else {
-			$Media = "";	
+			$Media = "";
 		}
 		printf ("<td><a class='texto'>".$row["a"]."</a></td>");
 		printf ("<td><a class='texto'>".$row["b"]."</a></td>");
@@ -785,7 +785,7 @@ function mresultados($g) {
 	global $senha_db;
 	if ($g != 0) {
 		$idusu = $g;
-	} else { 
+	} else {
 		$idusu =  $_SESSION["id"];
 	}
 	mysql_connect($host, $login_db, $senha_db);
@@ -869,9 +869,10 @@ function mresultados($g) {
 		}
 		printf ("<td height='20' valign='middle'><a class='texto'>".$pos."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".$vari."</a></td>");
-		
+
 	$i++;
 	}
+	printf ("</tr>");
 	printf ("</table>");
 }
 
@@ -911,7 +912,7 @@ function CvPV($valor) {
    case '.': $saida=$saida.',';$lpt=$ct;break;
    default : $saida=$saida.$alg;
    }
-   //echo "(Debug<3>:".$saida.")<BR>";   
+   //echo "(Debug<3>:".$saida.")<BR>";
   }
   if ($lpt>3) {
     $saida=substr($saida,0,$lpt-3).".".substr($saida,$lpt-3,strlen($valor));

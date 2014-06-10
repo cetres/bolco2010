@@ -23,6 +23,7 @@ if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
 		$TESTE_EMAIL = true;
 	}
 	if (isset($options["j"])) {
+		$TESTE_JOGO = true;      // Trava de seguranca para nao ocorrer falhas
 		$JOGO = $options["j"];
 		print("Jogo selecionado: " . $JOGO . "\n");
 	}

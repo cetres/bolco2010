@@ -197,7 +197,10 @@ table.fase2 td a {
    text-align: center;
 }
 #panorama .ganha {
-   background-color: #5A8BCE;
+   background-color: #3CF;
+}
+#panorama .empata {
+   background-color: #FC6;
 }
 #panorama input[type="button"] {
    color: #C20000;

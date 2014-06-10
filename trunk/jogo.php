@@ -167,7 +167,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 <table width="750" class="grupos">
 <thead>
 <tr >
-	<td colspan='5'><b class="tit">BOLSA DE APOSTAS <span style="font-size:9px;font-style:italic">(&Uacute;ltima atualiza&ccedil;&atilde;o: <?php echo substr(arrumaData($r['atualizacao']),0,10) ?>)</span></td>
+	<td colspan='5'><b class="tit">BOLSA DE APOSTAS <a href="http://www.bwin.com/">BWIN</a> <span style="font-size:9px;font-style:italic">(&Uacute;ltima atualiza&ccedil;&atilde;o: <?php echo substr(arrumaData($r['atualizacao']),0,10) ?>)</span></td>
 </tr>
 </thead>
 <tr class="ajuda">
@@ -193,7 +193,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 
 <tr class="jogadas">
 	<td class="<?php echo ($valores[1]>$valores[2])?"ganha":"" ?>"><b class="texto"><?php echo $valores[1] ?></td>
-	<td colspan='3'><a href="mresultados.php?us=<?php echo $valores[0] ?>"><?php echo $apelido?></a></td>
+	<td class="<?php echo ($valores[1]==$valores[2])?"empata":"" ?>" colspan='3'><a href="mresultados.php?us=<?php echo $valores[0] ?>"><?php echo $apelido?></a></td>
 	<td class="<?php echo ($valores[2]>$valores[1])?"ganha":"" ?>"><b class="texto"><?php echo $valores[2] ?></td>
 </tr>
 <?php } ?>

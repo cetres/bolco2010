@@ -84,7 +84,7 @@ scrollbar-shadow-color:#D6D7D6}
 </tr>
 </thead>
 <tr>
-	<td>Placar Correto</td>
+	<td><b class="texto">Placar Correto</td>
 	<td><b class="texto">12</td>
 	<td><b class="texto">15</td>
 	<td><b class="texto">18</td>
@@ -92,7 +92,7 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><b class="texto">25</td>
 </tr>
 <tr>
-	<td>Vit&oacute;ria simples</td>
+	<td><b class="texto">Vit&oacute;ria simples</td>
 	<td><b class="texto">9</td>
 	<td><b class="texto">10</td>
 	<td><b class="texto">12</td>
@@ -100,7 +100,7 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><b class="texto">18</td>
 </tr>
 <tr>
-	<td>Empate incerto</td>
+	<td><b class="texto">Empate incerto</td>
 	<td><b class="texto">8</td>
 	<td><b class="texto">9</td>
 	<td><b class="texto">10</td>
@@ -108,7 +108,7 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><b class="texto">16</td>
 </tr>
 <tr>
-	<td>Derrota simples</td>
+	<td><b class="texto">Derrota simples</td>
 	<td><b class="texto">7</td>
 	<td><b class="texto">8</td>
 	<td><b class="texto">9</td>
@@ -116,7 +116,7 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><b class="texto">15</td>
 </tr>
 <tr>
-	<td>Saldo de gols</td>
+	<td><b class="texto">Saldo de gols</td>
 	<td><b class="texto">5</td>
 	<td><b class="texto">6</td>
 	<td><b class="texto">7</td>
@@ -124,7 +124,7 @@ scrollbar-shadow-color:#D6D7D6}
 	<td><b class="texto">12</td>
 </tr>
 <tr>
-	<td>Indicativo do vencedor</td>
+	<td><b class="texto">Indicativo do vencedor</td>
 	<td><b class="texto">3</td>
 	<td><b class="texto">4</td>
 	<td><b class="texto">5</td>

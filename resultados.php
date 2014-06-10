@@ -28,8 +28,6 @@ scrollbar-shadow-color:#D6D7D6}
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-
-
 <?php menu();?>
 
    </td></tr>
@@ -40,9 +38,19 @@ scrollbar-shadow-color:#D6D7D6}
    	<td width="100%" valign="top" align="left" >
 <b class="tit">Pontua&ccedil;&atilde;o e resultados dos Jogos</b><br><br>
 <table width="100%" >
+
+<!-- Por que diabo voce esta vendo esse codigo??? -->
+
+<tr>
+	<td align="center"  valign="top">
+		<?php 	resultados(); ?>
+	</td>
+</tr>
+
 <tr>
 	<td align="left"  width="750"  valign="top">
-<font class="texto">
+<span class="texto">
+<b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BOLCÓ. Maiores informa&ccedil;&otilde;es veja o regulamento.</b><br><br>
 Legenda da Tabela:
 <li>A - Placar Correto; </li>
 <li>B - Acerto em empate com n&uacute;mero de gols incorreto; </li>
@@ -50,19 +58,22 @@ Legenda da Tabela:
 <li>D - Indica&ccedil;&atilde;o correta do vencedor e acerto do n&uacute;mero de gols do perdedor; </li>
 <li>E - Indica&ccedil;&atilde;o correta do vencedor e acerto do saldo de gols do jogo; e </li>
 <li>F - Indica&ccedil;&atilde;o correta do vencedor. </li>
-<br><b>Se você pagou e seu nome não está na lista abaixo verifique se você aceitou o regulamento do BOLCÓ. Maiores informa&ccedil;&otilde;es veja o regulamento.<b/>
-</font>
+<br>
+</span>
 <br><br>
 	</td>
 </tr>
 
 <tr>
 	<td align="center"  valign="top">
-		<?php 	resultados(); ?>
-	</td>
-</tr>
-<tr>
-	<td align="center"  valign="top"><!--<a class="verm">&sup1; - A Organização do Bolco incentiva e agradece todas as participações construtivas. </b>-->
+    <table>
+    <tr><td class="meuResultado">Eu (ou você...)</td></tr>
+    <tr><td class="amigoResultado">Meu Amigo</td></tr>
+    <tr><td class="notorio">Notório</td></tr>
+    </table>
+    </td>
+ </tr>
+    <!--<a class="verm">&sup1; - A Organização do Bolco incentiva e agradece todas as participações construtivas. </b>-->
 
 	</td>
 </tr>

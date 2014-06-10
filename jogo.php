@@ -196,7 +196,7 @@ var ap2=<?php echo ($r['ap2']=="")?"null":$r['ap2']; ?>;
 
 <thead>
 <tr>
-	<td colspan='5'><b class="tit">OUTROS PALPITES NO BOLC&Oacute;</td>
+	<td colspan='5'><b class="tit">OUTROS PALPITES VIS&Iacute;VEIS NO BOLC&Oacute;</td>
 </tr>
 </thead>
 <?php foreach ($JOG as $apelido => $valores ) { ?>

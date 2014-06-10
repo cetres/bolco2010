@@ -111,11 +111,11 @@ alert("<?php echo $msg; ?>");
 <input type=hidden name="pagamento" value="<?php echo $pagamento; ?>">
 <tr valign="top" align="left">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Apelido</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="Apelido" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities($Apelido); ?>" size="50" maxlength="50"><br></td>
+<td><input name="Apelido" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities(utf8_encode($Apelido)); ?>" size="50" maxlength="50"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Nome Completo</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="nome" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities($nome); ?>" size="50" maxlength="100"><br></td>
+<td><input name="nome" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities(utf8_encode($nome)); ?>" size="50" maxlength="100"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Email</a>&nbsp;<a class="rodape">.: </a></td>
@@ -127,11 +127,11 @@ alert("<?php echo $msg; ?>");
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Senha</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo $senha; ?>" size="25" maxlength="10"><br></td>
+<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo utf8_encode($senha); ?>" size="25" maxlength="10"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Confirme a senha</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="confirma" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  value="<?php echo $senha; ?>" size="25" maxlength="10"><br></td>
+<td><input name="confirma" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  value="<?php echo utf8_encode($senha); ?>" size="25" maxlength="10"><br></td>
 
 </tr>
 <tr valign="top">

@@ -761,7 +761,7 @@ EOL;
 		if ($c = 0) {
 printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>");
 
-`		}	else {
+		}	else {
 
 		for ($cont = 0; $cont < $c; $cont++) {
 			if ($row["idusu"] == $usuarios[$cont]) {

@@ -69,7 +69,7 @@ EOL;
 $res =& $db->query($q,array($j));
 while ($res->fetchInto($row,DB_FETCHMODE_ASSOC)) {
   if (($row["idusu"] != $_SESSION['id']) && (($row["mostra"]==0)||$row["jafoi"]==1)) {
-    $JOG[htmlentities($row["apelido"])] = array($row["idusu"],$row["ap1"],$row["ap2"]);
+    $JOG[htmlentities(utf8_encode($row["apelido"]))] = array($row["idusu"],$row["ap1"],$row["ap2"]);
   }
   $s = $row["ap2"]-$row["ap1"];
   if (abs($s)<6) {

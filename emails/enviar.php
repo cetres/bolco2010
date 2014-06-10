@@ -4,9 +4,9 @@
 
 
 */
-
-$TESTE_JOGO=false;
-$TESTE_EMAIL=false;
+$DEBUG = false;
+$TESTE_JOGO = false;
+$TESTE_EMAIL = false;
 
 $METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
@@ -14,13 +14,18 @@ $PROVEDOR = 1; // 1 = gmail; 2 = aws; 3 = webfaction
 $JOGO = 0; // 0 = obtem o ultimo jogo; n>0 = jid
 
 if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
-	$options = getopt("j:p:m:t");
+	$options = getopt("j:p:m:ted");
 	if (isset($options["t"])) {
 		$TESTE_JOGO = true;
 		print("Iniciando modo teste de jogo\n");
 	}
 	if (isset($options["e"])) {
 		$TESTE_EMAIL = true;
+		print("Iniciando modo teste de email\n");
+	}
+	if (isset($options["d"])) {
+		$DEBUG = true;
+		print("Modo DEBUG habilitado\n");
 	}
 	if (isset($options["j"])) {
 		$TESTE_JOGO = true;      // Trava de seguranca para nao ocorrer falhas
@@ -29,6 +34,7 @@ if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {
 	}
 	if (isset($options["p"])) {
 		$PROVEDOR = $options["p"];
+		print("Selecionando provedor $PROVEDOR\n");
 	}
 	if (isset($options["m"])) {
 		$METODO = $options["m"];
@@ -86,7 +92,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
-		//$mail->Hostname = 'b.ap1.com.br';
+		$mail->Hostname = 'bolco.com.br';
    		$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "Juiz BolCo";
     	$mail->AddAddress($email,$apelido);
@@ -99,7 +105,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 		$mail->Body = $bufferTotal;
         //$mail->AltBody = "This is the body when user views in plain text format"; //Text Body
 		if ($TESTE_EMAIL) {
-		    echo "TESTE: " . var_dump($mail);
+		    echo "TESTE: \n" . var_dump($mail);
 			$enviado=false;
 		} else {
 			$enviado = $mail->Send();
@@ -111,7 +117,7 @@ function enviarEmail($email, $assunto, $template, $apelido, $C) {
 }
 
 function enviarEmailJogo($obj) {
-	global $METODO, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $LIMITE_LOTE;
+	global $METODO, $versao, $ERR, $TESTE_EMAIL, $TESTE_JOGO, $SMTP_SERVER, $SMTP_USER, $SMTP_PASS, $LIMITE_LOTE, $DEBUG;
 	$enviado=null;
 
 	$bufferTotal= "Este e-mail é para informar os palpites dos participantes do bolão fazendo,\n";
@@ -132,6 +138,9 @@ function enviarEmailJogo($obj) {
 	$bufferTotalHTML .= "BolCo: http://www.bolco.com.br/\n";
     $bufferTotal .= "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
     $bufferTotal .= "BolCo: http://www.bolco.com.br/\n";
+	if ($DEBUG) {
+	   print($bufferTotal);	
+	}
 	if ($METODO == 1) {
 		$remetente = 'From: Juiz BolCo <juiz@bolco.com.br>';
 	  	$para = $apelido." <".$email.">";
@@ -150,7 +159,7 @@ function enviarEmailJogo($obj) {
 		$mail->SMTPDebug = false;
 		$mail->Username = $SMTP_USER;
 		$mail->Password = $SMTP_PASS;
-		//$mail->Hostname = 'b.ap1.com.br';
+		$mail->Hostname = 'bolco.com.br';
     	$mail->From = "juiz@bolco.com.br";
     	$mail->FromName = "BolCo 2014";
 		$mail->AddReplyTo('contato@bolco.com.br',"Contato BolCo");
@@ -158,8 +167,18 @@ function enviarEmailJogo($obj) {
 		$mail->Subject = "[BolCo] Palpites de ".utf8_decode($obj->jogo);
 		$mail->Body = $bufferTotalHTML;
 		$mail->AltBody = $bufferTotal;
-		if($TESTE_JOGO) {
+		if ($TESTE_EMAIL) {
+		    echo "TESTE: \n" . var_dump($mail);
+			$enviado = false;
+		} elseif ($TESTE_JOGO) {
 			$mail->AddBCC("gustavo@apto101.com.br");
+			print("Iniciando envio de email...");
+			$enviado = $mail->Send();
+			$ERR .= $mail->ErrorInfo;
+			if ($ERR!="") {
+				print("Erro no envio de emails dos jogos - " . $ERR);
+				syslog(LOG_ERR, "Erro no envio de emails dos jogos - " . $ERR);
+			}
 		} else {
 			$LOTE=1;
 			$CT=0;
@@ -190,10 +209,7 @@ function enviarEmailJogo($obj) {
 //					$mail->AddBCC($email);
 			}
 		}
-		if ($TESTE_EMAIL) {
-		    echo "TESTE: " . var_dump($mail);
-			$enviado = false;
-		} elseif(!($LIMITE_LOTE > 0)) {
+		if((!$TESTE_EMAIL && !$TESTE_JOGO) && !($LIMITE_LOTE > 0)) {
 			$enviado = $mail->Send();
 			$ERR .= $mail->ErrorInfo;
 			if ($ERR!="") {
@@ -245,7 +261,7 @@ if ($TIPO=="soap") {
 		}
 	}
 	$obj = $client->ObterPalpites($JOGO);
-	if ($TESTE_JOGO and $TESTE_EMAIL) {
+	if ($DEBUG) {
 		print("Objeto obtido. Len: " . count($obj));
 		print_r($obj);
 	}
@@ -254,10 +270,10 @@ if ($TIPO=="soap") {
 		$enviado = enviarEmailJogo($obj);
 		if ($enviado) {
 			$assunto = "[BolCo ADM] (".$obj->jid.") Palpites enviados com sucesso ";
-			mail("gustavo@apto101.com.br",$assunto,"Palpites enviados com sucesso\n".var_dump($obj));
+			mail("gustavo@apto101.com.br",$assunto,"Palpites enviados com sucesso\n".print_r($obj, true));
 		} else {
 			$assunto = "[BolCo ADM] (".$obj->jid.") Erro ao enviar palpites ";
-			mail("gustavo@apto101.com.br",$assunto,"Erro ao enviar palpites\n".var_dump($obj));
+			mail("gustavo@apto101.com.br",$assunto,"Erro ao enviar palpites\n".print_r($obj, true));
 			syslog(LOG_INFO,"Envio Palpites - Erro ao enviar emails");
 			error_log("Erro ao enviar o e-mail para o jogo " . utf8_decode($obj->jogo));
 		}

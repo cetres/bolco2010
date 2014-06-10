@@ -1,6 +1,6 @@
-Este e-mail é para informar os palpites dos participantes do bolão fazendo, 
-assim, uma ferramenta para que possa verificar a integridade do sistema 
-auditando os resultados. Caso não deseje receber mais esses e-mails, basta 
-entrar no sítio na área preferências e desabilitar a opção de receber e-mails.
+Este e-mail é para informar os palpites dos participantes do bolão e para 
+que você possa verificar a integridade do sistema. Caso não deseje receber 
+mais esses e-mails, basta entrar no sítio na área "Preferências" e 
+desabilitar a opção "Receber e-mails".
 
 Os palpites do jogo ${C01} (${C02} x ${C03}) são os seguintes:

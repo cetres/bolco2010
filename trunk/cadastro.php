@@ -22,7 +22,7 @@ if (isset($_POST["Apelido"])) {
 	$Comentario = (isset($_POST["Comentario"]))?mysql_real_escape_string (strip_tags($_POST["Comentario"])):"";
 	$senha = (isset($_POST["senha"]))?mysql_real_escape_string (strip_tags($_POST["senha"])):"";
 	$palpite = (isset($_POST["palpite"]))?mysql_real_escape_string (strip_tags($_POST["palpite"])):"";
-	$receberPalpites = (isset($_POST["receberPalpites"]))?mysql_real_escape_string (strip_tags($_POST["receberPalpites"]):"";
+	$receberPalpites = (isset($_POST["receberPalpites"]))?mysql_real_escape_string (strip_tags($_POST["receberPalpites"])):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
 
 
@@ -49,7 +49,7 @@ if (isset($_POST["Apelido"])) {
 } else {
 	mysql_connect($host, $login_db, $senha_db);
 	mysql_select_db($database);
-	$q = "select nome, Telefone,Comentario,pago,mostrapalpite,receberPalpites from usuarios where email = '$email' and senha = '$senha'";
+	$q = "select nome,Telefone,Comentario,pago,mostrapalpite,receberPalpites from usuarios where email = '$email' and senha = '$senha'";
 	$rs = mysql_query($q);
 	if (!$rs) {
 		die('Could not query:' . mysql_error());

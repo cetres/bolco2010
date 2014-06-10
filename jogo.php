@@ -93,7 +93,7 @@ $max=$SAL[0]+2;
 	$num = mysql_num_rows($rs);
 
 $idx = array_search($j, $ordem_jogos);
-$jogoAnt = ($idx > 1)?$ordem_jogos[$idx-1]:0;
+$jogoAnt = ($idx > 0)?$ordem_jogos[$idx-1]:0;
 $jogoPos = ($idx < 63)?$ordem_jogos[$idx+1]:0;
 
 //$q="select jo_codigo from jogos where jo_hora < CONVERT(?,DATETIME) order by jo_hora desc limit 1";

@@ -797,7 +797,7 @@ function mresultados($g) {
 	}
 	$Apelido = mysql_result($rs,0,"apelido");
 	$mostrapalpite = mysql_result($rs,0,"mostrapalpite");
-	$q = "SELECT jogos.jo_codigo, p1.nome, p1.figura, p2.figura, p2.nome, jo_hora, jo_fase, golp1, golp2, Acerto, jo_result_golp1, jo_result_golp2, pontos, colocacao FROM `jogos` ";
+	$q = "SELECT jogos.jo_codigo, p1.nome as nome1, p1.figura, p2.figura, p2.nome as nome2, jo_hora, jo_fase, golp1, golp2, Acerto, jo_result_golp1, jo_result_golp2, pontos, colocacao FROM `jogos` ";
 	$q .= " inner join paises p1 on p1.idpaises = jo_time1";
 	$q .= " inner join paises p2 on p2.idpaises = jo_time2";
 	$q .= "	left outer join aposta on aposta.jo_codigo = jogos.jo_codigo and aposta.idusu = '$idusu' and aposta.ativa = 0";
@@ -829,9 +829,9 @@ function mresultados($g) {
 	printf ("<tr>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".arrumadata(mysql_result($rs,$i,"jo_hora"))."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p1.figura").".jpg' border='0' alt=''></a></td>");
-		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p1.Nome"))."</a></td>");
+		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"Nome1"))."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>X</td>");
-		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"p2.Nome"))."</a></td>");
+		printf ("<td height='20' valign='middle'><a class='texto'>".htmlentities(mysql_result($rs,$i,"Nome2"))."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'><img src='imagens/paises/".mysql_result($rs,$i,"p2.figura").".jpg' border='0' alt=''></a></td>");
 
 		if (($idusu == $_SESSION["id"]) || ($mostrapalpite == 0) || (strtotime(mysql_result($rs,$i,"jo_hora")) < $horario)){

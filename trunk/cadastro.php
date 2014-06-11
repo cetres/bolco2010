@@ -10,7 +10,7 @@ require_once("email.php");
 $idusu =  $_SESSION["id"];
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$apelido = ($_POST["apelido"]);
+	$apelido = (isset($_POST["apelido"]))?strip_tags($_POST["apelido"]):"";
 	$nome = (isset($_POST["nome"]))?strip_tags($_POST["nome"]):"";
 	$telefone = (isset($_POST["telefone"]))?strip_tags($_POST["telefone"]):"";
 	$comentario = (isset($_POST["comentario"]))?strip_tags($_POST["comentario"]):"";
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$q = "UPDATE usuarios SET mostrapalpite=?,nome=?,apelido=?,telefone=?,comentario=?,receberPalpites=? WHERE idusu=?";
 	$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$receberPalpites,$idusu));
-	$_SESSION["nome"] = $palpite;
+	$_SESSION["nome"] = $apelido;
 	if (PEAR::isError($res)) {
 		error_log("Update User ".$res->getMessage()." / ".$res->getDebugInfo());
 		die($res->getMessage());
@@ -100,7 +100,7 @@ alert("<?php echo $msg; ?>");
    	<td width="100%" valign="top" align="left" >
 <b class="tit">Cadastro</b><br><br>
 <table width="80%">
-<form name="FormComent"  action="cadastro.php" method="Post"  onSubmit="return Validaform()" >
+<form name="FormComent"  action="cadastro.php" method="Post"  onSubmit="return Validaform()" autocomplete="off">
 <input type=hidden name="operacao" value="<?php echo $operacao; ?>">
 <input type=hidden name="pagamento" value="<?php echo $pagamento; ?>">
 <tr valign="top" align="left">

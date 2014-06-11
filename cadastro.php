@@ -20,21 +20,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$q = "UPDATE usuarios SET mostrapalpite=?,nome=?,apelido=?,telefone=?,comentario=?,receberPalpites=? WHERE idusu=?";
 	$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$receberPalpites,$idusu));
+	$_SESSION["nome"] = $palpite;
 	if (PEAR::isError($res)) {
 		error_log("Update User ".$res->getMessage()." / ".$res->getDebugInfo());
 		die($res->getMessage());
 	} 
 	if (isset($_POST["senha"]) && strlen($_POST["senha"]) > 0) {
+		$senha = strip_tags($_POST["senha"]);
 		$q = "UPDATE usuarios SET senha=? WHERE idusu=?";
 		$res =& $db->query($q, array($senha,$idusu));
+		$_SESSION["senha"] = $senha;
 		if (PEAR::isError($res)) {
 			error_log("Update Senha ".$res->getMessage()." / ".$res->getDebugInfo());
 			die($res->getMessage());
 		} 
 	}
 	$msg = "Dados alterados com sucesso.";
-	$_SESSION["nome"] = $apelido;
-	$_SESSION["senha"] = $senha;
+
 	$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', ?, 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )";
 	$res =& $db->query($q, $idusu);
 	if (PEAR::isError($res)) {
@@ -97,7 +99,7 @@ alert("<?php echo $msg; ?>");
    <tr>
    	<td width="100%" valign="top" align="left" >
 <b class="tit">Cadastro</b><br><br>
-<table width="70%">
+<table width="80%">
 <form name="FormComent"  action="cadastro.php" method="Post"  onSubmit="return Validaform()" >
 <input type=hidden name="operacao" value="<?php echo $operacao; ?>">
 <input type=hidden name="pagamento" value="<?php echo $pagamento; ?>">
@@ -115,7 +117,7 @@ alert("<?php echo $msg; ?>");
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Telefone</a>&nbsp;<a class="rodape">.:</a></td>
-<td><input name="Telefone" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo $telefone; ?>" size="25" maxlength="20"><br></td>
+<td><input name="telefone" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo $telefone; ?>" size="25" maxlength="20"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Senha</a>&nbsp;<a class="rodape">.: *</a></td>
@@ -154,7 +156,7 @@ alert("<?php echo $msg; ?>");
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Coment&aacute;rios</a>&nbsp;<a class="rodape">.:</a></td>
-<td><textarea STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" cols="35" rows="7" name="Comentario"><?php echo $Comentario; ?></textarea><br></td>
+<td><textarea STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" cols="35" rows="7" name="comentario"><?php echo $comentario; ?></textarea><br></td>
 </tr>
 <tr valign="top">
 <td></td>

@@ -1,66 +1,60 @@
 <?php
+require_once("pre.php");
 require_once("protecao.php");
 require_once("email.php");
-global $database;
-global $host;
-global $login_db;
-global $senha_db;
 
-$Apelido = $_SESSION["nome"];
-$senha = $_SESSION["senha"];
-$email = $_SESSION["email"];
-$nome = "";
-$Telefone = "";
-$Comentario = "";
-$pagamento =  "0";
-$contrato  = "";
-$palpite = "";
-if (isset($_POST["Apelido"])) {
-	$Apelido = ($_POST["Apelido"]);
-	$nome = (isset($_POST["nome"]))?mysql_real_escape_string (strip_tags($_POST["nome"])):"";
-	$Telefone = (isset($_POST["Telefone"]))?mysql_real_escape_string (strip_tags($_POST["Telefone"])):"";
-	$Comentario = (isset($_POST["Comentario"]))?mysql_real_escape_string (strip_tags($_POST["Comentario"])):"";
-	$senha = (isset($_POST["senha"]))?mysql_real_escape_string (strip_tags($_POST["senha"])):"";
-	$palpite = (isset($_POST["palpite"]))?mysql_real_escape_string (strip_tags($_POST["palpite"])):"";
-	$receberPalpites = (isset($_POST["receberPalpites"]))?mysql_real_escape_string (strip_tags($_POST["receberPalpites"])):"";
+$idusu =  $_SESSION["id"];
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+	$apelido = ($_POST["Apelido"]);
+	$nome = (isset($_POST["nome"]))?strip_tags($_POST["nome"]):"";
+	$telefone = (isset($_POST["Telefone"]))?strip_tags($_POST["Telefone"]):"";
+	$comentario = (isset($_POST["Comentario"]))?strip_tags($_POST["Comentario"]):"";
+	$palpite = (isset($_POST["palpite"]))?strip_tags($_POST["palpite"]):"";
+	$receberPalpites = (isset($_POST["receberPalpites"]))?strip_tags($_POST["receberPalpites"]):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
-
-
-	if ($_SESSION["tipo"] != "Visitante")  {
-		$idusu =  $_SESSION["id"];
-			mysql_connect($host, $login_db, $senha_db);
-			mysql_select_db($database);
-			$q = "update usuarios set mostrapalpite = '$palpite', nome = '$nome', apelido = '$Apelido', Telefone  = '$Telefone' ,Comentario  = '$Comentario' , senha = '$senha', receberPalpites = '$receberPalpites' where idusu = '$idusu' ";
-			//echo $q;
-			$rs = mysql_query($q);
-		if (!$rs) {
-	   	  die('Could not query:' . mysql_error());
+	if (strtolower($_SESSION["tipo"]) != "visitante")  {
+		$q = "UPDATE usuarios SET mostrapalpite=?,nome=?,apelido=?,telefone=?,comentario=?,receberPalpites=? WHERE idusu=?";
+		$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$receberPalpites,$idusu));
+		if (PEAR::isError($res)) {
+			error_log("Update User ".$res->getMessage()." / ".$res->getDebugInfo());
+  	    	die($res->getMessage());
+	 	} 
+		if (isset($_POST["senha"]) && strlen($_POST["senha"]) > 0) {
+			$q = "UPDATE usuarios SET senha=? WHERE idusu=?";
+			$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$senha,$receberPalpites,$idusu));
+			if (PEAR::isError($res)) {
+				error_log("Update Senha ".$res->getMessage()." / ".$res->getDebugInfo());
+  	    		die($res->getMessage());
+	 		} 
 		}
-			$msg = "Dados alterados com sucesso.";
-			$_SESSION["nome"] = $Apelido;
-			$_SESSION["senha"] = $senha;
-			$_SESSION["Aceitou"] = $contrato;
-			// manda email
-			mysql_connect($host, $login_db, $senha_db);
-			mysql_select_db($database);
-			mysql_query("INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', '$idusu', 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )") or die(mysql_error());
+		$msg = "Dados alterados com sucesso.";
+		$_SESSION["nome"] = $apelido;
+		$_SESSION["senha"] = $senha;
+		$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', ?, 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )";
+		$res =& $db->query($q, $idusu);
+		if (PEAR::isError($res)) {
+			error_log("Log ".$res->getMessage()." / ".$res->getDebugInfo());
+  	    	die($res->getMessage());
+	 	} 
 // Se existe monstra mensagem avisando
 	}
 } else {
-	mysql_connect($host, $login_db, $senha_db);
-	mysql_select_db($database);
-	$q = "select nome,Telefone,Comentario,pago,mostrapalpite,receberPalpites from usuarios where email = '$email' and senha = '$senha'";
-	$rs = mysql_query($q);
-	if (!$rs) {
-		die('Could not query:' . mysql_error());
-	}
-	if(mysql_num_rows($rs) == 1){
-		$nome = mysql_result($rs,0,"nome");
-		$Telefone = mysql_result($rs,0,"telefone");
-		$Comentario = mysql_result($rs,0,"comentario");
-		$pagamento = mysql_result($rs,0,"pago");
-		$palpite = mysql_result($rs,0,"mostrapalpite");
-		$receberPalpites = mysql_result($rs,0,"receberpalpites");
+	$q = "SELECT * FROM usuarios WHERE idusu=?";
+	$res =& $db->query($q, $idusu));
+	if (PEAR::isError($res)) {
+		error_log("Select ".$res->getMessage()." / ".$res->getDebugInfo());
+		die($res->getMessage());
+	} 
+	if ($res->fetchInto($row,DB_FETCHMODE_ASSOC)) {
+		$nome = $row['nome'];
+		$telefone = $row['telefone'];
+		$comentario = $row['comentario'];
+		$pagamento = $row['pago'];
+		$palpite = $row['mostrapalpite'];
+		$receberPalpites = $row['receberpalpites'];
+	} else {
+		$msg = "Usuario nao encontrado";
 	}
 }
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
@@ -75,10 +69,8 @@ function Validaform() {
   with (document.FormComent)	{
     if (nome.value=="") { alert("Preencha o campo Nome!"); return false; }
     if (email.value=="") { alert("Preencha o campo email!"); return false; }
-    if (Apelido.value=="") { alert("Preencha o campo Apelido!"); return false; }
-    if (senha.value=="") { alert("Preencha o campo Senha!"); return false; }
-    if (confirma.value=="") { alert("Preencha o campo Confirma Senha!"); return false; }
-    if (senha.value!=confirma.value) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; }
+    if (apelido.value=="") { alert("Preencha o campo Apelido!"); return false; }
+    if ((senha.value!="") && (senha.value!=confirma.value)) { alert("O campo Senha tem que ser igual ao campo Cofirma Senha!"); return false; }
 } }
 <?php if (isset($msg) && ($msg != "")) { ?>
 alert("<?php echo $msg; ?>");
@@ -92,7 +84,6 @@ alert("<?php echo $msg; ?>");
    <tr>
    	<td background="imagens/lado_esq.jpg" width="17"></td>
    	<td width="800" valign="top">
-
 
 <?php menu();?>
 
@@ -111,7 +102,7 @@ alert("<?php echo $msg; ?>");
 <input type=hidden name="pagamento" value="<?php echo $pagamento; ?>">
 <tr valign="top" align="left">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Apelido</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="Apelido" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities(utf8_encode($Apelido)); ?>" size="50" maxlength="50"><br></td>
+<td><input name="apelido" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo htmlentities(utf8_encode($apelido)); ?>" size="50" maxlength="50"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Nome Completo</a>&nbsp;<a class="rodape">.: *</a></td>
@@ -123,15 +114,15 @@ alert("<?php echo $msg; ?>");
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Telefone</a>&nbsp;<a class="rodape">.:</a></td>
-<td><input name="Telefone" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo $Telefone; ?>" size="25" maxlength="20"><br></td>
+<td><input name="Telefone" type="text" STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo $telefone; ?>" size="25" maxlength="20"><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Senha</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="<?php echo utf8_encode($senha); ?>" size="25" maxlength="10"><br></td>
+<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="" size="25" maxlength="10">(Preencha apenas se for alterar)<br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Confirme a senha</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="confirma" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  value="<?php echo utf8_encode($senha); ?>" size="25" maxlength="10"><br></td>
+<td><input name="confirma" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;"  value="" size="25" maxlength="10"><br></td>
 
 </tr>
 <tr valign="top">
@@ -168,6 +159,7 @@ alert("<?php echo $msg; ?>");
 <td></td>
 <td><input type="submit" value="Enviar" STYLE="border:1 outset #efefef;font-size:8pt;color:#707070;"><br></td>
 </tr>
+</form>
 <?php // inserir opções  de administrador; ?>
 </table><br>
    </td>

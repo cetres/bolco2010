@@ -7,6 +7,8 @@ BD_CONF = {"h": "localhost", "u": "bolco",
 
 def obterLocal(conf):
     import MySQLdb
+    import boto
+    
     
     
 

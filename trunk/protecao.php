@@ -715,10 +715,10 @@ EOL;
 		$classeLinha = "";
 		if ($row["idusu"]==$_SESSION["id"]) {
 			$classeLinha = "meuResultado";
-		} elseif(($_SESSION["tipo"]=='notorio')||($_SESSION["tipo"]=='admin')) {
+		} elseif((strtolower($_SESSION["tipo"])=='notorio')||($_SESSION["tipo"]=='admin')) {
 			if (($row["idchamador"]==$_SESSION["id"])&&($row["tipo"]=='usuario')) {
 				$classeLinha = "amigoResultado";
-			} elseif (($row["tipo"]=='notorio')||($row["tipo"]=='admin')) {
+			} elseif ((strtolower($row["tipo"])=='notorio')||($row["tipo"]=='admin')) {
 				$classeLinha = "notorio";
 			}
 		} elseif(($_SESSION["tipo"]=='usuario')&&($row["idusu"]==$idChamador)) {

@@ -91,7 +91,7 @@ $acao = $_GET['acao'];
 		$email = ($_POST["email"]);
 		$Telefone = ($_POST["Telefone"]);
 		$Comentario = ($_POST["Comentario"]);
-		$tipo = ($_POST["tipo"]);
+		$tipo = strtolower($_POST["tipo"]);
 		$senha = rand(5000, 15000);
 		$ativo = ($_POST["ativo"]);
 		$idusu =  $_SESSION["id"];
@@ -284,16 +284,16 @@ $i = 0;
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Tipo de Usuario</a>&nbsp;<a class="rodape">.: *</a></td>
 <td>
   <select name="tipo" size=1>
-<?php if ($tipo == "Usuario") { ?>
-  <option value='Usuario'>Usuario</option>
-  <option value='Notorio'>Notorio</option>
-<?php } elseif ($tipo == "Notorio") { ?>
-  <option value='Notorio'>Notorio</option>
-  <option value='Usuario'>Usuario</option>
+<?php if (strtolower($tipo) == "usuario") { ?>
+  <option value='usuario'>Usuario</option>
+  <option value='notorio'>Notorio</option>
+<?php } elseif (strtolower($tipo) == "notorio") { ?>
+  <option value='notorio'>Notorio</option>
+  <option value='usuario'>Usuario</option>
 <?php } else  { ?>
   <option value='<?php echo $tipo; ?>'><?php echo $tipo; ?></option>
-  <option value='Notorio'>Notorio</option>
-  <option value='Usuario'>Usuario</option>
+  <option value='notorio'>Notorio</option>
+  <option value='usuario'>Usuario</option>
 
 <?php } ?>
 

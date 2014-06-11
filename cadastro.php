@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	} 
 	if (isset($_POST["senha"]) && strlen($_POST["senha"]) > 0) {
 		$q = "UPDATE usuarios SET senha=? WHERE idusu=?";
-		$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$senha,$receberPalpites,$idusu));
+		$res =& $db->query($q, array($senha,$idusu));
 		if (PEAR::isError($res)) {
 			error_log("Update Senha ".$res->getMessage()." / ".$res->getDebugInfo());
 			die($res->getMessage());
@@ -119,7 +119,7 @@ alert("<?php echo $msg; ?>");
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Senha</a>&nbsp;<a class="rodape">.: *</a></td>
-<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="" size="25" maxlength="10"><span class="text">(Preencha apenas se for alterar)</span><br></td>
+<td><input name="senha" type=password STYLE="border:1 inset #efefef;font-size:8pt;color:#707070;" value="" size="25" maxlength="10"><span class="texto">(Preencha apenas se for alterar)</span><br></td>
 </tr>
 <tr valign="top">
 <td><a class="rodape">:.</a>&nbsp;<a class="texto">Confirme a senha</a>&nbsp;<a class="rodape">.: *</a></td>

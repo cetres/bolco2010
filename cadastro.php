@@ -1,4 +1,8 @@
 <?php
+if (strtolower($_SESSION["tipo"]) == "visitante")  {
+	header("Location: /");
+	exit();
+}
 require_once("pre.php");
 require_once("protecao.php");
 require_once("email.php");
@@ -6,38 +10,36 @@ require_once("email.php");
 $idusu =  $_SESSION["id"];
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$apelido = ($_POST["Apelido"]);
+	$apelido = ($_POST["apelido"]);
 	$nome = (isset($_POST["nome"]))?strip_tags($_POST["nome"]):"";
-	$telefone = (isset($_POST["Telefone"]))?strip_tags($_POST["Telefone"]):"";
-	$comentario = (isset($_POST["Comentario"]))?strip_tags($_POST["Comentario"]):"";
+	$telefone = (isset($_POST["telefone"]))?strip_tags($_POST["telefone"]):"";
+	$comentario = (isset($_POST["comentario"]))?strip_tags($_POST["comentario"]):"";
 	$palpite = (isset($_POST["palpite"]))?strip_tags($_POST["palpite"]):"";
 	$receberPalpites = (isset($_POST["receberPalpites"]))?strip_tags($_POST["receberPalpites"]):"";
 	$pagamento = (isset($_POST["pagamento"]))?$_POST["pagamento"]:"";
-	if (strtolower($_SESSION["tipo"]) != "visitante")  {
-		$q = "UPDATE usuarios SET mostrapalpite=?,nome=?,apelido=?,telefone=?,comentario=?,receberPalpites=? WHERE idusu=?";
-		$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$receberPalpites,$idusu));
+
+	$q = "UPDATE usuarios SET mostrapalpite=?,nome=?,apelido=?,telefone=?,comentario=?,receberPalpites=? WHERE idusu=?";
+	$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$receberPalpites,$idusu));
+	if (PEAR::isError($res)) {
+		error_log("Update User ".$res->getMessage()." / ".$res->getDebugInfo());
+		die($res->getMessage());
+	} 
+	if (isset($_POST["senha"]) && strlen($_POST["senha"]) > 0) {
+		$q = "UPDATE usuarios SET senha=? WHERE idusu=?";
+		$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$senha,$receberPalpites,$idusu));
 		if (PEAR::isError($res)) {
-			error_log("Update User ".$res->getMessage()." / ".$res->getDebugInfo());
-  	    	die($res->getMessage());
-	 	} 
-		if (isset($_POST["senha"]) && strlen($_POST["senha"]) > 0) {
-			$q = "UPDATE usuarios SET senha=? WHERE idusu=?";
-			$res =& $db->query($q, array($palpite,$nome,$apelido,$telefone,$comentario,$senha,$receberPalpites,$idusu));
-			if (PEAR::isError($res)) {
-				error_log("Update Senha ".$res->getMessage()." / ".$res->getDebugInfo());
-  	    		die($res->getMessage());
-	 		} 
-		}
-		$msg = "Dados alterados com sucesso.";
-		$_SESSION["nome"] = $apelido;
-		$_SESSION["senha"] = $senha;
-		$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', ?, 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )";
-		$res =& $db->query($q, $idusu);
-		if (PEAR::isError($res)) {
-			error_log("Log ".$res->getMessage()." / ".$res->getDebugInfo());
-  	    	die($res->getMessage());
-	 	} 
-// Se existe monstra mensagem avisando
+			error_log("Update Senha ".$res->getMessage()." / ".$res->getDebugInfo());
+			die($res->getMessage());
+		} 
+	}
+	$msg = "Dados alterados com sucesso.";
+	$_SESSION["nome"] = $apelido;
+	$_SESSION["senha"] = $senha;
+	$q = "INSERT INTO logbolco (lo_tipo, lo_usuario, lo_desc, lo_data) VALUES ('Alteração de Dados do usuário', ?, 'Alteração de Cadastro',CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')  )";
+	$res =& $db->query($q, $idusu);
+	if (PEAR::isError($res)) {
+		error_log("Log ".$res->getMessage()." / ".$res->getDebugInfo());
+		die($res->getMessage());
 	}
 } else {
 	$q = "SELECT * FROM usuarios WHERE idusu=?";
@@ -95,8 +97,6 @@ alert("<?php echo $msg; ?>");
    <tr>
    	<td width="100%" valign="top" align="left" >
 <b class="tit">Cadastro</b><br><br>
-<font class="texto">Voc&ecirc; foi convidado a participar deste bol&atilde;o por&eacute;m &eacute; preciso preencher alguns dados antes de come&ccedil;ar. Leia o regulamento e ent&atilde;o aceite-o para continuar </font>
-
 <table width="70%">
 <form name="FormComent"  action="cadastro.php" method="Post"  onSubmit="return Validaform()" >
 <input type=hidden name="operacao" value="<?php echo $operacao; ?>">

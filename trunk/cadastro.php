@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	}
 } else {
 	$q = "SELECT * FROM usuarios WHERE idusu=?";
-	$res =& $db->query($q, $idusu));
+	$res =& $db->query($q, $idusu);
 	if (PEAR::isError($res)) {
 		error_log("Select ".$res->getMessage()." / ".$res->getDebugInfo());
 		die($res->getMessage());

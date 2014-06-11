@@ -6,6 +6,9 @@ BD_CONF = {"h": "localhost", "u": "bolco",
 
 
 def obterLocal(conf):
+    import MySQLdb
+    
+    
 
 def obterRemoto(url):
     from pysimplesoap.client import SoapClient
@@ -37,13 +40,9 @@ if __name__ == '__main__':
             logging.basicConfig(level=logging.WARN)
         logging.debug("Logging configurado")
         if options.remoto:
-            arquivo = options.arquivo.rstrip(".body")
-            if not os.path.exists(arquivo + '.body'):
-                parser.error(u"Nao foi possivel localizar o arquivo - %s.body" % arquivo)
+            emails = obterRemoto("http://www.bolco.com.br/ws/bolco2010.wsdl")
         else:
-            arquivo = download()
-        if not options.download:
-            logging.debug("Iniciando o processamento do arquivo")
-            processa(arquivo)
+            emails = obterLocal(BD_CONF)
+        envioAmazon
     except:
         raise

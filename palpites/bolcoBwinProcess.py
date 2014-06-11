@@ -117,6 +117,7 @@ if __name__ == '__main__':
             parser.error(u"Arquivo nao encontrado")
         dados = carregar_arquivo(args[0])
         if options.atualiza:
-            atualizar_banco(dados, args[0][5:13])
+            data = os.path.basename(arquivo)[5:13]
+            atualizar_banco(dados, data)
     except:
         raise

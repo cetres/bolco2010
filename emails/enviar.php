@@ -10,7 +10,7 @@ $TESTE_EMAIL = false;
 
 $METODO = 2; // 1 = nativo; 2 = smtp
 $TIPO='soap';
-$PROVEDOR = 2; // 1 = gmail; 2 = aws; 3 = webfaction
+$PROVEDOR = 1; // 1 = gmail; 2 = aws; 3 = webfaction
 $JOGO = 0; // 0 = obtem o ultimo jogo; n>0 = jid
 
 if (PHP_SAPI === 'cli' || empty($_SERVER['REMOTE_ADDR'])) {

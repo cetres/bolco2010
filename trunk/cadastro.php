@@ -150,7 +150,7 @@ alert("<?php echo $msg; ?>");
 <?php if (intval($pagamento) == 0) { ?>
 <span class="texto" style="font-weight:bold;color:#F00">Pagamento n&atilde;o registrado.</span>
 <?php } elseif ($pagamento > 0) { ?>
-<span class="texto" style="font-weight:bold;color:#0F0">Pagamento registrado</span>
+<span class="texto" style="font-weight:bold;color:#360">Pagamento registrado</span>
 <?php } ?>
 <br></td>
 </tr>

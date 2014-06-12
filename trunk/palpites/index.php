@@ -69,7 +69,8 @@ FROM usuarios
 WHERE receberPalpites = 0 AND
 ativo=0 AND 
 email <> "Visitante" AND 
-apelido <> ""
+apelido <> "" AND
+ultimoAcesso IS NOT NULL
 EOL;
     $res =& $db->query($q);
     if (PEAR::isError($res)) {

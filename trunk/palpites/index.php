@@ -21,6 +21,7 @@ EOL;
     if (intval($jid) > 0) {
 		$q.="AND j.jo_codigo=?";
 		$res =& $db->query($q,array($TEMPLATE, intval($jid)));
+        $TESTE_JOGO = true;
 	} else {
 		$q.="AND SUBDATE(jo_hora, INTERVAL 5 minute) < CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00')";
 		$res =& $db->query($q, $TEMPLATE);
@@ -82,7 +83,7 @@ EOL;
 		array_push($r["email"],$row[0]);
 	}
 	$res->free();
-	if (intval($jid) == 0) {
+	if (!$TESTE_JOGO) {
 		$q = <<< EOL
 INSERT INTO enviarEmail (ee_usuario,ee_template,ee_programado,ee_enviado) 
 VALUES (?,?,CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'),CONVERT_TZ(UTC_TIMESTAMP(),'+00:00','-03:00'));

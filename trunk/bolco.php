@@ -70,11 +70,17 @@ $(document).ready(function() {
         <tr>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
           <td height="250" align="justify" class="noticia">
-          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>
+           <blockquote><strong>Prezados participantes,</strong></blockquote>
+Como percebido ontem, o Bolcó teve um problema de saúde e apresentou uma certa gagueira no sistema de envio de e-mail. Durante o jogo, foi difícil encontrar um fonoaudiólogo que atendesse no plano de saúde do sistema. Mas de madrugada conseguimos ser atendidos depois de uma longa espera no HFB (Hospital de Fonoaudiologia de Brasília).Aparentemente, o problema foi resolvido (Assim esperamos). Agradecemos a compreensão.<br>
+Comiss&atilde;o Organizadora
+          <br> <br>
+          <hr>
+              <p style="font-size:9px;text-align:right">Bras&iacute;lia, 09 de junho de 2014</p>
            <blockquote><strong>Amigos apostadores,</strong></blockquote>
-Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$20,00</strong> at� as 23:59h do dia 16/06/2014.
-O pagamento poder� ser feito diretamento �quele not�rio que lhe convidou ou transferindo o valor para a conta do Banco do Brasil (Ag. 3475-4 e CC:  1887-2) do Cac� (Carlos de Oliveira Costa).
-Por favor, se optarem por fazer a transfer�ncia, enviem o comprovante para o e-mail <a href="mailto:contato@bolco.com.br?subject=Comprovante de Pagamento"> contato@bolco.com.br</a>.
+Conforme previsto no regulamento do BolC&oacute;, s&oacute; ter&aacute; direito ao pr&ecirc;mio aquele apostador que pagar a quantia de <strong>R$20,00</strong> até as 23:59h do dia 16/06/2014.
+O pagamento poderá ser feito diretamento àquele notório que lhe convidou ou transferindo o valor para a conta do Banco do Brasil (Ag. 3475-4 e CC:  1887-2) do Cacá (Carlos de Oliveira Costa).
+Por favor, se optarem por fazer a transferência, enviem o comprovante para o e-mail <a href="mailto:contato@bolco.com.br?subject=Comprovante de Pagamento"> contato@bolco.com.br</a>.
 <br><br>
 Boa sorte a todos!!<br>
 Comiss&atilde;o Organizadora

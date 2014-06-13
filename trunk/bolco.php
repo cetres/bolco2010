@@ -3,6 +3,7 @@ require_once("protecao.php");
 ?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
 <head>
+    <meta charset="UTF-8">
 <title>BolC&oacute; 2014</title>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.countdown.min.js"></script>

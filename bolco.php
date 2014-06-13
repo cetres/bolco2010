@@ -73,7 +73,8 @@ $(document).ready(function() {
           <td height="250" align="justify" class="noticia">
           <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>
            <blockquote><strong>Atenção!!</strong></blockquote>
-Lembramos que o prazo para efetuar o pagamento de R$20,00 se encerra às <font color="#FF0000"> <strong>23:59h do dia 16/06/2014</strong></font> . Lembramos que, conforme descrito no Regulamento, "O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores".
+Lembramos que o prazo para efetuar o pagamento de R$20,00 se encerra às <font color="#FF0000"> <strong>23:59h do dia 16/06/2014</strong></font> . Lembramos que, conforme descrito no Regulamento, "O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores".<br>
+Comissão Organizadora.
           <br> <br>
           <hr>
           <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>

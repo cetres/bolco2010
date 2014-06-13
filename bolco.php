@@ -72,6 +72,11 @@ $(document).ready(function() {
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
           <td height="250" align="justify" class="noticia">
           <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>
+           <blockquote><strong>Atenção!!</strong></blockquote>
+Lembramos que o prazo para efetuar o pagamento de R$20,00 se encerra às <font color="#FF0000"> <strong>23:59h do dia 16/06/2014</strong></font> . Lembramos que, conforme descrito no Regulamento, "O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores".
+          <br> <br>
+          <hr>
+          <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>
            <blockquote><strong>Prezados participantes,</strong></blockquote>
 Como percebido ontem, o Bolcó teve um problema de saúde e apresentou uma certa gagueira no sistema de envio de e-mail. Durante o jogo, foi difícil encontrar um fonoaudiólogo que atendesse no plano de saúde do sistema. Mas de madrugada conseguimos ser atendidos depois de uma longa espera no HFB (Hospital de Fonoaudiologia de Brasília).Aparentemente, o problema foi resolvido (Assim esperamos). Agradecemos a compreensão.<br>
 Comiss&atilde;o Organizadora

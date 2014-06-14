@@ -760,23 +760,24 @@ EOL;
 		$cont = 0;
 
 		if ($c == 0) {
-			printf ("<td nowrap>&nbsp;</td>");
-
-		}	else {
-
-		for ($cont = 0; $cont < $c; $cont++) {
+			printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>");
+		} else {
+			for ($cont = 0; $cont < $c; $cont++) {
 				if ($row["idusu"] == $usuarios[$cont]) {
 					if ($posAnt < $posicaoAnt[$cont]) {
-						printf ("<td nowrap><a class='texto'><img src='imagens/grp_up.gif' width='11' height='13' border='0'' alt=''>+".($posicaoAnt[$cont]-$posAnt)."</a></td>");
+						$CELL="<td nowrap><a class='texto'><img src='imagens/grp_up.gif' width='11' height='13' border='0'' alt=''>+".($posicaoAnt[$cont]-$posAnt)."</a></td>";
 					} elseif ($posAnt > $posicaoAnt[$cont]) {
-						printf ("<td nowrap><a class='texto'><img src='imagens/grp_down.gif' width='11' height='13' border='0'' alt=''>-".($posAnt-$posicaoAnt[$cont])."</a></td>");
-					}	else {
-					printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>");
+						$CELL="<td nowrap><a class='texto'><img src='imagens/grp_down.gif' width='11' height='13' border='0'' alt=''>-".($posAnt-$posicaoAnt[$cont])."</a></td>";
+					} else {
+						$CELL="<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>";
 					}
-
+					break;
 				}
     		}
-
+			if (!isset($CELL)) {
+				$CELL="<td nowrap>&nbsp;</td>";
+			}
+			printf($CELL);
 		}
 	printf ("</tr>");
 	$i++;

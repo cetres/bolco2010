@@ -760,7 +760,7 @@ EOL;
 		$cont = 0;
 
 		if ($c == 0) {
-			printf ("<td nowrap><a class='texto'><img src='imagens/grp_nul.gif' width='11' height='13' border='0'' alt=''></a></td>");
+			printf ("<td nowrap>&nbsp;</td>");
 
 		}	else {
 

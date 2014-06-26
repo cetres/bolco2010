@@ -733,7 +733,7 @@ EOL;
 		printf ("<td class='texto'>".$posicaoExibir."</td>");
 		$CARTAO_AMARELO='';
 		if ($row["idusu"] == "559") {
-		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>"."Pera"."</a></b></td>");
+		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>"."#####Me chamo Rudgere e amo o CR7"."</a></b></td>");
 		} else {
 		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"]."</a></b></td>");
 		

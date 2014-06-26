@@ -857,6 +857,7 @@ function mresultados($g) {
 		printf ("<td height='20' valign='middle'><a class='texto'>".mysql_result($rs,$i,"jo_result_golp2")."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".mysql_result($rs,$i,"Acerto")."</a></td>");
 		printf ("<td height='20' valign='middle'><a class='texto'>".mysql_result($rs,$i,"Pontos")."</a></td>");
+		printf ("<td height='20' valign='middle'><a class='texto'>".mysql_result($rs,$i,"colocacao")."</a></td>");
 		$posNova = mysql_result($rs,$i,"colocacao");
 		if (($posNova > 0) && ($posAnt > 0)) {
 		  $pos=$posNova;

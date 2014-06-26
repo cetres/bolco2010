@@ -732,10 +732,12 @@ EOL;
 		printf ("<tr class='".$classeLinha."'>");
 		printf ("<td class='texto'>".$posicaoExibir."</td>");
 		$CARTAO_AMARELO='';
-		//if ($row["idusu"] == "206") {
-		//	$CARTAO_AMARELO = " &nbsp; <img src='imagens/cartaoAmarelo.png' border='0' width=6 height=10 alt='C.A.' title='Cartao Amarelo' style='display:inline'>";
-		//}
-		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"].$CARTAO_AMARELO."</a></b></td>");
+		if ($row["idusu"] == "559") {
+		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>"."Pera"."</a></b></td>");
+		} else {
+		printf ("<td onclick='irresultado(".$row["idusu"].")' class='link_jogo' nowrap><b><a class='texto' href='mresultados.php?us=".$row["idusu"]."'>".$row["apelido"]."</a></b></td>");
+		
+		}
 		printf ("<td><a class='texto'>".$row["chamador"]."</a></td>");
 		if (intval($row["pago"]) > 0) {
 			printf ("<td><a class='texto'>Sim</a></td>");

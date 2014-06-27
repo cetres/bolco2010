@@ -71,6 +71,13 @@ $(document).ready(function() {
         <tr>
           <td colspan="1" width="1" bgcolor="#2B59AE" ></td>
           <td height="250" align="justify" class="noticia">
+           <p style="font-size:9px;text-align:right">Bras&iacute;lia, 27 de junho de 2014</p>
+           <blockquote><strong>Prezados apostadores,</strong></blockquote>
+A segunda fase da Copa do Mundo 2014 vai começar!!! Agora que os confrontos já estão definidos, não se esqueçam de fazer suas apostas.<br> Boa sorte.<br>
+Comissão Organizadora.
+          <br> <br>
+          <hr>
+
           <p style="font-size:9px;text-align:right">Bras&iacute;lia, 13 de junho de 2014</p>
            <blockquote><strong>Atenção!!</strong></blockquote>
 Lembramos que o prazo para efetuar o pagamento de R$20,00 se encerra às <font color="#FF0000"> <strong>23:59h do dia 16/06/2014</strong></font> . Lembramos que, conforme descrito no Regulamento, "O pagamento será facultativo, porém a premiação se destinará apenas aos pagadores".<br>
